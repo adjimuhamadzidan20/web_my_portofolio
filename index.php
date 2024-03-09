@@ -155,11 +155,14 @@
                         if ($dataPorto == 0) { 
                     ?>
                         <!-- Portfolio Item 1 -->
-                        <div class="col-md-6 col-lg-4 mb-5 d-flex align-content-stretch">
+                        <div class="col-md-6 col-lg-5 col-xl-4 mb-5 d-flex align-content-stretch">
                             <div class="portfolio-item mx-auto bg-white shadow w-100">
-                                <img style="width: 100%; height: 60%;" src="dashboard/thumb_pict/thumb_porto.png" alt="thumbnail" />
+                                <img style="width: 100%; height: 50%; object-fit: cover;" src="dashboard/thumb_pict/thumb_porto.png" alt="thumbnail" />
                                 <div class="keterangan-portfolio p-3">
-                                    <h5>Portofolio 1</h5>
+                                    <h6 class="mb-2">Portofolio 1</h6>
+                                    <div style="height: 70px; overflow: hidden;">
+                                        Lorem ipsum, dolor sit, amet consectetur adipisicing elit. Voluptates quod voluptatibus nulla totam quaerat recusandae voluptatem, error doloribus quidem consequuntur dolorem reiciendis aliquam eveniet illum! Quia perspiciatis itaque, id doloremque. Lorem ipsum dolor sit amet consectetur adipisicing, elit. Minima nostrum illum veniam eligendi quidem labore dolor impedit earum ab vitae, hic quisquam molestiae eaque asperiores necessitatibus laboriosam delectus itaque ullam!
+                                    </div>
                                 </div>
                                 <div class="detail-button px-3 pb-3">
                                     <button class="detail btn btn-primary" data-bs-toggle="modal" 
@@ -169,11 +172,14 @@
                         </div>
 
                         <!-- Portfolio Item 2 -->
-                        <div class="col-md-6 col-lg-4 mb-5 d-flex align-content-stretch">
+                        <div class="col-md-6 col-lg-5 col-xl-4 mb-5 d-flex align-content-stretch">
                             <div class="portfolio-item mx-auto bg-white shadow w-100">
-                                <img style="width: 100%; height: 60%;" src="dashboard/thumb_pict/thumb_porto.png" alt="thumbnail" />
+                                <img style="width: 100%; height: 50%; object-fit: cover;" src="dashboard/thumb_pict/thumb_porto.png" alt="thumbnail" />
                                 <div class="keterangan-portfolio p-3">
-                                    <h5>Portofolio 2</h5>
+                                    <h6 class="mb-2">Portofolio 2</h6>
+                                    <div style="height: 70px; overflow: hidden;">
+                                        Lorem ipsum, dolor sit, amet consectetur adipisicing elit. Voluptates quod voluptatibus nulla totam quaerat recusandae voluptatem, error doloribus quidem consequuntur dolorem reiciendis aliquam eveniet illum! Quia perspiciatis itaque, id doloremque. Lorem ipsum dolor sit amet consectetur adipisicing, elit. Minima nostrum illum veniam eligendi quidem labore dolor impedit earum ab vitae, hic quisquam molestiae eaque asperiores necessitatibus laboriosam delectus itaque ullam!
+                                    </div>
                                 </div>
                                 <div class="detail-button px-3 pb-3">
                                     <button class="detail btn btn-primary" data-bs-toggle="modal" 
@@ -183,11 +189,14 @@
                         </div>
 
                         <!-- Portfolio Item 3 -->
-                        <div class="col-md-6 col-lg-4 mb-5 d-flex align-content-stretch">
+                        <div class="col-md-6 col-lg-5 col-xl-4 mb-5 d-flex align-content-stretch">
                             <div class="portfolio-item mx-auto bg-white shadow w-100">
-                                <img style="width: 100%; height: 60%;" src="dashboard/thumb_pict/thumb_porto.png" alt="thumbnail" />
+                                <img style="width: 100%; height: 50%; object-fit: cover;" src="dashboard/thumb_pict/thumb_porto.png" alt="thumbnail" />
                                 <div class="keterangan-portfolio p-3">
-                                    <h5>Portofolio 3</h5>
+                                    <h6 class="mb-2">Portofolio 3</h6>
+                                    <div style="height: 70px; overflow: hidden;">
+                                        Lorem ipsum, dolor sit, amet consectetur adipisicing elit. Voluptates quod voluptatibus nulla totam quaerat recusandae voluptatem, error doloribus quidem consequuntur dolorem reiciendis aliquam eveniet illum! Quia perspiciatis itaque, id doloremque. Lorem ipsum dolor sit amet consectetur adipisicing, elit. Minima nostrum illum veniam eligendi quidem labore dolor impedit earum ab vitae, hic quisquam molestiae eaque asperiores necessitatibus laboriosam delectus itaque ullam!
+                                    </div>
                                 </div>
                                 <div class="detail-button px-3 pb-3">
                                     <button class="detail btn btn-primary" data-bs-toggle="modal" 
@@ -317,11 +326,12 @@
                         foreach ($row as $porto) : 
                     ?>
                         <!-- Portfolio Item -->
-                        <div class="col-md-6 col-lg-4 mb-5 d-flex align-content-stretch">
+                        <div class="col-md-6 col-lg-5 col-xl-4 mb-5 d-flex align-content-stretch">
                             <div class="portfolio-item mx-auto bg-white shadow w-100">
-                                <img style="width: 100%; height: 55%;" src="dashboard/file_thumbnail/<?= $porto['thumbnail']; ?>" alt="thumbnail" />
-                                <div class="keterangan-portfolio p-3 mb-5">
-                                    <h5><?= $porto['judul_portofolio']; ?></h5>
+                                <img style="width: 100%; height: 50%; object-fit: cover;" src="dashboard/file_thumbnail/<?= $porto['thumbnail']; ?>" alt="thumbnail" />
+                                <div class="keterangan-portfolio p-3" style="margin-bottom: 5rem;">
+                                    <h6 class="mb-2"><?= $porto['judul_portofolio']; ?></h6>
+                                    <div style="height: 60px; overflow: hidden;"><?= $porto['deskripsi']; ?></div>
                                 </div>
                                 <div class="detail-button px-3 pb-3">
                                     <button class="detail btn btn-primary" data-bs-toggle="modal" 

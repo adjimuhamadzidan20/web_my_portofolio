@@ -1,5 +1,6 @@
 <?php
-
+	// error_reporting(error_reporting() & ~E_NOTICE);
+	
 	if (isset($_GET['halaman'])) {
 
 		if ($_GET['halaman'] == 'dashboard') {

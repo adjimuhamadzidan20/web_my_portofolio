@@ -40,7 +40,8 @@
 		
 	}
 	else {
-		if ($formatFile === 'jpg' || $formatFile === 'jpeg' || $formatFile === 'png') {
+		if ($formatFile === 'jpg' || $formatFile === 'JPG' || $formatFile === 'jpeg' || $formatFile === 'JPEG' || $formatFile === 'png' 
+		|| $formatFile === 'PNG') {
 			if ($ukuranFile > $sizeGambar) {
 				$_SESSION['status'] = 'warning';
 				$_SESSION['pesan'] = 'Ukuran file thumbnail maksimal 2MB!';
