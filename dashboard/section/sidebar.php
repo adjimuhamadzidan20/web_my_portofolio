@@ -47,7 +47,7 @@
 
 <!-- Brand Logo -->
 <a href="index.php" class="brand-link text-center">
-    <span class="brand-text">MY PORTOFOLIO</span>
+    <span class="brand-text font-weight-bold" style="color: #FFC800;">MY PORTOFOLIO</span>
 </a>
 
 <!-- Sidebar -->

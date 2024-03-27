@@ -28,12 +28,29 @@
   <link rel="stylesheet" href="dashboard/assets/dist/css/adminlte.min.css">
   <!-- SweetAlert2 -->
   <link rel="stylesheet" href="dashboard/assets/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+
+  <style type="text/css">
+    body {
+      background-image: url("landing_page/assets/img/background_header_new.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .btn-dark {
+      background-color: black;
+    }
+
+    .btn-dark:hover {
+      background-color: #343A40;
+      border-color: #343A40;
+    }
+  </style>
   
 </head>
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo mb-1">
-    <a href="login.php" class="text-uppercase">Login <b>Portofolio</b></a>
+    <a href="login.php" class="text-uppercase text-light">Login <b>Portofolio</b></a>
   </div>
   <!-- /.login-logo -->
   <div class="card py-2">

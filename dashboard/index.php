@@ -41,12 +41,12 @@
 
   <style type="text/css">
     .dataTables_paginate .paginate_button.page-item.active a {
-      background-color: #343A40;
-      border-color: #343A40;
+      background-color: black;
+      border-color: black;
     }
 
     .dataTables_paginate .paginate_button.page-item:not(.active) a {
-      color: #343A40;
+      color: black;
     }  
   </style>
 </head>
@@ -81,7 +81,7 @@
   </div>
 
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary">
+  <aside class="main-sidebar sidebar-dark-primary" style="background-color: black;">
     <?php require 'section/sidebar.php'; ?>
   </aside>
 
@@ -179,7 +179,7 @@
   });
 
   $('#tabel_sosial').DataTable({
-    "paging": true,
+    "paging": false,
     "lengthChange": false,
     "searching": false,
     "ordering": true,

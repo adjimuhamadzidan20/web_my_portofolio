@@ -52,6 +52,7 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="landing_page/css/styles.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="landing_page/assets/aos-master/dist/aos.css">
     </head>
     <body id="page-top">
 
@@ -117,7 +118,7 @@
                 </div>
                 <!-- About Section Content-->
                 <div class="row text-dark text-justify justify-content-center">
-                    <div class="col-lg-8 px-4 px-md-0">
+                    <div class="col-lg-8 px-4 px-md-0" data-aos="fade-down" data-aos-duration="1000">
                         <?php  
                             $dataTentang = mysqli_num_rows($query2);
                             if ($dataTentang == 0) { 
@@ -155,7 +156,7 @@
                         if ($dataPorto == 0) { 
                     ?>
                         <!-- Portfolio Item 1 -->
-                        <div class="col-md-6 col-lg-5 col-xl-4 mb-5 d-flex align-content-stretch">
+                        <div class="col-md-6 col-lg-5 col-xl-4 mb-5 d-flex align-content-stretch" data-aos="zoom-in" data-aos-duration="800">
                             <div class="portfolio-item mx-auto bg-white shadow w-100">
                                 <img style="width: 100%; height: 50%; object-fit: cover;" src="dashboard/thumb_pict/thumb_porto.png" alt="thumbnail" />
                                 <div class="keterangan-portfolio p-3">
@@ -172,7 +173,7 @@
                         </div>
 
                         <!-- Portfolio Item 2 -->
-                        <div class="col-md-6 col-lg-5 col-xl-4 mb-5 d-flex align-content-stretch">
+                        <div class="col-md-6 col-lg-5 col-xl-4 mb-5 d-flex align-content-stretch" data-aos="zoom-in" data-aos-duration="800">
                             <div class="portfolio-item mx-auto bg-white shadow w-100">
                                 <img style="width: 100%; height: 50%; object-fit: cover;" src="dashboard/thumb_pict/thumb_porto.png" alt="thumbnail" />
                                 <div class="keterangan-portfolio p-3">
@@ -189,7 +190,7 @@
                         </div>
 
                         <!-- Portfolio Item 3 -->
-                        <div class="col-md-6 col-lg-5 col-xl-4 mb-5 d-flex align-content-stretch">
+                        <div class="col-md-6 col-lg-5 col-xl-4 mb-5 d-flex align-content-stretch" data-aos="zoom-in" data-aos-duration="800">
                             <div class="portfolio-item mx-auto bg-white shadow w-100">
                                 <img style="width: 100%; height: 50%; object-fit: cover;" src="dashboard/thumb_pict/thumb_porto.png" alt="thumbnail" />
                                 <div class="keterangan-portfolio p-3">
@@ -326,7 +327,7 @@
                         foreach ($row as $porto) : 
                     ?>
                         <!-- Portfolio Item -->
-                        <div class="col-md-6 col-lg-5 col-xl-4 mb-5 d-flex align-content-stretch">
+                        <div class="col-md-6 col-lg-5 col-xl-4 mb-5 d-flex align-content-stretch" data-aos="zoom-in" data-aos-duration="800">
                             <div class="portfolio-item mx-auto bg-white shadow w-100">
                                 <img style="width: 100%; height: 50%; object-fit: cover;" src="dashboard/file_thumbnail/<?= $porto['thumbnail']; ?>" alt="thumbnail" />
                                 <div class="keterangan-portfolio p-3" style="margin-bottom: 5rem;">
@@ -430,7 +431,7 @@
         </section>
 
         <!-- Footer-->
-        <footer class="footer py-3 bg-dark">
+        <footer class="footer py-3" style="background-color: black;">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-4 text-lg-start text-white">
@@ -488,5 +489,10 @@
 
         </script>
 
+        <script type="text/javascript" src="landing_page/assets/aos-master/dist/aos.js"></script>
+
+        <script>
+          AOS.init();
+        </script>
     </body>
 </html>

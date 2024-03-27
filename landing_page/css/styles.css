@@ -10903,7 +10903,7 @@ p {
 #mainNav {
   padding-top: 1rem;
   padding-bottom: 1rem;
-  background-color: #212529;
+  background-color: black;
 }
 #mainNav .navbar-toggler {
   padding: 0.75rem;
@@ -10951,7 +10951,7 @@ p {
   #mainNav.navbar-shrink {
     padding-top: 1rem;
     padding-bottom: 1rem;
-    background-color: #212529;
+    background-color: black;
   }
   #mainNav.navbar-shrink .navbar-brand {
     font-size: 1.25em;
@@ -10972,7 +10972,7 @@ header.masthead {
   padding-bottom: 11.5rem;
   text-align: center;
   color: #fff;
-  background-image: url("../assets/img/background_header.jpg");
+  background-image: url("../assets/img/background_header_new.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
