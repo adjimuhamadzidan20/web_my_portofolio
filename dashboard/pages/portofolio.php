@@ -40,7 +40,7 @@
           <div class="card-header">
             <div class="d-flex justify-content-between align-items-center">
               <div class="opsi-tambah">
-                <a href="index.php?halaman=tambah_porto" class="btn btn-success"><i class="fas fa-plus mr-2"></i>Tambah</a>
+                <a href="index.php?halaman=tambah_porto" class="btn btn-warning text-white"><i class="fas fa-plus mr-2"></i>Tambah</a>
               </div>
               <div class="card-title">
                 Data Portofolio
@@ -69,15 +69,17 @@
                       <td class="text-center"><?= $no; ?></td>
                       <td><?= $porto['judul_portofolio']; ?></td>
                       <td class="text-center">
-                        <img src="file_thumbnail/<?= $porto['thumbnail']; ?>" alt="thumbnail" width="85" class="img-thumbnail">
+                        <img src="file_thumbnail/<?= $porto['thumbnail']; ?>" alt="thumbnail" class="gambar-porto img-thumbnail">
                       </td>
                       <td class="text-center"><?= $porto['tahun_pembuatan']; ?></td>
-                      <td><?= $porto['deskripsi']; ?></td>
+                      <td>
+                        <div class="deskripsi-port"><?= $porto['deskripsi']; ?></div>
+                      </td>
                       <td nowrap="nowrap">
                         <center>
-                          <a href="index.php?halaman=edit_porto&edit=<?= $porto['id']; ?>" class="btn btn-success btn-sm"><i class="fas fa-edit"></i></a>
+                          <a href="index.php?halaman=edit_porto&edit=<?= $porto['id']; ?>" class="btn btn-warning text-white btn-sm"><i class="fas fa-edit"></i></a>
 
-                          <button type="button" class="btn btn-success btn-sm" data-toggle="modal" 
+                          <button type="button" class="btn btn-warning text-white btn-sm" data-toggle="modal" 
                           data-target="#hapusPorto<?= $porto['id']; ?>"><i class="fas fa-trash"></i></button>
                         </center>
 
@@ -96,7 +98,7 @@
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                                <a href="config/delete_porto.php?id=<?= $porto['id']; ?>&thumb=<?= $porto['thumbnail']; ?>" class="btn btn-success">Hapus</a>
+                                <a href="config/delete_porto.php?id=<?= $porto['id']; ?>&thumb=<?= $porto['thumbnail']; ?>" class="btn btn-warning text-white">Hapus</a>
                               </div>
                             </div>
                           </div>

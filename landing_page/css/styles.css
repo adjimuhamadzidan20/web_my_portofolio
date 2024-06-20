@@ -488,7 +488,7 @@ progress {
 }
 
 .lead {
-  font-size: 1.25rem;
+  font-size: 1.20rem;
   font-weight: 300;
 }
 
@@ -10846,7 +10846,7 @@ p {
 }
 
 .page-section h2.section-heading, .page-section .section-heading.h2 {
-  font-size: 2.3rem;
+  font-size: 2.0rem;
   margin-top: 0;
   margin-bottom: 1rem;
 }
@@ -10934,8 +10934,8 @@ p {
 
 @media (min-width: 992px) {
   #mainNav {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     border: none;
     background-color: transparent;
     transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
@@ -10949,8 +10949,8 @@ p {
     transition: height 0.3s ease-in-out;
   }
   #mainNav.navbar-shrink {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
     background-color: black;
   }
   #mainNav.navbar-shrink .navbar-brand {
@@ -10975,7 +10975,7 @@ header.masthead {
   background-image: url("../assets/img/background_header_new.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
-  background-position: center center;
+  background-position: center;
   background-size: cover;
 }
 header.masthead .masthead-subheading {
@@ -10993,8 +10993,8 @@ header.masthead .masthead-heading {
 }
 
 .masthead .masthead-avatar {
-  width: 13rem;
-  height: 13rem;
+  width: 12rem;
+  height: 12rem;
 }
 
 @media (min-width: 768px) {
@@ -11290,7 +11290,7 @@ header.masthead .masthead-heading {
 
 section#contact {
   background-color: #212529;
-  background-image: url("../assets/img/background_contact.jpg");
+  background-image: url("../assets/img/background_contact_new.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -11352,4 +11352,5 @@ section#contact form#contactForm :-ms-input-placeholder {
 .detail-button {
   position: absolute;
   bottom: 0;
+  width: 100%;
 }

@@ -1,5 +1,5 @@
 <?php
-	// error_reporting(error_reporting() & ~E_NOTICE);
+	error_reporting(error_reporting() & ~E_NOTICE);
 	
 	if (isset($_GET['halaman'])) {
 
@@ -40,6 +40,5 @@
 	else {
 		require 'pages/dashboard.php';
 	}
-
 
 ?>

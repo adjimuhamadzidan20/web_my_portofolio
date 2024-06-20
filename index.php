@@ -156,7 +156,7 @@
                         if ($dataPorto == 0) { 
                     ?>
                         <!-- Portfolio Item 1 -->
-                        <div class="col-md-6 col-lg-5 col-xl-4 mb-5 d-flex align-content-stretch" data-aos="zoom-in" data-aos-duration="800">
+                        <div class="col-md-6 col-lg-5 col-xl-4 mb-4 mb-lg-5 d-flex align-content-stretch" data-aos="zoom-in" data-aos-duration="800">
                             <div class="portfolio-item mx-auto bg-white shadow w-100">
                                 <img style="width: 100%; height: 50%; object-fit: cover;" src="dashboard/thumb_pict/thumb_porto.png" alt="thumbnail" />
                                 <div class="keterangan-portfolio p-3">
@@ -166,14 +166,14 @@
                                     </div>
                                 </div>
                                 <div class="detail-button px-3 pb-3">
-                                    <button class="detail btn btn-primary" data-bs-toggle="modal" 
+                                    <button class="detail btn btn-primary col-12 col-lg-3" data-bs-toggle="modal" 
                                     data-bs-target="#portfolio1"><i class="fas fa-eye"></i> Detail</button>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Portfolio Item 2 -->
-                        <div class="col-md-6 col-lg-5 col-xl-4 mb-5 d-flex align-content-stretch" data-aos="zoom-in" data-aos-duration="800">
+                        <div class="col-md-6 col-lg-5 col-xl-4 mb-4 mb-lg-5 d-flex align-content-stretch" data-aos="zoom-in" data-aos-duration="800">
                             <div class="portfolio-item mx-auto bg-white shadow w-100">
                                 <img style="width: 100%; height: 50%; object-fit: cover;" src="dashboard/thumb_pict/thumb_porto.png" alt="thumbnail" />
                                 <div class="keterangan-portfolio p-3">
@@ -183,14 +183,14 @@
                                     </div>
                                 </div>
                                 <div class="detail-button px-3 pb-3">
-                                    <button class="detail btn btn-primary" data-bs-toggle="modal" 
+                                    <button class="detail btn btn-primary col-12 col-lg-3" data-bs-toggle="modal" 
                                     data-bs-target="#portfolio2"><i class="fas fa-eye"></i> Detail</button>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Portfolio Item 3 -->
-                        <div class="col-md-6 col-lg-5 col-xl-4 mb-5 d-flex align-content-stretch" data-aos="zoom-in" data-aos-duration="800">
+                        <div class="col-md-6 col-lg-5 col-xl-4 mb-4 mb-lg-5 d-flex align-content-stretch" data-aos="zoom-in" data-aos-duration="800">
                             <div class="portfolio-item mx-auto bg-white shadow w-100">
                                 <img style="width: 100%; height: 50%; object-fit: cover;" src="dashboard/thumb_pict/thumb_porto.png" alt="thumbnail" />
                                 <div class="keterangan-portfolio p-3">
@@ -200,7 +200,7 @@
                                     </div>
                                 </div>
                                 <div class="detail-button px-3 pb-3">
-                                    <button class="detail btn btn-primary" data-bs-toggle="modal" 
+                                    <button class="detail btn btn-primary col-12 col-lg-3" data-bs-toggle="modal" 
                                     data-bs-target="#portfolio3"><i class="fas fa-eye"></i> Detail</button>
                                 </div>
                             </div>
@@ -218,10 +218,10 @@
                                             <div class="row">
                                                 <div class="col pb-3">
                                                     <!-- Portfolio Modal - Title-->
-                                                    <h4 class="text-secondary text-uppercase mb-3 text-center">Portofolio 1</h4>
+                                                    <h5 class="text-secondary text-uppercase mb-3 text-center">Portofolio 1</h5>
 
                                                     <!-- Portfolio Modal - Image-->
-                                                    <img class="img-fluid rounded mb-4" src="dashboard/thumb_pict/thumb_porto.png" alt="thumbnail" />
+                                                    <img class="img-fluid img-thumbnail rounded mb-4" src="dashboard/thumb_pict/thumb_porto.png" alt="thumbnail" />
 
                                                     <!-- Portfolio Modal - Tahun -->
                                                     <div class="tahun-pembuatan mb-4">
@@ -257,10 +257,10 @@
                                             <div class="row">
                                                 <div class="col pb-3">
                                                     <!-- Portfolio Modal - Title-->
-                                                    <h4 class="text-secondary text-uppercase mb-3 text-center">Portofolio 2</h4>
+                                                    <h5 class="text-secondary text-uppercase mb-3 text-center">Portofolio 2</h5>
 
                                                     <!-- Portfolio Modal - Image-->
-                                                    <img class="img-fluid rounded mb-4" src="dashboard/thumb_pict/thumb_porto.png" alt="thumbnail" />
+                                                    <img class="img-fluid img-thumbnail rounded mb-4" src="dashboard/thumb_pict/thumb_porto.png" alt="thumbnail" />
 
                                                     <!-- Portfolio Modal - Tahun -->
                                                     <div class="tahun-pembuatan mb-4">
@@ -296,10 +296,10 @@
                                             <div class="row">
                                                 <div class="col pb-3">
                                                     <!-- Portfolio Modal - Title-->
-                                                    <h4 class="text-secondary text-uppercase mb-3 text-center">Portofolio 3</h4>
+                                                    <h5 class="text-secondary text-uppercase mb-3 text-center">Portofolio 3</h5>
 
                                                     <!-- Portfolio Modal - Image-->
-                                                    <img class="img-fluid rounded mb-4" src="dashboard/thumb_pict/thumb_porto.png" alt="thumbnail" />
+                                                    <img class="img-fluid img-thumbnail rounded mb-4" src="dashboard/thumb_pict/thumb_porto.png" alt="thumbnail" />
 
                                                     <!-- Portfolio Modal - Tahun -->
                                                     <div class="tahun-pembuatan mb-4">
@@ -327,7 +327,7 @@
                         foreach ($row as $porto) : 
                     ?>
                         <!-- Portfolio Item -->
-                        <div class="col-md-6 col-lg-5 col-xl-4 mb-5 d-flex align-content-stretch" data-aos="zoom-in" data-aos-duration="800">
+                        <div class="col-md-6 col-lg-5 col-xl-4 mb-4 mb-lg-5 d-flex align-content-stretch" data-aos="zoom-in" data-aos-duration="800">
                             <div class="portfolio-item mx-auto bg-white shadow w-100">
                                 <img style="width: 100%; height: 50%; object-fit: cover;" src="dashboard/file_thumbnail/<?= $porto['thumbnail']; ?>" alt="thumbnail" />
                                 <div class="keterangan-portfolio p-3" style="margin-bottom: 5rem;">
@@ -335,7 +335,7 @@
                                     <div style="height: 60px; overflow: hidden;"><?= $porto['deskripsi']; ?></div>
                                 </div>
                                 <div class="detail-button px-3 pb-3">
-                                    <button class="detail btn btn-primary" data-bs-toggle="modal" 
+                                    <button class="detail btn btn-primary col-12 col-lg-3" data-bs-toggle="modal" 
                                     data-bs-target="#portfolio<?= $porto['id']; ?>"><i class="fas fa-eye"></i> Detail</button>
                                 </div>
                             </div>
@@ -353,10 +353,10 @@
                                             <div class="row">
                                                 <div class="col pb-3">
                                                     <!-- Portfolio Modal - Title-->
-                                                    <h4 class="text-secondary text-uppercase mb-3 text-center"><?= $porto['judul_portofolio']; ?></h4>
+                                                    <h5 class="text-secondary text-uppercase mb-3 text-center"><?= $porto['judul_portofolio']; ?></h5>
 
                                                     <!-- Portfolio Modal - Image-->
-                                                    <img class="img-fluid rounded mb-4" src="dashboard/file_thumbnail/<?= $porto['thumbnail']; ?>" alt="thumbnail" />
+                                                    <img class="img-fluid img-thumbnail rounded mb-4" src="dashboard/file_thumbnail/<?= $porto['thumbnail']; ?>" alt="thumbnail" />
 
                                                     <!-- Portfolio Modal - Tahun -->
                                                     <div class="tahun-pembuatan mb-4">
@@ -365,7 +365,7 @@
                                                     </div>
 
                                                     <!-- Portfolio Modal - Deskripsi -->
-                                                    <div class="deskripsi mb-4">
+                                                    <div class="deskripsi mb-5">
                                                         <strong class="text-secondary">Deskripsi :</strong>
                                                         <div class="text-secondary text-justify"><?= $porto['deskripsi']; ?></div>
                                                     </div>

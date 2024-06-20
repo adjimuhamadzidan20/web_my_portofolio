@@ -16,7 +16,7 @@
   <div class="container-fluid">
     <div class="row mb-1">
       <div class="col-sm-6">
-        <h1 class="m-0 font-weight-normal">Selamat Datang!</h1>
+        <h1 class="m-0 font-weight-normal text-uppercase">Selamat Datang!</h1>
       </div>
       <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
@@ -35,8 +35,8 @@
     <div class="row">
       <div class="col-md-6 col-12">
         <!-- small box -->
-        <div class="small-box bg-success">
-          <div class="inner">
+        <div class="small-box bg-warning">
+          <div class="inner text-white">
             <h3><?= $dataPorto; ?> Data</h3>
             <p>Portofolio</p>
           </div>
@@ -49,8 +49,8 @@
       <!-- ./col -->
       <div class="col-md-6 col-12">
         <!-- small box -->
-        <div class="small-box bg-success">
-          <div class="inner">
+        <div class="small-box bg-warning">
+          <div class="inner text-white">
             <h3><?= $dataSosial; ?> Data</h3>
             <p>Sosial Media</p>
           </div>

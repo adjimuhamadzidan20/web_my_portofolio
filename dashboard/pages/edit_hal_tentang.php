@@ -45,7 +45,7 @@
               </div>
               <div class="d-flex justify-content-between">
                 <a href="index.php?halaman=tentang" class="btn btn-secondary">Kembali</a>
-                <button type="submit" class="btn btn-success">Edit</button>
+                <button type="submit" class="btn btn-warning text-white">Edit</button>
               </div>
             </div>
           </form>

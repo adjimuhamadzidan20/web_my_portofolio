@@ -40,6 +40,19 @@
   <link rel="stylesheet" href="assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
 
   <style type="text/css">
+    .gambar-porto {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      background-size: cover;
+    }
+
+    .deskripsi-port {
+      height: 50px;
+      overflow: hidden;
+      text-align: justify;
+    }
+
     .dataTables_paginate .paginate_button.page-item.active a {
       background-color: black;
       border-color: black;
@@ -74,7 +87,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-          <a href="logout.php" class="btn btn-success">Logout</a>
+          <a href="logout.php" class="btn btn-warning text-white">Logout</a>
         </div>
       </div>
     </div>

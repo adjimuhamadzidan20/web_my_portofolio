@@ -55,7 +55,7 @@
   <!-- /.login-logo -->
   <div class="card py-2">
     <div class="card-body login-card-body">
-      <p class="login-box-msg">Masuk sebagai admin</p>
+      <p class="login-box-msg">Masuk Sebagai Admin</p>
 
       <form action="dashboard/config/proses_login.php" method="post">
         <div class="input-group mb-3">

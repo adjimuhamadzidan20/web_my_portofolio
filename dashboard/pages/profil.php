@@ -74,12 +74,12 @@
                 <p>Belum ada alamat<p>
               </div>
               <div>
-                <button type="button" class="btn btn-success col-12 col-lg-auto mb-2 mt-3 mb-lg-0 mt-lg-0" 
+                <button type="button" class="btn text-white btn-warning col-12 col-lg-auto mb-2 mt-3 mb-lg-0 mt-lg-0" 
                 data-toggle="modal" 
                 data-target="#tambahProfil">
                 <i class="fas fa-plus"></i> Tambah Profil</button>
 
-                <button class="btn btn-success col-12 col-lg-auto" disabled="disabled"><i class="fas fa-undo mr-2"></i>Reset Profil</button>
+                <button class="btn text-white btn-warning col-12 col-lg-auto" disabled="disabled"><i class="fas fa-undo mr-2"></i>Reset Profil</button>
               </div>
             </div>
           </div>
@@ -127,7 +127,7 @@
                 <p><?= $profil['alamat']; ?><p>
               </div>
               <div>
-                <button type="button" class="btn btn-success col-12 col-lg-auto mb-2 mt-3 mb-lg-0 mt-lg-0" 
+                <button type="button" class="btn btn-warning text-white col-12 col-lg-auto mb-2 mt-3 mb-lg-0 mt-lg-0" 
                 data-toggle="modal" 
                 data-target="#suntingProfil"
                 data-id="<?= $profil['id']; ?>"
@@ -137,7 +137,7 @@
                 data-foto="<?= $profil['foto']; ?>">
                 <i class="fas fa-edit mr-2"></i>Sunting Profil</button>
 
-                <button type="button" class="btn btn-success col-12 col-lg-auto" data-toggle="modal" 
+                <button type="button" class="btn btn-warning text-white col-12 col-lg-auto" data-toggle="modal" 
                 data-target="#resetProfil<?= $profil['id']; ?>"><i class="fas fa-undo mr-2"></i>Reset Profil</button>
 
                 <!-- modal hapus -->
@@ -155,7 +155,7 @@
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                        <a href="config/reset_profil.php?foto=<?= $profil['foto']; ?>" class="btn btn-success">Hapus</a>
+                        <a href="config/reset_profil.php?foto=<?= $profil['foto']; ?>" class="btn btn-warning text-white">Hapus</a>
                       </div>
                     </div>
                   </div>
@@ -207,7 +207,7 @@
         </div>
         <div class="modal-footer justify-content-between">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
-          <button type="submit" class="btn btn-success">Simpan</button>
+          <button type="submit" class="btn btn-warning text-white">Simpan</button>
         </div>
       </form>
     </div>
@@ -251,7 +251,7 @@
         </div>
         <div class="modal-footer justify-content-between">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
-          <button type="submit" class="btn btn-success">Sunting</button>
+          <button type="submit" class="btn btn-warning text-white">Sunting</button>
         </div>
       </form>
     </div>

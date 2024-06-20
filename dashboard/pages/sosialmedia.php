@@ -57,7 +57,7 @@
                       <label for="facebook" class="form-label">Link Facebook</label>
                       <div class="form-link d-block d-md-flex col-auto col-lg-6 col-md-8">
                         <input type="text" class="form-control mr-2 mb-2 mb-md-0" id="facebook" name="link" placeholder="Cantumkan link" required>
-                        <button type="submit" class="btn btn-success">Simpan</button>
+                        <button type="submit" class="btn btn-warning text-white">Simpan</button>
                       </div>
                     </form>
                   </div>
@@ -79,7 +79,7 @@
                       <label for="instagram" class="form-label">Link Instagram</label>
                       <div class="form-link d-block d-md-flex col-auto col-lg-6 col-md-8">
                         <input type="text" class="form-control mr-2 mb-2 mb-md-0" id="instagram" name="link" placeholder="Cantumkan link" required>
-                        <button type="submit" class="btn btn-success">Simpan</button>
+                        <button type="submit" class="btn btn-warning text-white">Simpan</button>
                       </div>
                     </form>
                   </div>
@@ -101,7 +101,7 @@
                       <label for="twitter" class="form-label">Link Twitter</label>
                       <div class="form-link d-block d-md-flex col-auto col-lg-6 col-md-8">
                         <input type="text" class="form-control mr-2 mb-2 mb-md-0" id="twitter" name="link" placeholder="Cantumkan link" required>
-                        <button type="submit" class="btn btn-success">Simpan</button>
+                        <button type="submit" class="btn btn-warning text-white">Simpan</button>
                       </div>
                     </form>
                   </div>
@@ -123,7 +123,7 @@
                       <label for="linkedin" class="form-label">Link Linkedin</label>
                       <div class="form-link d-block d-md-flex col-auto col-lg-6 col-md-8">
                         <input type="text" class="form-control mr-2 mb-2 mb-md-0" id="linkedin" name="link" placeholder="Cantumkan link" required>
-                        <button type="submit" class="btn btn-success">Simpan</button>
+                        <button type="submit" class="btn btn-warning text-white">Simpan</button>
                       </div>
                     </form>
                   </div>
@@ -145,7 +145,7 @@
                       <label for="github" class="form-label">Link Github</label>
                       <div class="form-link d-block d-md-flex col-auto col-lg-6 col-md-8">
                         <input type="text" class="form-control mr-2 mb-2 mb-md-0" id="github" name="link" placeholder="Cantumkan link" required>
-                        <button type="submit" class="btn btn-success">Simpan</button>
+                        <button type="submit" class="btn btn-warning text-white">Simpan</button>
                       </div>
                     </form>
                   </div>
@@ -186,13 +186,13 @@
                       <td><?= $sosial['link']; ?></td>
                       <td nowrap="nowrap">
                         <center>
-                          <button type="button" class="btn btn-success btn-sm" data-toggle="modal" 
+                          <button type="button" class="btn btn-warning text-white btn-sm" data-toggle="modal" 
                           data-target="#editSosial"
                           data-id="<?= $sosial['id']; ?>"
                           data-sosial="<?= $sosial['sosial_media']; ?>"
                           data-link="<?= $sosial['link']; ?>"
                           ><i class="fas fa-edit"></i></button>
-                          <button type="button" class="btn btn-success btn-sm" data-toggle="modal" 
+                          <button type="button" class="btn btn-warning text-white btn-sm" data-toggle="modal" 
                           data-target="#hapusSosial<?= $sosial['id']; ?>"><i class="fas fa-trash"></i></button>
                         </center>
 
@@ -211,7 +211,7 @@
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                                <a href="config/delete_sosialmedia.php?id=<?= $sosial['id']; ?>" class="btn btn-success">Hapus</a>
+                                <a href="config/delete_sosialmedia.php?id=<?= $sosial['id']; ?>" class="btn btn-warning text-white">Hapus</a>
                               </div>
                             </div>
                           </div>
@@ -255,7 +255,7 @@
           </div>
           <div class="modal-footer justify-content-between">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
-            <button type="submit" class="btn btn-success">Edit</button>
+            <button type="submit" class="btn btn-warning text-white">Edit</button>
           </div>
         </form>
     </div>

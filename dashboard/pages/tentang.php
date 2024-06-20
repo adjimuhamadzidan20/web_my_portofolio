@@ -71,7 +71,7 @@
           <div class="card-header">
             <div class="d-flex justify-content-between align-items-center">
               <div class="opsi-tambah">
-                <a href="index.php?halaman=tambah_tentang" class="btn btn-success"><i class="fas fa-plus mr-2"></i>Tambah</a>
+                <a href="index.php?halaman=tambah_tentang" class="btn btn-warning text-white"><i class="fas fa-plus mr-2"></i>Tambah</a>
               </div>
               <div class="card-title">
                 Data Tentang
@@ -98,9 +98,9 @@
                       <td><?= $tentang['deskripsi']; ?></td>
                       <td nowrap="nowrap">
                         <center>
-                          <a href="index.php?halaman=edit_tentang&edit=<?= $tentang['id']; ?>" class="btn btn-success btn-sm"><i class="fas fa-edit"></i></a>
+                          <a href="index.php?halaman=edit_tentang&edit=<?= $tentang['id']; ?>" class="btn btn-warning text-white btn-sm"><i class="fas fa-edit"></i></a>
 
-                          <button type="button" class="btn btn-success btn-sm" data-toggle="modal" 
+                          <button type="button" class="btn btn-warning text-white btn-sm" data-toggle="modal" 
                           data-target="#hapusTentang<?= $tentang['id']; ?>"><i class="fas fa-trash"></i></button>
                         </center>
 
@@ -119,7 +119,7 @@
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                                <a href="config/delete_tentang.php?id=<?= $tentang['id']; ?>" class="btn btn-success">Hapus</a>
+                                <a href="config/delete_tentang.php?id=<?= $tentang['id']; ?>" class="btn btn-warning text-white">Hapus</a>
                               </div>
                             </div>
                           </div>
