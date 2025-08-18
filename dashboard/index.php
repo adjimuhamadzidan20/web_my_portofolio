@@ -9,242 +9,244 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="web_my_portofolio" />
-  <meta name="author" content="adjimuhamadzidan" />
-  <title>Dashboard || Portofolio</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="web_portofolio" />
+    <meta name="author" content="adjimuhamadzidan" />
+    <title>Portfolio || Dashboard</title>
+    
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" /> -->
+    <link href="assets/css/styles.css" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 
-  <!-- Favicon-->
-  <link rel="icon" type="image/x-icon" href="favicon/favicon.ico" />
-  <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="assets/plugins/fontawesome-free/css/all.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- Tempusdominus Bootstrap 4 -->
-  <link rel="stylesheet" href="assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="assets/dist/css/adminlte.min.css">
-  <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
-  <!-- summernote -->
-  <link rel="stylesheet" href="assets/plugins/summernote/summernote-bs4.min.css">
-  <!-- SweetAlert2 -->
-  <link rel="stylesheet" href="assets/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
-  <!-- DataTables -->
-  <link rel="stylesheet" href="assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-  <link rel="stylesheet" href="assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-  <link rel="stylesheet" href="assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+    <style type="text/css">
+      .gambar-porto {
+        width: 70px;
+        height: 70px;
+        object-fit: cover;
+        background-size: cover;
+      }
 
-  <style type="text/css">
-    .gambar-porto {
-      width: 80px;
-      height: 80px;
-      object-fit: cover;
-      background-size: cover;
-    }
+      .deskripsi-port {
+        height: 50px;
+        overflow: hidden;
+        text-align: justify;
+      }
 
-    .deskripsi-port {
-      height: 50px;
-      overflow: hidden;
-      text-align: justify;
-    }
+      /*.dataTables_paginate .paginate_button.page-item.active a {
+        background-color: black;
+        border-color: black;
+      }
 
-    .dataTables_paginate .paginate_button.page-item.active a {
-      background-color: black;
-      border-color: black;
-    }
+      .dataTables_paginate .paginate_button.page-item:not(.active) a {
+        color: black;
+      }  */
+    </style>
 
-    .dataTables_paginate .paginate_button.page-item:not(.active) a {
-      color: black;
-    }  
-  </style>
-</head>
-<body class="hold-transition sidebar-mini layout-fixed">
-<div class="wrapper">
-
-  <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand navbar-white navbar-light sticky-top">
-    <?php require 'section/navbar.php'; ?>
-  </nav>
-  <!-- /.navbar -->
-
-  <!-- modal logout -->
-  <div class="modal fade" tabindex="-1" id="logout">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title"><i class="fas fa-sign-out-alt"></i> Log out dashboard</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          Yakin ingin keluar dari dashboard?
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-          <a href="logout.php" class="btn btn-warning text-white">Logout</a>
-        </div>
+  </head>
+  <body class="sb-nav-fixed">
+      <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <!-- Navbar Brand-->
+        <a class="navbar-brand ps-3" href="index.html">MY PORTOFOLIO</a>
+        <!-- Sidebar Toggle-->
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+        <!-- Navbar Search-->
+        <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+          <div class="input-group">
+              <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+              <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
+          </div>
+        </form>
+          <!-- Navbar-->
+          <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#!">Settings</a></li>
+                    <li><a class="dropdown-item" href="#!">Activity Log</a></li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li><a class="dropdown-item" href="#!">Logout</a></li>
+                </ul>
+            </li>
+          </ul>
+      </nav>
+      <div id="layoutSidenav">
+          <div id="layoutSidenav_nav">
+            <?php require 'section/sidebar.php'; ?>
+          </div>
+          
+          <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid px-4">
+                  <?php require 'config/halaman.php'; ?>
+                </div>
+            </main>
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid px-4">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">Web My Portofolio - <?= date('Y'); ?></div>
+                        <div>
+                            <a href="#">Privacy Policy</a>
+                            &middot;
+                            <a href="#">Terms &amp; Conditions</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+          </div>
       </div>
-    </div>
-  </div>
 
-  <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary" style="background-color: black;">
-    <?php require 'section/sidebar.php'; ?>
-  </aside>
-
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <?php require 'config/halaman.php' ?>
-  </div>
-  <!-- /.content-wrapper -->
-
-  <footer class="main-footer">
-    Copyright &copy; My Portofolio - <?= date('Y'); ?>
-  </footer>
-
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
-</div>
-<!-- ./wrapper -->
-
-<!-- jQuery -->
-<script src="assets/plugins/jquery/jquery.min.js"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="assets/plugins/jquery-ui/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-  $.widget.bridge('uibutton', $.ui.button)
-</script>
-<!-- Bootstrap 4 -->
-<script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- Tempusdominus Bootstrap 4 -->
-<script src="assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
-<!-- Summernote -->
-<script src="assets/plugins/summernote/summernote-bs4.min.js"></script>
-<!-- overlayScrollbars -->
-<script src="assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-<!-- AdminLTE App -->
-<script src="assets/dist/js/adminlte.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="assets/dist/js/pages/dashboard.js"></script>
-
-<!-- DataTables  & Plugins -->
-<script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-<script src="assets/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-<script src="assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-<script src="assets/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-<script src="assets/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-
-<!-- SweetAlert2 -->
-<script src="assets/plugins/sweetalert2/sweetalert2.min.js"></script>
-
-<?php if (isset($_SESSION['status']) && isset($_SESSION['pesan'])) : ?>
-  <script>
-    $(function() {
-      var Toast = Swal.mixin({
-        toast: true,
-        position: 'top-end',
-        showConfirmButton: false,
-        timer: 4000
-      });
+      <script src="assets/js/jquery-3.6.0.js"></script>
+      <script src="assets/js/scripts.js"></script>
+      <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+      <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script> 
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+      <!-- <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script> -->
+      <!-- <script src="assets/js/datatables-simple-demo.js"></script> -->
       
-      Toast.fire({
-        icon: '<?= $_SESSION['status']; ?>',
-        title: '<?= $_SESSION['pesan']; ?>'
-      })
-    });
-  </script>
-<?php
-  unset($_SESSION['status']);  
-  unset($_SESSION['pesan']);  
-  endif; 
-?>
+      <!-- SweetAlert2 -->
+      <script src="assets/plugins/sweetalert2/sweetalert2.min.js"></script>
 
-<script type="text/javascript">
-  $('#tabel_tentang').DataTable({
-    "paging": false,
-    "lengthChange": false,
-    "searching": false,
-    "ordering": true,
-    "info": true,
-    "autoWidth": false,
-    "responsive": true,
-  });
+      <?php if (isset($_SESSION['status']) && isset($_SESSION['pesan'])) : ?>
+        <script>
+          $(function() {
+            var Toast = Swal.mixin({
+              toast: true,
+              position: 'top-end',
+              showConfirmButton: false,
+              timer: 4000
+            });
+            
+            Toast.fire({
+              icon: '<?= $_SESSION['status']; ?>',
+              title: '<?= $_SESSION['pesan']; ?>'
+            })
+          });
+        </script>
+      <?php
+        unset($_SESSION['status']);  
+        unset($_SESSION['pesan']);  
+        endif; 
+      ?>
 
-  $('#tabel_porto').DataTable({
-    "paging": true,
-    "lengthChange": true,
-    "searching": true,
-    "ordering": true,
-    "info": true,
-    "autoWidth": false,
-    "responsive": true,
-  });
+      <script type="text/javascript">
+        $(document).ready(function () {
+          $('#tabel_tentang').DataTable({
+            "paging": false,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
+          });
 
-  $('#tabel_sosial').DataTable({
-    "paging": false,
-    "lengthChange": false,
-    "searching": false,
-    "ordering": true,
-    "info": true,
-    "autoWidth": false,
-    "responsive": true,
-  });
+          $('#tabel_kemampuan').DataTable({
+            "paging": true,
+            "lengthChange": true,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
+          });
 
-  $('#suntingProfil').on('show.bs.modal', function(event) {
-    let target = $(event.relatedTarget);
+          $('#tabel_basis').DataTable({
+            "paging": true,
+            "lengthChange": true,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
+          });
 
-    let id = target.data('id');
-    let nama = target.data('nama');
-    let status = target.data('status');
-    let alamat = target.data('alamat');
-    let foto = target.data('foto');
+          $('#tabel_status').DataTable({
+            "paging": true,
+            "lengthChange": true,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
+          });
 
-    $(this).find('#id').val(id);
-    $(this).find('#nama').val(nama);
-    $(this).find('#status').val(status);
-    $(this).find('#alamat').val(alamat);
+          $('#tabel_porto').DataTable({
+            "paging": true,
+            "lengthChange": true,
+            "searching": true,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
+          });
 
-    $(this).find('#foto_lama').val(foto);
-    $(this).find('#admin_user').attr('src', 'file_foto/' + foto);
+          $('#tabel_sosial').DataTable({
+            "paging": false,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
+          });
+        });
 
-  });
+      </script>
 
-  $('#editSosial').on('show.bs.modal', function(event) {
-    let target = $(event.relatedTarget);
+      <script>
+        $('#suntingProfil').on('show.bs.modal', function(event) {
+          let target = $(event.relatedTarget);
 
-    let id = target.data('id');
-    let sosial = target.data('sosial');
-    let link = target.data('link');
+          let id = target.data('id');
+          let nama = target.data('nama');
+          let alamat = target.data('alamat');
+          let telp = target.data('telp');
+          let email = target.data('email');
+          let foto = target.data('foto');
 
-    $(this).find('#id').val(id);
-    $(this).find('#sosial').val(sosial);
-    $(this).find('#link').val(link);
+          console.log(target.data(status));
 
-  });
-</script>
+          $(this).find('#id').val(id);
+          $(this).find('#nama').val(nama);
+          $(this).find('#telp').val(telp);
+          $(this).find('#alamat').val(alamat);
+          $(this).find('#email').val(email);
 
-<script>
-  $(function () {
-    // Summernote
-    $('#deskripsi').summernote()
-  })
+          $(this).find('#foto_lama').val(foto);
+          $(this).find('#admin_user').attr('src', 'file_foto/' + foto);
 
-  $(function () {
-    // Summernote
-    $('#tentang').summernote()
-  })
-</script>
+        });
+      </script>
 
-</body>
+      <script>
+        $('#editSosial').on('show.bs.modal', function(event) {
+          let target = $(event.relatedTarget);
+
+          let id = target.data('id');
+          let sosial = target.data('sosial');
+          let link = target.data('link');
+
+          $(this).find('#id').val(id);
+          $(this).find('#sosial').val(sosial);
+          $(this).find('#link').val(link);
+
+        });
+      </script>
+
+      <script>
+        $(function () {
+          // Summernote
+          $('#deskripsi').summernote()
+        })
+
+        $(function () {
+          // Summernote
+          $('#tentang').summernote()
+        })
+      </script>
+  </body>
 </html>

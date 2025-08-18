@@ -15,7 +15,7 @@
 			$_SESSION['pesan'] = 'Sosial media '. $akun .' sudah ada!';
 		} 
 		else {
-			$sql = "INSERT INTO dt_sosialmedia VALUES ('', '$akun', '$link')";
+			$sql = "INSERT INTO dt_sosialmedia (sosial_media, link) VALUES ('$akun', '$link')";
 			$result = mysqli_query($koneksi, $sql);
 
 			if ($result) {
@@ -38,7 +38,7 @@
 			$_SESSION['pesan'] = 'Sosial media '. $akun .' sudah ada!';
 		}
 		else {
-			$sql = "INSERT INTO dt_sosialmedia VALUES ('', '$akun', '$link')";
+			$sql = "INSERT INTO dt_sosialmedia (sosial_media, link) VALUES ('$akun', '$link')";
 			$result = mysqli_query($koneksi, $sql);
 
 			if ($result) {
@@ -61,7 +61,7 @@
 			$_SESSION['pesan'] = 'Sosial media '. $akun .' sudah ada!';
 		} 
 		else {
-			$sql = "INSERT INTO dt_sosialmedia VALUES ('', '$akun', '$link')";
+			$sql = "INSERT INTO dt_sosialmedia (sosial_media, link) VALUES ('$akun', '$link')";
 			$result = mysqli_query($koneksi, $sql);
 
 			if ($result) {
@@ -84,7 +84,7 @@
 			$_SESSION['pesan'] = 'Sosial media '. $akun .' sudah ada!';
 		}
 		else {
-			$sql = "INSERT INTO dt_sosialmedia VALUES ('', '$akun', '$link')";
+			$sql = "INSERT INTO dt_sosialmedia (sosial_media, link) VALUES ('$akun', '$link')";
 			$result = mysqli_query($koneksi, $sql);
 
 			if ($result) {
@@ -107,7 +107,7 @@
 			$_SESSION['pesan'] = 'Sosial media '. $akun .' sudah ada!';
 		}
 		else {
-			$sql = "INSERT INTO dt_sosialmedia VALUES ('', '$akun', '$link')";
+			$sql = "INSERT INTO dt_sosialmedia (sosial_media, link) VALUES ('$akun', '$link')";
 			$result = mysqli_query($koneksi, $sql);
 
 			if ($result) {

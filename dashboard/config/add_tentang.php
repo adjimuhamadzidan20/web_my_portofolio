@@ -2,13 +2,12 @@
 	require 'koneksi_db.php';
 	session_start();
 
-	$tentang = $_POST['tentang'];
-
-	$sql = "INSERT INTO dt_tentang VALUES ('', '$tentang')";
+	$tentang = mysqli_real_escape_string($koneksi, $_POST['tentang']);
+	$sql = "INSERT INTO dt_tentang (deskripsi) VALUES ('$tentang')";
 	$result = mysqli_query($koneksi, $sql);
 
 	if ($result) {
-		$_SESSION['status'] = 'success';
+		$_SESSION['status'] = 'success';	
 		$_SESSION['pesan'] = 'Tentang berhasil ditambahkan!';
 
 		header('Location: ../index.php?halaman=tentang');

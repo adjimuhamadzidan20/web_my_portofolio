@@ -3,7 +3,8 @@
 	session_start();
 
 	$nama = htmlspecialchars($_POST['nama']);
-	$status = htmlspecialchars($_POST['status']);
+	$telp = htmlspecialchars($_POST['telp']);
+	$email = htmlspecialchars($_POST['email']);
 	$alamat = htmlspecialchars($_POST['alamat']);
 	
 	$namaFile = $_FILES['foto']['name'];
@@ -27,7 +28,7 @@
 			$fileFoto = $idfile .'.'. $formatFile;
 			move_uploaded_file($tempatFile, '../file_foto/'. $fileFoto);
 			
-			$sql = "INSERT INTO dt_profil VALUES ('', '$nama', '$status', '$alamat', '$fileFoto')";
+			$sql = "INSERT INTO dt_profil VALUES ('', '$nama', '$telp', '$email', $alamat', '$fileFoto')";
 			$result = mysqli_query($koneksi, $sql);
 
 			if ($result) {

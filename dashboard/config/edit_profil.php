@@ -4,7 +4,8 @@
 
 	$id = $_POST['id'];
 	$nama = htmlspecialchars($_POST['nama']);
-	$status = htmlspecialchars($_POST['status']);
+	$telp = htmlspecialchars($_POST['telp']);
+	$email = htmlspecialchars($_POST['email']);
 	$alamat = htmlspecialchars($_POST['alamat']);
 	$fotoLama = htmlspecialchars($_POST['foto_lama']);
 
@@ -19,7 +20,7 @@
 	if ($errorFile == 4) {
 		$fileFoto = $fotoLama;
 
-		$sql = "UPDATE dt_profil SET nama_lengkap = '$nama', status = '$status', alamat = '$alamat', 
+		$sql = "UPDATE dt_profil SET nama_lengkap = '$nama', no_telp = '$telp', email = '$email', alamat = '$alamat', 
 		foto = '$fileFoto' WHERE id = $id";
 		$result = mysqli_query($koneksi, $sql);
 
@@ -52,8 +53,8 @@
 				$fileFoto = $idfile .'.'. $formatFile;
 				move_uploaded_file($tempatFile, '../file_foto/'. $fileFoto);
 
-				$sql = "UPDATE dt_profil SET nama_lengkap = '$nama', status = '$status', alamat = '$alamat', 
-				foto = '$fileFoto' WHERE id = $id";
+				$sql = "UPDATE dt_profil SET nama_lengkap = '$nama', no_telp = '$telp', email = '$email', 
+				alamat = '$alamat', foto = '$fileFoto' WHERE id = $id";
 				$result = mysqli_query($koneksi, $sql);
 
 				// menghapus gambar/foto di local folder

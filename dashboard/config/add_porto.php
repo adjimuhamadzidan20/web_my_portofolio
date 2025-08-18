@@ -4,7 +4,8 @@
 	
 	$judulPorto = htmlspecialchars($_POST['judul']);
 	$tahun = htmlspecialchars($_POST['tahun']);
-	$deskripsi = $_POST['deskripsi'];
+	$basis = htmlspecialchars($_POST['basis']);
+	$deskripsi = mysqli_real_escape_string($koneksi, $_POST['deskripsi']);
 
 	$namaFile = $_FILES['thumbnail']['name'];
 	$tempatFile = $_FILES['thumbnail']['tmp_name'];
@@ -28,7 +29,8 @@
 			$fileThumbnail = $idfile .'.'. $formatFile;
 			move_uploaded_file($tempatFile, '../file_thumbnail/'. $fileThumbnail);
 
-			$sql = "INSERT INTO dt_portofolio VALUES ('', '$judulPorto', '$fileThumbnail', '$tahun', '$deskripsi')";
+			$sql = "INSERT INTO dt_portofolio (judul_portofolio, thumbnail, basis_projek, tahun_pembuatan, deskripsi) 
+			VALUES ('$judulPorto', '$fileThumbnail', '$basis', '$tahun', '$deskripsi')";
 			$result = mysqli_query($koneksi, $sql);
 
 			if ($result) {

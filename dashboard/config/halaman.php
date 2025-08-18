@@ -32,6 +32,33 @@
 		}
 		else if ($_GET['halaman'] == 'sosial_media') {
 			require 'pages/sosialmedia.php';
+		}
+		else if ($_GET['halaman'] == 'kemampuan') {
+			require 'pages/kemampuan.php';
+		}
+		else if ($_GET['halaman'] == 'tambah_kemampuan') {
+			require 'pages/tambah_hal_kemampuan.php';
+		}
+		else if ($_GET['halaman'] == 'edit_kemampuan') {
+			require 'pages/edit_hal_kemampuan.php';
+		}
+		else if ($_GET['halaman'] == 'basis') {
+			require 'pages/basis_projek.php';
+		} 
+		else if ($_GET['halaman'] == 'tambah_basis') {
+			require 'pages/tambah_hal_basisprojek.php';
+		} 
+		else if ($_GET['halaman'] == 'edit_basis') {
+			require 'pages/edit_hal_basisprojek.php';
+		}  
+		else if ($_GET['halaman'] == 'status') {
+			require 'pages/status_profil.php';
+		} 
+		else if ($_GET['halaman'] == 'tambah_status') {
+			require 'pages/tambah_hal_statusprofil.php';
+		} 
+		else if ($_GET['halaman'] == 'edit_status') {
+			require 'pages/edit_hal_statusprofil.php';
 		} 
 		else {
 			require 'pages/404_error.php';

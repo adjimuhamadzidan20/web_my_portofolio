@@ -3,7 +3,7 @@
 	session_start();
 
 	$id = $_POST['id'];
-	$tentang = $_POST['tentang'];
+	$tentang =  mysqli_real_escape_string($koneksi, $_POST['tentang']);
 	
 	$sql = "UPDATE dt_tentang SET deskripsi = '$tentang' WHERE id = $id";
 	$result = mysqli_query($koneksi, $sql);
