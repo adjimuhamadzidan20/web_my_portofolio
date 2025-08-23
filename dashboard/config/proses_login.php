@@ -18,7 +18,7 @@
 			$_SESSION['login'] = true;
 			
 			header('Location: ../index.php');
-      exit;
+      		exit;
 		} 
 		else {
 			$_SESSION['status'] = 'error'; 

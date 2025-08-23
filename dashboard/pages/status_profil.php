@@ -33,7 +33,6 @@
               <tr>
                 <th class="text-center">No</th>
                 <th>Nama Status</th>
-                <th class="text-center">Created</th>
                 <th class="text-center">Opsi</th>
               </tr>
             </thead>
@@ -46,7 +45,6 @@
                 <tr>
                   <td class="text-center"><?= $no; ?></td>
                   <td><?= $status['nama_status']; ?></td>
-                  <td class="text-center"><?= $status['created_at']; ?></td>
                   <td nowrap="nowrap">
                     <center>
                       <a href="index.php?halaman=edit_status&edit=<?= $status['id']; ?>" class="btn btn-primary btn-sm text-white btn-sm"><i class="fas fa-edit"></i></a>
@@ -68,7 +66,7 @@
                           </div>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                            <a href="config/delete_statusprofil.php?id=<?= $status['id']; ?>" class="btn btn-primary text-white">Hapus</a>
+                            <a href="config/delete_process/delete_statusprofil.php?id=<?= $status['id']; ?>" class="btn btn-primary text-white">Hapus</a>
                           </div>
                         </div>
                       </div>

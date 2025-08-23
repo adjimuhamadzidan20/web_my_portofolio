@@ -18,9 +18,12 @@
     <title>Portfolio || Dashboard</title>
     
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
-    <!-- <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" /> -->
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <link href="assets/css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+
+    <!-- Toastr -->
+    <link rel="stylesheet" href="assets/plugins/toastr/toastr.min.css">
 
     <style type="text/css">
       .gambar-porto {
@@ -49,54 +52,46 @@
   </head>
   <body class="sb-nav-fixed">
       <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-        <!-- Navbar Brand-->
-        <a class="navbar-brand ps-3" href="index.html">MY PORTOFOLIO</a>
-        <!-- Sidebar Toggle-->
-        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
-        <!-- Navbar Search-->
-        <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
-          <div class="input-group">
-              <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-              <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
-          </div>
-        </form>
-          <!-- Navbar-->
-          <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
-                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#!">Settings</a></li>
-                    <li><a class="dropdown-item" href="#!">Activity Log</a></li>
-                    <li><hr class="dropdown-divider" /></li>
-                    <li><a class="dropdown-item" href="#!">Logout</a></li>
-                </ul>
-            </li>
-          </ul>
+        <?php require 'section/navbar.php'; ?>
       </nav>
       <div id="layoutSidenav">
-          <div id="layoutSidenav_nav">
-            <?php require 'section/sidebar.php'; ?>
+        <div id="layoutSidenav_nav">
+          <?php require 'section/sidebar.php'; ?>
+        </div>
+        
+        <div id="layoutSidenav_content">
+          <main>
+              <div class="container-fluid px-4">
+                <?php require 'config/halaman.php'; ?>
+              </div>
+          </main>
+          <footer class="py-4 bg-light mt-auto">
+              <div class="container-fluid px-4">
+                  <div class="d-flex align-items-center justify-content-between small">
+                      <div class="text-muted">My Portofolio | 2024 - <?= date('Y'); ?></div>
+                  </div>
+              </div>
+          </footer>
+        </div>
+      </div>
+
+      <!-- Modal logout -->
+      <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel"><i class="fas fa-sign-out fa-fw me-2"></i>Logout dashboard</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              Anda yakin ingin meninggalkan dashboard?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+              <a href="logout.php" class="btn btn-primary">Logout</a>
+            </div>
           </div>
-          
-          <div id="layoutSidenav_content">
-            <main>
-                <div class="container-fluid px-4">
-                  <?php require 'config/halaman.php'; ?>
-                </div>
-            </main>
-            <footer class="py-4 bg-light mt-auto">
-                <div class="container-fluid px-4">
-                    <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Web My Portofolio - <?= date('Y'); ?></div>
-                        <div>
-                            <a href="#">Privacy Policy</a>
-                            &middot;
-                            <a href="#">Terms &amp; Conditions</a>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-          </div>
+        </div>
       </div>
 
       <script src="assets/js/jquery-3.6.0.js"></script>
@@ -107,24 +102,12 @@
       <!-- <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script> -->
       <!-- <script src="assets/js/datatables-simple-demo.js"></script> -->
       
-      <!-- SweetAlert2 -->
-      <script src="assets/plugins/sweetalert2/sweetalert2.min.js"></script>
+      <!-- Toastr -->
+      <script src="assets/plugins/toastr/toastr.min.js"></script>
 
       <?php if (isset($_SESSION['status']) && isset($_SESSION['pesan'])) : ?>
         <script>
-          $(function() {
-            var Toast = Swal.mixin({
-              toast: true,
-              position: 'top-end',
-              showConfirmButton: false,
-              timer: 4000
-            });
-            
-            Toast.fire({
-              icon: '<?= $_SESSION['status']; ?>',
-              title: '<?= $_SESSION['pesan']; ?>'
-            })
-          });
+          toastr.<?= $_SESSION['status']; ?>('<?= $_SESSION['pesan']; ?>');
         </script>
       <?php
         unset($_SESSION['status']);  
@@ -208,8 +191,6 @@
           let email = target.data('email');
           let foto = target.data('foto');
 
-          console.log(target.data(status));
-
           $(this).find('#id').val(id);
           $(this).find('#nama').val(nama);
           $(this).find('#telp').val(telp);
@@ -219,6 +200,29 @@
           $(this).find('#foto_lama').val(foto);
           $(this).find('#admin_user').attr('src', 'file_foto/' + foto);
 
+        });
+      </script>
+
+      <script>
+        $('#suntingAkun').on('show.bs.modal', function(event) {
+          let target = $(event.relatedTarget);
+
+          let id = target.data('id');
+          let nama = target.data('nama');
+          let user = target.data('user');
+
+          $(this).find('#id').val(id);
+          $(this).find('#nama_admin').val(nama);
+          $(this).find('#username').val(user);
+
+        });
+      </script>
+
+      <script>
+        $('#resetPass').on('show.bs.modal', function(event) {
+          let target = $(event.relatedTarget);
+          let id = target.data('id');
+          $(this).find('#id').val(id);
         });
       </script>
 

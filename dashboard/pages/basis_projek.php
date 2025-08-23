@@ -33,7 +33,6 @@
               <tr>
                 <th class="text-center">No</th>
                 <th>Nama Basis</th>
-                <th class="text-center">Created</th>
                 <th class="text-center">Opsi</th>
               </tr>
             </thead>
@@ -46,7 +45,6 @@
                 <tr>
                   <td class="text-center"><?= $no; ?></td>
                   <td><?= $basis['nama_basis']; ?></td>
-                  <td class="text-center"><?= $basis['created_at']; ?></td>
                   <td nowrap="nowrap">
                     <center>
                       <a href="index.php?halaman=edit_basis&edit=<?= $basis['id']; ?>" class="btn btn-primary btn-sm text-white btn-sm"><i class="fas fa-edit"></i></a>
@@ -68,7 +66,7 @@
                           </div>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                            <a href="config/delete_basisprojek.php?id=<?= $basis['id']; ?>" class="btn btn-primary text-white">Hapus</a>
+                            <a href="config/delete_process/delete_basisprojek.php?id=<?= $basis['id']; ?>" class="btn btn-primary text-white">Hapus</a>
                           </div>
                         </div>
                       </div>

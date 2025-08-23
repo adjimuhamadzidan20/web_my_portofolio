@@ -36,8 +36,7 @@
                 <th class="text-center">Thumbnail</th>
                 <th class="text-center">Basis</th>
                 <th class="text-center">Tahun</th>
-                <th class="text-center" style="width: 40%;">Deskripsi</th>
-                <th class="text-center">Created</th>
+                <th class="text-center" style="width: 35%;">Deskripsi</th>
                 <th class="text-center">Opsi</th>
               </tr>
             </thead>
@@ -58,7 +57,6 @@
                   <td>
                     <div class="deskripsi-port"><?= $porto['deskripsi']; ?></div>
                   </td>
-                  <td class="text-center"><?= $porto['created_at']; ?></td>
                   <td nowrap="nowrap">
                     <center>
                       <a href="index.php?halaman=edit_porto&edit=<?= $porto['id']; ?>" class="btn btn-primary btn-sm text-white btn-sm"><i class="fas fa-edit"></i></a>
@@ -80,7 +78,7 @@
                           </div>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                            <a href="config/delete_porto.php?id=<?= $porto['id']; ?>&thumb=<?= $porto['thumbnail']; ?>" class="btn btn-primary text-white">Hapus</a>
+                            <a href="config/delete_process/delete_porto.php?id=<?= $porto['id']; ?>&thumb=<?= $porto['thumbnail']; ?>" class="btn btn-primary text-white">Hapus</a>
                           </div>
                         </div>
                       </div>

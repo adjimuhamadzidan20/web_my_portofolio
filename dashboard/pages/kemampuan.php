@@ -35,7 +35,6 @@
                 <th>Kemampuan</th>
                 <th>Tingkatan</th>
                 <th class="text-center">Presentase</th>
-                <th class="text-center">Created</th>
                 <th class="text-center">Opsi</th>
               </tr>
             </thead>
@@ -50,7 +49,6 @@
                   <td><?= $skill['kemampuan']; ?></td>
                   <td><?= $skill['tingkatan']; ?></td>
                   <td class="text-center"><?= $skill['nilai_progres'] . '%'; ?></td>
-                  <td class="text-center"><?= $skill['created_at']; ?></td>
                   <td nowrap="nowrap">
                     <center>
                       <a href="index.php?halaman=edit_kemampuan&edit=<?= $skill['id']; ?>" class="btn btn-primary btn-sm text-white btn-sm"><i class="fas fa-edit"></i></a>
@@ -72,7 +70,7 @@
                           </div>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                            <a href="config/delete_kemampuan.php?id=<?= $skill['id']; ?>" class="btn btn-primary text-white">Hapus</a>
+                            <a href="config/delete_process/delete_kemampuan.php?id=<?= $skill['id']; ?>" class="btn btn-primary text-white">Hapus</a>
                           </div>
                         </div>
                       </div>

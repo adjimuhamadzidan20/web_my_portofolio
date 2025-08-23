@@ -63,8 +63,7 @@
             <thead>
               <tr>
                 <th class="text-center">No</th>
-                <th class="text-center" style="width: 75%;">Tentang Deskripsi</th>
-                <th class="text-center">Created</th>
+                <th class="text-center" style="width: 80%;">Tentang Deskripsi</th>
                 <th class="text-center">Opsi</th>
               </tr>
             </thead>
@@ -77,7 +76,6 @@
                 <tr>
                   <td class="text-center"><?= $no; ?></td>
                   <td style="text-align: justify;"><?= $tentang['deskripsi']; ?></td>
-                  <td class="text-center"><?= $tentang['created_at']; ?></td>
                   <td nowrap="nowrap">
                     <center>
                       <a href="index.php?halaman=edit_tentang&edit=<?= $tentang['id']; ?>" class="btn btn-primary text-white btn-sm"><i class="fas fa-edit"></i></a>
@@ -99,7 +97,7 @@
                           </div>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                            <a href="config/delete_tentang.php?id=<?= $tentang['id']; ?>" class="btn btn-primary text-white">Hapus</a>
+                            <a href="config/delete_process/delete_tentang.php?id=<?= $tentang['id']; ?>" class="btn btn-primary text-white">Hapus</a>
                           </div>
                         </div>
                       </div>

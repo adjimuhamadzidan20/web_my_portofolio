@@ -24,7 +24,7 @@
     <div class="col-12 mb-3 col-lg-4 mb-lg-0">
       <div class="card h-100">
         <div class="card-header">
-          Profil
+          Background Profil
         </div>
         <div class="card-body p-4 d-flex justify-content-center align-items-center">
           <div class="text-center">
@@ -77,7 +77,7 @@
     <div class="col-12 mb-3 col-lg-4 mb-lg-0">
       <div class="card h-100">
         <div class="card-header">
-          Profil
+          Background Profil
         </div>
         <div class="card-body p-4 d-flex justify-content-center align-items-center">
           <div class="text-center">
@@ -160,13 +160,13 @@
 
 <!-- Modal tambah -->
 <div class="modal fade" id="tambahProfil">
-  <div class="modal-dialog modal-lg">
+  <div class="modal-dialog modal-md">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title font-weight-normal"><i class="fas fa-plus me-2"></i>Tambah profil anda</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <form method="post" action="config/add_profil.php" enctype="multipart/form-data">
+      <form method="post" action="config/add_process/add_profil.php" enctype="multipart/form-data">
         <div class="modal-body">
           <div class="mb-3">
             <label for="nama" class="form-label">Nama Lengkap</label>
@@ -200,13 +200,13 @@
 
 <!-- Modal sunting -->
 <div class="modal fade" id="suntingProfil">
-  <div class="modal-dialog modal-lg">
+  <div class="modal-dialog modal-md">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title font-weight-normal"><i class="fas fa-edit me-2"></i>Sunting profil anda</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <form method="post" action="config/edit_profil.php" enctype="multipart/form-data">
+      <form method="post" action="config/edit_process/edit_profil.php" enctype="multipart/form-data">
         <div class="modal-body">
           <input type="hidden" class="form-control" id="id" name="id">
           <input type="hidden" class="form-control" id="foto_lama" name="foto_lama">

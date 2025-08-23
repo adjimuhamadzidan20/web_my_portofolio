@@ -142,7 +142,6 @@
                 <th class="text-center">No</th>
                 <th>Sosial Media</th>
                 <th>Link</th>
-                <th class="text-center">Created</th>
                 <th class="text-center">Opsi</th>
               </tr>
             </thead>
@@ -156,7 +155,6 @@
                   <td class="text-center"><?= $no; ?></td>
                   <td><?= ucwords($sosial['sosial_media']); ?></td>
                   <td><?= $sosial['link']; ?></td>
-                  <td class="text-center"><?= $sosial['created_at']; ?></td>
                   <td nowrap="nowrap">
                     <center>
                       <button type="button" class="btn btn-primary text-white btn-sm" data-bs-toggle="modal" 
@@ -182,7 +180,7 @@
                           </div>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                            <a href="config/delete_sosialmedia.php?id=<?= $sosial['id']; ?>" class="btn btn-primary text-white">Hapus</a>
+                            <a href="config/delete_process/delete_sosialmedia.php?id=<?= $sosial['id']; ?>" class="btn btn-primary text-white">Hapus</a>
                           </div>
                         </div>
                       </div>
