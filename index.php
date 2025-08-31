@@ -30,10 +30,6 @@
     <meta name="description" content="web_portofolio" />
     <meta name="author" content="adjimuhamadzidan" />
 
-    <!-- Favicons -->
-    <!-- <link href="landing_page/assets/img/favicon.png" rel="icon"> -->
-    <!-- <link href="landing_page/assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
-
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
@@ -56,7 +52,6 @@
 
         .tentang-deskripsi {
             margin: auto;
-            text-align: justify;
             line-height: 32px;
             width: 85%;
         }
@@ -64,15 +59,13 @@
         .portfolio-item {
             cursor: pointer;
         }
-    </style>
 
-    <!-- =======================================================
-  * Template Name: MyResume
-  * Template URL: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/
-  * Updated: Jun 29 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+        .deskripsi-porto {
+            width: 93%;
+            height: 40px;
+            overflow: hidden;
+        }
+    </style>
 </head>
 
 <body class="index-page">
@@ -310,37 +303,35 @@
                 <h2>Portofolio</h2>
                 <p>Berikut beberapa projek atau program aplikasi yang sudah pernah dibangun.</p>
             </div>
-            <!-- End Section Title -->
             <div class="container">
                 <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
                     <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+                        <li data-filter="*" class="filter-active">Semua</li>
                         <?php
                             $sqlBasis = "SELECT nama_basis FROM dt_basisprojek";
                             $queryBasis = mysqli_query($koneksi, $sqlBasis);
                             $dataBasis = mysqli_num_rows($queryBasis);
 
-                            if ($dataBasis == 0) {
-                        ?>
-                            <li data-filter="*" class="filter-active">Semua</li>
-                        <?php
-                            } else {
-                                $row = [];
-                                while ($data = mysqli_fetch_assoc($queryBasis)) {
-                                    $row[] = $data;
-                                }
+                            $row = [];
+                            while ($data = mysqli_fetch_assoc($queryBasis)) {
+                                $row[] = $data;
+                            }
 
-                                foreach ($row as $basis) :
+                            foreach ($row as $basis) :
                         ?>
                             <li data-filter=".<?= $basis['nama_basis']; ?>"><?= $basis['nama_basis']; ?></li>
                         <?php
-                                endforeach;
-                            }
+                            endforeach;
                         ?>
                     </ul>
                     <!-- End Portfolio Filters -->
                     <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
                         <?php
-                            $sqlPorto = "SELECT * FROM dt_portofolio";
+                            $sqlPorto = "SELECT dt_portofolio.id, dt_portofolio.judul_portofolio, dt_portofolio.thumbnail, 
+                            dt_portofolio.id_basis, dt_basisprojek.nama_basis, dt_portofolio.tahun_pembuatan,
+                            dt_portofolio.deskripsi, dt_portofolio.id_admin, dt_portofolio.created_at FROM dt_portofolio 
+                            INNER JOIN dt_basisprojek ON dt_portofolio.id_basis = dt_basisprojek.id";
+                            
                             $queryPorto = mysqli_query($koneksi, $sqlPorto);
                             $dataPorto = mysqli_num_rows($queryPorto);
 
@@ -410,14 +401,16 @@
 
                                 foreach ($row as $porto) :
                         ?>
-                            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-                                <img src="dashboard/file_thumbnail/<?= $porto['thumbnail']; ?>" class="img-fluid" alt="thumbnail">
+                            <div class="col-lg-4 col-md-6 portfolio-item isotope-item <?= $porto['nama_basis']; ?>">
+                                <img src="dashboard/file_thumbnail/<?= $porto['thumbnail']; ?>" class="img-fluid" alt="thumbnail" style="height: 260px; width: 100%; object-fit: cover;">
                                 <div class="portfolio-info">
                                     <h4><?= $porto['judul_portofolio']; ?></h4>
-                                    <p><?= $porto['deskripsi']; ?></p>
+                                    <h6><?= $porto['nama_basis']; ?></h6>
+                                    <div class="deskripsi-porto"><?= $porto['deskripsi']; ?></div>
+                                    
                                     <a href="dashboard/file_thumbnail/<?= $porto['thumbnail']; ?>" 
                                     title="<?= $porto['judul_portofolio']; ?>" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                                    <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                                    <a href="portofolio_details.php?id_porto=<?= $porto['id']; ?>" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                                 </div>
                             </div>
                             <!-- End Portfolio Item -->
@@ -536,7 +529,24 @@
 
     <footer id="footer" class="footer position-relative light-background">
         <div class="container">
-            <h3 class="sitename">My Portofolio</h3>
+            <?php
+                $sqlProfilFooter = "SELECT nama_lengkap FROM dt_profil";
+                $queryProfilFooter = mysqli_query($koneksi, $sqlProfilFooter);
+                $profilNameFoot = mysqli_num_rows($queryProfilFooter);
+
+                if ($profilNameFoot == 0) {
+            ?>
+                <h3 class="sitename">Anonymus</h3>
+            <?php
+                } else {
+                    while ($dtProfilFoot = mysqli_fetch_assoc($queryProfilFooter)) :
+            ?>
+                <h3 class="sitename"><?= $dtProfilFoot['nama_lengkap']; ?></h3>
+            <?php
+                    endwhile;
+                }
+            ?>
+
             <p>Halaman website yang menampilkan tentang diri pribadi serta kemampuan dan portofolio yang pernah dibangun.</p>
             <div class="social-links d-flex justify-content-center">
                 <?php
@@ -560,13 +570,9 @@
             </div>
             <div class="container">
                 <div class="copyright">
-                    <span>Copyright</span> <strong class="px-1 sitename">My Portofolio</strong> tahun <?= date('Y'); ?> - <span>All Rights Reserved</span>
+                    <span>Copyright</span><strong class="px-1 sitename">My Portofolio</strong>| 2024 - <?= date('Y'); ?> <span>All Rights Reserved</span>
                 </div>
                 <div class="credits">
-                    <!-- All the links in the footer should remain intact. -->
-                    <!-- You can delete the links only if you've purchased the pro version. -->
-                    <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                    <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
                     Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distribuited by <a href="https://themewagon.com">ThemeWagon</a>
                 </div>
             </div>

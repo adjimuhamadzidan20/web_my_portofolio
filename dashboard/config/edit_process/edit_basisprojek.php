@@ -1,5 +1,5 @@
 <?php 
-	require 'koneksi_db.php';
+	require '../koneksi_db.php';
 	session_start();
 
 	$id = $_POST['id'];
@@ -12,13 +12,13 @@
 		$_SESSION['status'] = 'success';
 		$_SESSION['pesan'] = 'Basis projek berhasil diubah!';
 
-		header('Location: ../index.php?halaman=basis');
+		header('Location: ../../index.php?halaman=basis');
 		exit;
 	} else {
 		$_SESSION['status'] = 'danger';
 		$_SESSION['pesan'] = 'Basis projek gagal diubah!';
 
-		header('Location: ../index.php?halaman=basis');
+		header('Location: ../../index.php?halaman=basis');
 		exit;
 	}
 ?>

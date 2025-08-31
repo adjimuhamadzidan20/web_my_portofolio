@@ -3,7 +3,11 @@
 
   $id = $_GET['edit'];
 
-  $sql = "SELECT * FROM dt_portofolio WHERE id = $id";
+  $sql = "SELECT dt_portofolio.id, dt_portofolio.judul_portofolio, dt_portofolio.thumbnail, 
+  dt_portofolio.id_basis, dt_basisprojek.nama_basis, dt_portofolio.tahun_pembuatan,
+  dt_portofolio.deskripsi, dt_portofolio.id_admin, dt_portofolio.created_at FROM dt_portofolio 
+  INNER JOIN dt_basisprojek ON dt_portofolio.id_basis = dt_basisprojek.id WHERE dt_portofolio.id = $id";
+
   $query = mysqli_query($koneksi, $sql);
   $data = mysqli_fetch_assoc($query);
 
@@ -38,9 +42,9 @@
           <div class="mb-3">
             <label for="tahun" class="form-label">Basis Projek</label>
             <select class="form-select" aria-label="Default select example" id="basis" name="basis" required>
-              <option value="<?= $data['judul_portofolio']; ?>" selected><?= $data['basis_projek']; ?></option>
+              <option value="<?= $data['id_basis']; ?>" selected><?= $data['nama_basis']; ?></option>
               <?php
-                $sqlBasis = "SELECT nama_basis FROM dt_basisprojek";
+                $sqlBasis = "SELECT id, nama_basis FROM dt_basisprojek";
                 $queryBasis = mysqli_query($koneksi, $sqlBasis);
 
                 $rowBasis = [];
@@ -50,7 +54,7 @@
 
                 foreach ($rowBasis as $basis) :
               ?>
-                <option value="<?= $basis['nama_basis']; ?>"><?= $basis['nama_basis']; ?></option>
+                <option value="<?= $basis['id']; ?>"><?= $basis['nama_basis']; ?></option>
               <?php  
                 endforeach;
               ?>

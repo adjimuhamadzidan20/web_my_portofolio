@@ -11,7 +11,7 @@
         $active7 = '';
         $active8 = '';
     } 
-    else if ($pages == 'profil') {
+    else if ($pages == 'profil' || $pages == 'akun') {
         $active1 = '';
         $active2 = 'active';
         $active3 = '';
@@ -21,7 +21,7 @@
         $active7 = '';
         $active8 = '';
     }
-    else if ($pages == 'tentang') {
+    else if ($pages == 'tentang' || $pages == 'tambah_tentang' || $pages == 'edit_tentang') {
         $active1 = '';
         $active2 = '';
         $active3 = 'active';
@@ -31,7 +31,7 @@
         $active7 = '';
         $active8 = '';
     }
-    else if ($pages == 'kemampuan') {
+    else if ($pages == 'kemampuan' || $pages == 'tambah_kemampuan' || $pages == 'edit_kemampuan') {
         $active1 = '';
         $active2 = '';
         $active3 = '';
@@ -41,7 +41,7 @@
         $active7 = '';
         $active8 = '';
     }
-    else if ($pages == 'basis') {
+    else if ($pages == 'basis' || $pages == 'tambah_basis' || $pages == 'edit_basis') {
         $active1 = '';
         $active2 = '';
         $active3 = '';
@@ -51,7 +51,7 @@
         $active7 = '';
         $active8 = '';
     }
-    else if ($pages == 'status') {
+    else if ($pages == 'status' || $pages == 'tambah_status' || $pages == 'edit_status') {
         $active1 = '';
         $active2 = '';
         $active3 = '';
@@ -61,7 +61,7 @@
         $active7 = '';
         $active8 = '';
     }
-    else if ($pages == 'portofolio') {
+    else if ($pages == 'portofolio' || $pages == 'tambah_porto' || $pages == 'edit_porto') {
         $active1 = '';
         $active2 = '';
         $active3 = '';

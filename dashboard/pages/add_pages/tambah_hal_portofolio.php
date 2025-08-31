@@ -1,7 +1,7 @@
 <?php
   require 'config/koneksi_db.php';
 
-  $sql = "SELECT nama_basis FROM dt_basisprojek";
+  $sql = "SELECT id, nama_basis FROM dt_basisprojek";
   $query = mysqli_query($koneksi, $sql);
 
   $row = [];
@@ -40,7 +40,7 @@
                 <?php  
                   foreach ($row as $basis) :
                 ?>
-                  <option value="<?= $basis['nama_basis']; ?>"><?= $basis['nama_basis']; ?></option>
+                  <option value="<?= $basis['id']; ?>"><?= $basis['nama_basis']; ?></option>
                 <?php  
                   endforeach;
                 ?>
@@ -52,7 +52,7 @@
             </div>
             <div class="mb-3">
               <label for="deskripsi" class="form-label">Deskripsi</label>
-              <textarea class="form-control" id="deskripsi" placeholder="Masukan deskripsi portfolio" name="deskripsi" rows="5" required></textarea>
+              <textarea class="form-control" id="deskripsi" name="deskripsi" rows="5" required></textarea>
             </div>
             <div class="d-flex justify-content-between">
               <a href="index.php?halaman=portofolio" class="btn btn-secondary">Kembali</a>

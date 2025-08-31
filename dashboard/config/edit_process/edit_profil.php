@@ -1,5 +1,5 @@
 <?php 
-	require 'koneksi_db.php';
+	require '../koneksi_db.php';
 	session_start();
 
 	$id = $_POST['id'];
@@ -28,14 +28,14 @@
 			$_SESSION['status'] = 'success';
 			$_SESSION['pesan'] = 'Profile berhasil disunting!';
 
-			header('Location: ../index.php?halaman=profil');
+			header('Location: ../../index.php?halaman=profil');
 			exit;
 		}
 		else {
 			$_SESSION['status'] = 'danger';
 			$_SESSION['pesan'] = 'Profile gagal disunting!';
 
-			header('Location: ../index.php?halaman=profil');
+			header('Location: ../../index.php?halaman=profil');
 			exit;
 		}
 	} 
@@ -45,13 +45,13 @@
 				$_SESSION['status'] = 'warning';
 				$_SESSION['pesan'] = 'Ukuran file foto maksimal 2MB!';
 
-				header('Location: ../index.php?halaman=profil');
+				header('Location: ../../index.php?halaman=profil');
 				exit;
 			} 
 			else {
 				$idfile = uniqid();
 				$fileFoto = $idfile .'.'. $formatFile;
-				move_uploaded_file($tempatFile, '../file_foto/'. $fileFoto);
+				move_uploaded_file($tempatFile, '../../file_foto/'. $fileFoto);
 
 				$sql = "UPDATE dt_profil SET nama_lengkap = '$nama', no_telp = '$telp', email = '$email', 
 				alamat = '$alamat', foto = '$fileFoto' WHERE id = $id";
@@ -59,21 +59,21 @@
 
 				// menghapus gambar/foto di local folder
 			  if (isset($fotoLama)) {
-			  	unlink('../file_foto/'. $fotoLama);
+			  	unlink('../../file_foto/'. $fotoLama);
 			  }
 
 				if ($result) {
 					$_SESSION['status'] = 'success';
 					$_SESSION['pesan'] = 'Profile berhasil disunting!';
 
-					header('Location: ../index.php?halaman=profil');
+					header('Location: ../../index.php?halaman=profil');
 					exit;
 				}
 				else {
 					$_SESSION['status'] = 'danger';
 					$_SESSION['pesan'] = 'Profile gagal disunting!';
 
-					header('Location: ../index.php?halaman=profil');
+					header('Location: ../../index.php?halaman=profil');
 					exit;
 				}
 			}
@@ -82,7 +82,7 @@
 			$_SESSION['status'] = 'warning';
 			$_SESSION['pesan'] = 'file extension harus berupa gambar (jpg, jpeg, png)!';
 
-			header('Location: ../index.php?halaman=profil');
+			header('Location: ../../index.php?halaman=profil');
 			exit;
 		}
 	}

@@ -1,5 +1,5 @@
 <?php  
-	require 'koneksi_db.php';
+	require '../koneksi_db.php';
 	session_start();
 
 	$id = $_GET['id'];
@@ -10,14 +10,14 @@
 		$_SESSION['status'] = 'success';
 		$_SESSION['pesan'] = 'Tentang berhasil dihapus!';
 
-		header('Location: ../index.php?halaman=tentang');
+		header('Location: ../../index.php?halaman=tentang');
 		exit;
 	} 
 	else {
 		$_SESSION['status'] = 'danger';
 		$_SESSION['pesan'] = 'Tentang gagal dihapus!';
 
-		header('Location: ../index.php?halaman=tentang');
+		header('Location: ../../index.php?halaman=tentang');
 		exit;
 	}
 

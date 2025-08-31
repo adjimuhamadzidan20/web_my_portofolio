@@ -1,5 +1,5 @@
 <?php 
-	require 'koneksi_db.php';
+	require '../koneksi_db.php';
 	session_start();
 
 	$nama = htmlspecialchars($_POST['nama']);
@@ -20,29 +20,31 @@
 			$_SESSION['status'] = 'warning';
 			$_SESSION['pesan'] = 'Ukuran file foto maksimal 2MB!';
 
-			header('Location: ../index.php?halaman=profil');
+			header('Location: ../../index.php?halaman=profil');
 			exit;
 		} 
 		else {
 			$idfile = uniqid();
 			$fileFoto = $idfile .'.'. $formatFile;
-			move_uploaded_file($tempatFile, '../file_foto/'. $fileFoto);
+			move_uploaded_file($tempatFile, '../../file_foto/'. $fileFoto);
+			$idAdmin = $_SESSION['id_admin'];
 			
-			$sql = "INSERT INTO dt_profil VALUES ('', '$nama', '$telp', '$email', $alamat', '$fileFoto')";
+			$sql = "INSERT INTO dt_profil (nama_lengkap, no_telp, email, alamat, foto, id_admin) 
+			VALUES ('$nama', '$telp', '$email', '$alamat', '$fileFoto', '$idAdmin')";
 			$result = mysqli_query($koneksi, $sql);
 
 			if ($result) {
 				$_SESSION['status'] = 'success';
 				$_SESSION['pesan'] = 'Profile berhasil ditambahkan!';
 
-				header('Location: ../index.php?halaman=profil');
+				header('Location: ../../index.php?halaman=profil');
 				exit;
 			}
 			else {
 				$_SESSION['status'] = 'danger';
 				$_SESSION['pesan'] = 'Profile gagal ditambahkan!';
 
-				header('Location: ../index.php?halaman=profil');
+				header('Location: ../../index.php?halaman=profil');
 				exit;
 			}
 		}
@@ -51,7 +53,7 @@
 		$_SESSION['status'] = 'warning';
 		$_SESSION['pesan'] = 'file extension harus berupa gambar (jpg, jpeg, png)!';
 
-		header('Location: ../index.php?halaman=profil');
+		header('Location: ../../index.php?halaman=profil');
 		exit;
 	}
 

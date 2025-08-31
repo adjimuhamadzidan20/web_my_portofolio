@@ -1,5 +1,5 @@
 <?php  
-	require 'koneksi_db.php';
+	require '../koneksi_db.php';
 	session_start();
 
 	$id = $_GET['id'];
@@ -11,14 +11,14 @@
 		$_SESSION['status'] = 'success';
 		$_SESSION['pesan'] = 'Sosial media berhasil dihapus!';
 
-		header('Location: ../index.php?halaman=sosial_media');
+		header('Location: ../../index.php?halaman=sosial_media');
 		exit;
 	}
 	else {
 		$_SESSION['status'] = 'danger';
 		$_SESSION['pesan'] = 'Sosial media gagal dihapus!';
 
-		header('Location: ../index.php?halaman=sosial_media');
+		header('Location: ../../index.php?halaman=sosial_media');
 		exit;
 	}
 

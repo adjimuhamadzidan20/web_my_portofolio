@@ -33,7 +33,7 @@
             </h2>
             <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
               <div class="accordion-body">
-                <form action="config/add_sosialmedia.php?akun=facebook" method="post">
+                <form action="config/add_process/add_sosialmedia.php?akun=facebook" method="post">
                   <label for="facebook" class="form-label">Link Facebook</label>
                   <div class="form-link d-block d-md-flex col-auto col-lg-6 col-md-8">
                     <input type="text" class="form-control me-2 mb-2 mb-md-0" id="facebook" name="link" placeholder="Cantumkan link" required>
@@ -53,7 +53,7 @@
             </h2>
             <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
               <div class="accordion-body">
-                <form action="config/add_sosialmedia.php?akun=instagram" method="post">
+                <form action="config/add_process/add_sosialmedia.php?akun=instagram" method="post">
                   <label for="instagram" class="form-label">Link Instagram</label>
                   <div class="form-link d-block d-md-flex col-auto col-lg-6 col-md-8">
                     <input type="text" class="form-control me-2 mb-2 mb-md-0" id="instagram" name="link" placeholder="Cantumkan link" required>
@@ -73,7 +73,7 @@
             </h2>
             <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
               <div class="accordion-body">
-                <form action="config/add_sosialmedia.php?akun=twitter" method="post">
+                <form action="config/add_process/add_sosialmedia.php?akun=twitter" method="post">
                   <label for="twitter" class="form-label">Link Twitter</label>
                   <div class="form-link d-block d-md-flex col-auto col-lg-6 col-md-8">
                     <input type="text" class="form-control me-2 mb-2 mb-md-0" id="twitter" name="link" placeholder="Cantumkan link" required>
@@ -93,7 +93,7 @@
             </h2>
             <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
               <div class="accordion-body">
-                <form action="config/add_sosialmedia.php?akun=github" method="post">
+                <form action="config/add_process/add_sosialmedia.php?akun=github" method="post">
                   <label for="github" class="form-label">Link Github</label>
                   <div class="form-link d-block d-md-flex col-auto col-lg-6 col-md-8">
                     <input type="text" class="form-control me-2 mb-2 mb-md-0" id="github" name="link" placeholder="Cantumkan link" required>
@@ -113,7 +113,7 @@
             </h2>
             <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
               <div class="accordion-body">
-                <form action="config/add_sosialmedia.php?akun=linkedin" method="post">
+                <form action="config/add_process/add_sosialmedia.php?akun=linkedin" method="post">
                   <label for="twitter" class="form-label">Link linkedin</label>
                   <div class="form-link d-block d-md-flex col-auto col-lg-6 col-md-8">
                     <input type="text" class="form-control me-2 mb-2 mb-md-0" id="twitter" name="link" placeholder="Cantumkan link" required>

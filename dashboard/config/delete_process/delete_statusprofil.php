@@ -1,5 +1,5 @@
 <?php  
-	require 'koneksi_db.php';
+	require '../koneksi_db.php';
 	session_start();
 
 	$id = $_GET['id'];
@@ -10,14 +10,14 @@
 		$_SESSION['status'] = 'success';
 		$_SESSION['pesan'] = 'Status profil berhasil dihapus!';
 
-		header('Location: ../index.php?halaman=status');
+		header('Location: ../../index.php?halaman=status');
 		exit;
 	}
 	else {
 		$_SESSION['status'] = 'danger';
 		$_SESSION['pesan'] = 'Status profil gagal dihapus!';
 
-		header('Location: ../index.php?halaman=status');
+		header('Location: ../../index.php?halaman=status');
 		exit;
 	}
 

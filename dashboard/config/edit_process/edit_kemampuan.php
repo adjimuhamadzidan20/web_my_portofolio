@@ -1,5 +1,5 @@
 <?php 
-	require 'koneksi_db.php';
+	require '../koneksi_db.php';
 	session_start();
 
 	$id = $_POST['id'];
@@ -26,13 +26,13 @@
 		$_SESSION['status'] = 'success';
 		$_SESSION['pesan'] = 'Kemampuan berhasil diubah!';
 
-		header('Location: ../index.php?halaman=kemampuan');
+		header('Location: ../../index.php?halaman=kemampuan');
 		exit;
 	} else {
 		$_SESSION['status'] = 'danger';
 		$_SESSION['pesan'] = 'Kemampuan gagal diubah!';
 
-		header('Location: ../index.php?halaman=kemampuan');
+		header('Location: ../../index.php?halaman=kemampuan');
 		exit;
 	}
 ?>

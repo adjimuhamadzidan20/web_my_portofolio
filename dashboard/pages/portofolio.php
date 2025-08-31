@@ -1,7 +1,10 @@
 <?php
   require 'config/koneksi_db.php';
 
-  $sql = "SELECT * FROM dt_portofolio";
+  $sql = "SELECT dt_portofolio.id, dt_portofolio.judul_portofolio, dt_portofolio.thumbnail, 
+  dt_portofolio.id_basis, dt_basisprojek.nama_basis, dt_portofolio.tahun_pembuatan,
+  dt_portofolio.deskripsi, dt_portofolio.id_admin, dt_portofolio.created_at FROM dt_portofolio 
+  INNER JOIN dt_basisprojek ON dt_portofolio.id_basis = dt_basisprojek.id;";
   $query = mysqli_query($koneksi, $sql);
 
   $row = [];
@@ -52,7 +55,7 @@
                   <td class="text-center">
                     <img src="file_thumbnail/<?= $porto['thumbnail']; ?>" alt="thumbnail" class="gambar-porto img-thumbnail">
                   </td>
-                  <td class="text-center"><?= $porto['basis_projek']; ?></td>
+                  <td class="text-center"><?= $porto['nama_basis']; ?></td>
                   <td class="text-center"><?= $porto['tahun_pembuatan']; ?></td>
                   <td>
                     <div class="deskripsi-port"><?= $porto['deskripsi']; ?></div>

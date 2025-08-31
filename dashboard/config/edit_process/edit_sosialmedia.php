@@ -1,5 +1,5 @@
 <?php  
-	require 'koneksi_db.php';
+	require '../koneksi_db.php';
 	session_start();
 
 	$id = $_POST['id'];
@@ -13,14 +13,14 @@
 		$_SESSION['status'] = 'success';
 		$_SESSION['pesan'] = 'Link sosial media '. $akun .' berhasil diubah!';
 
-		header('Location: ../index.php?halaman=sosial_media');
+		header('Location: ../../index.php?halaman=sosial_media');
 		exit;
 	}
 	else {
 		$_SESSION['status'] = 'danger';
 		$_SESSION['pesan'] = 'Link sosial media '. $akun .' gagal diubah!';
 
-		header('Location: ../index.php?halaman=sosial_media');
+		header('Location: ../../index.php?halaman=sosial_media');
 		exit;
 	}
 	

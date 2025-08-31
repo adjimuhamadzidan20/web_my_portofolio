@@ -63,6 +63,8 @@
             <i class="fas fa-plus me-1"></i>Tambah Profil</button>
 
             <button class="btn text-white btn-primary col-12 col-lg-auto" disabled="disabled"><i class="fas fa-undo me-1"></i>Reset Profil</button>
+
+            <a href="index.php?halaman=akun" class="btn btn-primary text-white col-12 col-lg-auto"><i class="fas fa-user me-2"></i>Pengaturan Akun</a>
           </div>
         </div>
       </div>
@@ -127,6 +129,8 @@
 
             <button type="button" class="btn btn-primary text-white col-12 col-lg-auto" data-bs-toggle="modal" 
             data-bs-target="#resetProfil<?= $profil['id']; ?>"><i class="fas fa-undo me-1"></i>Reset Profil</button>
+
+            <a href="index.php?halaman=akun" class="btn btn-primary text-white col-12 col-lg-auto"><i class="fas fa-user me-2"></i>Pengaturan Akun</a>
 
             <!-- modal hapus -->
             <div class="modal fade" tabindex="-1" id="resetProfil<?= $profil['id']; ?>">

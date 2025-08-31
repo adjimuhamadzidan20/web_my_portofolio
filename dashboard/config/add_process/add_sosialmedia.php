@@ -1,9 +1,10 @@
 <?php  
-	require 'koneksi_db.php';
+	require '../koneksi_db.php';
 	session_start();
 
 	$akun = $_GET['akun'];
 	$link = htmlspecialchars($_POST['link']);
+	$idAdmin = $_SESSION['id_admin'];
 
 	if ($akun == 'facebook') {
 		$akunFb = "SELECT * FROM dt_sosialmedia WHERE sosial_media = '$akun'";
@@ -15,7 +16,7 @@
 			$_SESSION['pesan'] = 'Sosial media '. $akun .' sudah ada!';
 		} 
 		else {
-			$sql = "INSERT INTO dt_sosialmedia (sosial_media, link) VALUES ('$akun', '$link')";
+			$sql = "INSERT INTO dt_sosialmedia (sosial_media, link, id_admin) VALUES ('$akun', '$link', '$idAdmin')";
 			$result = mysqli_query($koneksi, $sql);
 
 			if ($result) {
@@ -38,7 +39,7 @@
 			$_SESSION['pesan'] = 'Sosial media '. $akun .' sudah ada!';
 		}
 		else {
-			$sql = "INSERT INTO dt_sosialmedia (sosial_media, link) VALUES ('$akun', '$link')";
+			$sql = "INSERT INTO dt_sosialmedia (sosial_media, link, id_admin) VALUES ('$akun', '$link', '$idAdmin')";
 			$result = mysqli_query($koneksi, $sql);
 
 			if ($result) {
@@ -61,7 +62,7 @@
 			$_SESSION['pesan'] = 'Sosial media '. $akun .' sudah ada!';
 		} 
 		else {
-			$sql = "INSERT INTO dt_sosialmedia (sosial_media, link) VALUES ('$akun', '$link')";
+			$sql = "INSERT INTO dt_sosialmedia (sosial_media, link, id_admin) VALUES ('$akun', '$link', '$idAdmin')";
 			$result = mysqli_query($koneksi, $sql);
 
 			if ($result) {
@@ -84,7 +85,7 @@
 			$_SESSION['pesan'] = 'Sosial media '. $akun .' sudah ada!';
 		}
 		else {
-			$sql = "INSERT INTO dt_sosialmedia (sosial_media, link) VALUES ('$akun', '$link')";
+			$sql = "INSERT INTO dt_sosialmedia (sosial_media, link, id_admin) VALUES ('$akun', '$link', $idAdmin)";
 			$result = mysqli_query($koneksi, $sql);
 
 			if ($result) {
@@ -107,7 +108,7 @@
 			$_SESSION['pesan'] = 'Sosial media '. $akun .' sudah ada!';
 		}
 		else {
-			$sql = "INSERT INTO dt_sosialmedia (sosial_media, link) VALUES ('$akun', '$link')";
+			$sql = "INSERT INTO dt_sosialmedia (sosial_media, link, id_admin) VALUES ('$akun', '$link', '$idAdmin')";
 			$result = mysqli_query($koneksi, $sql);
 
 			if ($result) {
@@ -121,7 +122,7 @@
 		}
 	}
 
-	header('Location: ../index.php?halaman=sosial_media');
+	header('Location: ../../index.php?halaman=sosial_media');
 	exit;
 
 ?>

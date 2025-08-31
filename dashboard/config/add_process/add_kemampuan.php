@@ -1,9 +1,10 @@
 <?php 
-	require 'koneksi_db.php';
+	require '../koneksi_db.php';
 	session_start();
 
 	$kemampuan = htmlspecialchars($_POST['kemampuan']);
 	$tingkatan = htmlspecialchars($_POST['tingkatan']);
+	$idAdmin = $_SESSION['id_admin'];
 	
 	if ($tingkatan == 'Pemula (Begninner)') {
 		$progres = 20;
@@ -17,20 +18,21 @@
 		$progres = 85;
 	}
 	
-	$sql = "INSERT INTO dt_kemampuan (kemampuan, tingkatan, nilai_progres) VALUES ('$kemampuan', '$tingkatan', $progres)";
+	$sql = "INSERT INTO dt_kemampuan (kemampuan, tingkatan, nilai_progres, id_admin) VALUES 
+	('$kemampuan', '$tingkatan', $progres, '$idAdmin')";
 	$result = mysqli_query($koneksi, $sql);
 
 	if ($result) {
 		$_SESSION['status'] = 'success';
 		$_SESSION['pesan'] = 'Kemampuan berhasil ditambahkan!';
 
-		header('Location: ../index.php?halaman=kemampuan');
+		header('Location: ../../index.php?halaman=kemampuan');
 		exit;
 	} else {
 		$_SESSION['status'] = 'danger';
 		$_SESSION['pesan'] = 'Kemampuan gagal ditambahkan!';
 
-		header('Location: ../index.php?halaman=kemampuan');
+		header('Location: ../../index.php?halaman=kemampuan');
 		exit;
 	}
 ?>

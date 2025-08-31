@@ -21,6 +21,7 @@
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <link href="assets/css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote-lite.min.css" rel="stylesheet">
 
     <!-- Toastr -->
     <link rel="stylesheet" href="assets/plugins/toastr/toastr.min.css">
@@ -36,7 +37,6 @@
       .deskripsi-port {
         height: 50px;
         overflow: hidden;
-        text-align: justify;
       }
 
       /*.dataTables_paginate .paginate_button.page-item.active a {
@@ -99,6 +99,8 @@
       <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
       <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script> 
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote-lite.min.js"></script>
+
       <!-- <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script> -->
       <!-- <script src="assets/js/datatables-simple-demo.js"></script> -->
       
@@ -244,12 +246,32 @@
       <script>
         $(function () {
           // Summernote
-          $('#deskripsi').summernote()
+          $('#deskripsi').summernote({
+            placeholder: "Masukan deskripsi portfolio",
+            height: 150,
+            toolbar: [
+              ['view', ['undo', 'redo']],
+              ['font', ['bold', 'underline', 'italic', 'clear']],
+              ['font', ['strikethrough', 'superscript']],
+              ['para', ['ul', 'ol', 'paragraph']],
+              ['insert', ['link']],
+            ]
+          })
         })
 
         $(function () {
           // Summernote
-          $('#tentang').summernote()
+          $('#tentang').summernote({
+            placeholder: "Masukan tentang diri anda",
+            height: 150,
+            toolbar: [
+              ['view', ['undo', 'redo']],
+              ['font', ['bold', 'underline', 'italic', 'clear']],
+              ['font', ['strikethrough', 'superscript']],
+              ['para', ['ul', 'ol', 'paragraph']],
+              ['insert', ['link']],
+            ]
+          })
         })
       </script>
   </body>

@@ -1,5 +1,5 @@
 <?php  
-	require 'koneksi_db.php';
+	require '../koneksi_db.php';
 	session_start();
 	
 	$judulPorto = htmlspecialchars($_POST['judul']);
@@ -21,30 +21,31 @@
 			$_SESSION['status'] = 'warning';
 			$_SESSION['pesan'] = 'Ukuran file thumbnail maksimal 2MB!';
 
-			header('Location: ../index.php?halaman=tambah_porto');
+			header('Location: ../../index.php?halaman=tambah_porto');
 			exit;
 		} 
 		else {
 			$idfile = uniqid();
 			$fileThumbnail = $idfile .'.'. $formatFile;
-			move_uploaded_file($tempatFile, '../file_thumbnail/'. $fileThumbnail);
+			move_uploaded_file($tempatFile, '../../file_thumbnail/'. $fileThumbnail);
+			$idAdmin = $_SESSION['id_admin'];
 
-			$sql = "INSERT INTO dt_portofolio (judul_portofolio, thumbnail, basis_projek, tahun_pembuatan, deskripsi) 
-			VALUES ('$judulPorto', '$fileThumbnail', '$basis', '$tahun', '$deskripsi')";
+			$sql = "INSERT INTO dt_portofolio (judul_portofolio, thumbnail, id_basis, tahun_pembuatan, deskripsi, id_admin) 
+			VALUES ('$judulPorto', '$fileThumbnail', '$basis', '$tahun', '$deskripsi', '$idAdmin')";
 			$result = mysqli_query($koneksi, $sql);
 
 			if ($result) {
 				$_SESSION['status'] = 'success';
 				$_SESSION['pesan'] = 'Portofolio berhasil ditambahkan!';
 
-				header('Location: ../index.php?halaman=portofolio');
+				header('Location: ../../index.php?halaman=portofolio');
 				exit;
 			}
 			else {
 				$_SESSION['status'] = 'danger';
 				$_SESSION['pesan'] = 'Portofolio gagal ditambahkan!';
 
-				header('Location: ../index.php?halaman=portofolio');
+				header('Location: ../../index.php?halaman=portofolio');
 				exit;
 			}
 		}
@@ -53,7 +54,7 @@
 		$_SESSION['status'] = 'warning';
 		$_SESSION['pesan'] = 'file extension harus berupa gambar (jpg, jpeg, png)!';
 
-		header('Location: ../index.php?halaman=tambah_porto');
+		header('Location: ../../index.php?halaman=tambah_porto');
 		exit;
 	}
 

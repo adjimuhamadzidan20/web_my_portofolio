@@ -23,7 +23,7 @@
       <div class="card-header">
         Review
       </div>
-      <div class="card-body" style="text-align: justify;">
+      <div class="card-body">
 
         <?php
           $jumlahData = mysqli_num_rows($query);
@@ -31,7 +31,7 @@
         ?>
           <p>(Default) Lorem ipsum, dolor sit, amet consectetur adipisicing elit. Voluptates quod voluptatibus nulla totam quaerat recusandae voluptatem, error doloribus quidem consequuntur dolorem reiciendis aliquam eveniet illum! Quia perspiciatis itaque, id doloremque. Lorem ipsum dolor sit amet consectetur adipisicing, elit. Minima nostrum illum veniam eligendi quidem labore dolor impedit earum ab vitae, hic quisquam molestiae eaque asperiores necessitatibus laboriosam delectus itaque ullam!</p>
 
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing, elit. Numquam quasi quia nisi dolor. Sequi accusamus praesentium architecto quibusdam cumque eaque inventore, dolores suscipit cum et quasi, molestiae aliquam fuga nostrum.</p>
+          <p>(Default) Lorem ipsum dolor, sit amet consectetur adipisicing, elit. Numquam quasi quia nisi dolor. Sequi accusamus praesentium architecto quibusdam cumque eaque inventore, dolores suscipit cum et quasi, molestiae aliquam fuga nostrum. when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
         <?php  
           } else {
             foreach ($row as $desk) :
@@ -75,7 +75,7 @@
               ?>
                 <tr>
                   <td class="text-center"><?= $no; ?></td>
-                  <td style="text-align: justify;"><?= $tentang['deskripsi']; ?></td>
+                  <td><?= $tentang['deskripsi']; ?></td>
                   <td nowrap="nowrap">
                     <center>
                       <a href="index.php?halaman=edit_tentang&edit=<?= $tentang['id']; ?>" class="btn btn-primary text-white btn-sm"><i class="fas fa-edit"></i></a>

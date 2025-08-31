@@ -1,5 +1,5 @@
 <?php  
-	require 'koneksi_db.php';
+	require '../koneksi_db.php';
 	session_start();
 
 	$id = $_GET['id'];
@@ -9,23 +9,23 @@
 	$result = mysqli_query($koneksi, $sql);
 
 	// menghapus gambar/foto di local folder
-  if (isset($thumb)) {
-  	unlink('../file_thumbnail/'. $thumb);
-  }
+	if (isset($thumb)) {
+		unlink('../../file_thumbnail/'. $thumb);
+	}
 
-  if ($result) {
-  	$_SESSION['status'] = 'success';
+	if ($result) {
+		$_SESSION['status'] = 'success';
 		$_SESSION['pesan'] = 'Portofolio berhasil dihapus!';
 
-		header('Location: ../index.php?halaman=portofolio');
+		header('Location: ../../index.php?halaman=portofolio');
 		exit;
-  }
-  else {
-  	$_SESSION['status'] = 'danger';
+	}
+	else {
+		$_SESSION['status'] = 'danger';
 		$_SESSION['pesan'] = 'Portofolio gagal dihapus!';
 
-		header('Location: ../index.php?halaman=portofolio');
+		header('Location: ../../index.php?halaman=portofolio');
 		exit;
-  }
+	}
 
 ?>

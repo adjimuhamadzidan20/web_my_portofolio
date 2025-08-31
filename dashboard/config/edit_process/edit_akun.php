@@ -1,5 +1,5 @@
 <?php 
-	require 'koneksi_db.php';
+	require '../koneksi_db.php';
 	session_start();
 
 	$id = $_POST['id'];
@@ -13,13 +13,13 @@
 		$_SESSION['status'] = 'success';
 		$_SESSION['pesan'] = 'Akun profil berhasil diubah!';
 
-		header('Location: ../index.php?halaman=akun');
+		header('Location: ../../index.php?halaman=akun');
 		exit;
 	} else {
 		$_SESSION['status'] = 'danger';
 		$_SESSION['pesan'] = 'Akun profil gagal diubah!';
 
-		header('Location: ../index.php?halaman=akun');
+		header('Location: ../../index.php?halaman=akun');
 		exit;
 	}
 
