@@ -24,18 +24,18 @@
           <div class="opsi-tambah">
             <a href="index.php?halaman=tambah_kemampuan" class="btn btn-primary btn-sm text-white"><i class="fas fa-plus me-1"></i>Tambah</a>
           </div>
-          Kemampuan atau pengetahuan yang anda punya
+          <span class="d-none d-md-block">Kemampuan atau pengetahuan yang anda punya</span>
         </div>            
       </div>
-      <div class="card-body">
+      <div class="card-body table-responsive">
         <table id="tabel_kemampuan" class="table table-bordered">
             <thead>
               <tr>
                 <th class="text-center">No</th>
-                <th>Kemampuan</th>
-                <th>Tingkatan</th>
-                <th class="text-center">Presentase</th>
-                <th class="text-center">Opsi</th>
+                <th class="text-nowrap">Kemampuan</th>
+                <th class="text-nowrap">Tingkatan</th>
+                <th class="text-center text-nowrap">Presentase</th>
+                <th class="text-center text-nowrap">Opsi</th>
               </tr>
             </thead>
             <tbody>
@@ -46,15 +46,15 @@
               ?>  
                 <tr>
                   <td class="text-center"><?= $no; ?></td>
-                  <td><?= $skill['kemampuan']; ?></td>
-                  <td><?= $skill['tingkatan']; ?></td>
-                  <td class="text-center"><?= $skill['nilai_progres'] . '%'; ?></td>
+                  <td class="text-nowrap"><?= $skill['kemampuan']; ?></td>
+                  <td class="text-nowrap"><?= $skill['tingkatan']; ?></td>
+                  <td class="text-center text-nowrap"><?= $skill['nilai_progres'] . '%'; ?></td>
                   <td nowrap="nowrap">
                     <center>
-                      <a href="index.php?halaman=edit_kemampuan&edit=<?= $skill['id']; ?>" class="btn btn-primary btn-sm text-white btn-sm"><i class="fas fa-edit"></i></a>
+                      <a href="index.php?halaman=edit_kemampuan&edit=<?= $skill['id']; ?>" class="btn btn-primary btn-sm text-white btn-sm" title="Ubah data"><i class="fas fa-edit"></i></a>
 
                       <button type="button" class="btn btn-primary btn-sm text-white btn-sm" data-bs-toggle="modal" 
-                      data-bs-target="#hapusKemampuan<?= $skill['id']; ?>"><i class="fas fa-trash"></i></button>
+                      data-bs-target="#hapusKemampuan<?= $skill['id']; ?>" title="Hapus data"><i class="fas fa-trash"></i></button>
                     </center>
 
                     <!-- modal hapus -->
@@ -75,7 +75,6 @@
                         </div>
                       </div>
                     </div>
-
                   </td>
                 </tr>
               <?php endforeach; ?>  

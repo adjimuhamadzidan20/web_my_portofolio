@@ -135,14 +135,14 @@
       <div class="card-header">
         Data sosial media
       </div>
-      <div class="card-body">
+      <div class="card-body table-responsive">
         <table id="tabel_sosial" class="table table-bordered">
             <thead>
               <tr>
                 <th class="text-center">No</th>
-                <th>Sosial Media</th>
-                <th>Link</th>
-                <th class="text-center">Opsi</th>
+                <th class="text-nowrap">Sosial Media</th>
+                <th class="text-nowrap">Link</th>
+                <th class="text-center text-nowrap">Opsi</th>
               </tr>
             </thead>
             <tbody>
@@ -153,18 +153,20 @@
               ?>
                 <tr>
                   <td class="text-center"><?= $no; ?></td>
-                  <td><?= ucwords($sosial['sosial_media']); ?></td>
-                  <td><?= $sosial['link']; ?></td>
+                  <td class="text-nowrap"><?= ucwords($sosial['sosial_media']); ?></td>
+                  <td class="text-nowrap"><?= $sosial['link']; ?></td>
                   <td nowrap="nowrap">
                     <center>
                       <button type="button" class="btn btn-primary text-white btn-sm" data-bs-toggle="modal" 
                       data-bs-target="#editSosial"
                       data-id="<?= $sosial['id']; ?>"
                       data-sosial="<?= $sosial['sosial_media']; ?>"
-                      data-link="<?= $sosial['link']; ?>"
+                      data-link="<?= $sosial['link']; ?>" title="Ubah data"
                       ><i class="fas fa-edit"></i></button>
+
                       <button type="button" class="btn btn-primary text-white btn-sm" data-bs-toggle="modal" 
-                      data-bs-target="#hapusSosial<?= $sosial['id']; ?>"><i class="fas fa-trash"></i></button>
+                      data-bs-target="#hapusSosial<?= $sosial['id']; ?>" title="Hapus data">
+                      <i class="fas fa-trash"></i></button>
                     </center>
 
                     <!-- modal hapus -->
@@ -185,7 +187,6 @@
                         </div>
                       </div>
                     </div>
-
                   </td>
                 </tr>
               <?php endforeach; ?>

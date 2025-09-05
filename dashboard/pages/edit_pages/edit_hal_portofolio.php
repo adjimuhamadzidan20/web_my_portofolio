@@ -5,7 +5,7 @@
 
   $sql = "SELECT dt_portofolio.id, dt_portofolio.judul_portofolio, dt_portofolio.thumbnail, 
   dt_portofolio.id_basis, dt_basisprojek.nama_basis, dt_portofolio.tahun_pembuatan,
-  dt_portofolio.deskripsi, dt_portofolio.id_admin, dt_portofolio.created_at FROM dt_portofolio 
+  dt_portofolio.deskripsi, dt_portofolio.link_porto, dt_portofolio.id_admin, dt_portofolio.created_at FROM dt_portofolio 
   INNER JOIN dt_basisprojek ON dt_portofolio.id_basis = dt_basisprojek.id WHERE dt_portofolio.id = $id";
 
   $query = mysqli_query($koneksi, $sql);
@@ -68,6 +68,10 @@
             <label for="deskripsi" class="form-label">Deskripsi</label>
             <textarea class="form-control" name="deskripsi" id="deskripsi" rows="5" required><?= $data['deskripsi']; ?></textarea>
           </div>
+          <div class="mb-4">
+              <label for="link" class="form-label">Link Portofolio</label>
+              <input type="text" class="form-control" id="link" name="link" value="<?= $data['link_porto']; ?>" required>
+            </div>
           <div class="d-flex justify-content-between">
             <a href="index.php?halaman=portofolio" class="btn btn-secondary">Kembali</a>
             <button type="submit" class="btn btn-primary text-white">Edit</button>

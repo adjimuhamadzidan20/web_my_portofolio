@@ -10,6 +10,7 @@
         $active6 = '';
         $active7 = '';
         $active8 = '';
+        $active9 = '';
     } 
     else if ($pages == 'profil' || $pages == 'akun') {
         $active1 = '';
@@ -20,6 +21,7 @@
         $active6 = '';
         $active7 = '';
         $active8 = '';
+        $active9 = '';
     }
     else if ($pages == 'tentang' || $pages == 'tambah_tentang' || $pages == 'edit_tentang') {
         $active1 = '';
@@ -40,6 +42,7 @@
         $active6 = '';
         $active7 = '';
         $active8 = '';
+        $active9 = '';
     }
     else if ($pages == 'basis' || $pages == 'tambah_basis' || $pages == 'edit_basis') {
         $active1 = '';
@@ -50,6 +53,7 @@
         $active6 = '';
         $active7 = '';
         $active8 = '';
+        $active9 = '';
     }
     else if ($pages == 'status' || $pages == 'tambah_status' || $pages == 'edit_status') {
         $active1 = '';
@@ -60,6 +64,7 @@
         $active6 = 'active';
         $active7 = '';
         $active8 = '';
+        $active9 = '';
     }
     else if ($pages == 'portofolio' || $pages == 'tambah_porto' || $pages == 'edit_porto') {
         $active1 = '';
@@ -70,6 +75,7 @@
         $active6 = '';
         $active7 = 'active';
         $active8 = '';
+        $active9 = '';
     }
     else if ($pages == 'sosial_media') {
         $active1 = '';
@@ -80,6 +86,18 @@
         $active6 = '';
         $active7 = '';
         $active8 = 'active';
+        $active9 = '';
+    }
+    else if ($pages == 'kontak') {
+        $active1 = '';
+        $active2 = '';
+        $active3 = '';
+        $active4 = '';
+        $active5 = '';
+        $active6 = '';
+        $active7 = '';
+        $active8 = '';
+        $active9 = 'active';
     }
     else {
         $active1 = 'active';
@@ -90,7 +108,14 @@
         $active6 = '';
         $active7 = '';
         $active8 = '';
+        $active9 = '';
     }
+
+    require 'config/koneksi_db.php';
+
+    $sql = "SELECT * FROM dt_kontak";
+    $query = mysqli_query($koneksi, $sql);
+    $jumlah = mysqli_num_rows($query);
 ?>
 
 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
@@ -129,6 +154,10 @@
             <a class="nav-link <?= $active8; ?>" href="index.php?halaman=sosial_media">
                 <div class="sb-nav-link-icon"><i class="far fa-circle"></i></div>
                 Sosial Media
+            </a>
+            <a class="nav-link <?= $active9; ?>" href="index.php?halaman=kontak">
+                <div class="sb-nav-link-icon"><i class="far fa-circle"></i></div>
+                Kontak Masuk<span class="ms-2 badge text-bg-danger"><?= $jumlah; ?></span>
             </a>
         </div>
     </div>

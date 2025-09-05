@@ -26,7 +26,7 @@
         <form method="post" action="config/add_process/add_porto.php" enctype="multipart/form-data">
           <div class="modal-body">
             <div class="mb-3">
-              <label for="judul" class="form-label">Judul Portfolio</label>
+              <label for="judul" class="form-label">Judul Portofolio</label>
               <input type="text" class="form-control" id="judul" name="judul" placeholder="Judul portfolio anda" required>
             </div>
             <div class="mb-3">
@@ -48,11 +48,15 @@
             </div>
             <div class="mb-3">
               <label for="tahun" class="form-label">Tahun Pembuatan</label>
-              <input type="text=" class="form-control" id="tahun" name="tahun" placeholder="Masukkan Tahun pembuatan" required>
+              <input type="text" class="form-control" id="tahun" name="tahun" placeholder="Masukkan Tahun pembuatan" required>
             </div>
             <div class="mb-3">
               <label for="deskripsi" class="form-label">Deskripsi</label>
               <textarea class="form-control" id="deskripsi" name="deskripsi" rows="5" required></textarea>
+            </div>
+            <div class="mb-4">
+              <label for="link" class="form-label">Link Portofolio</label>
+              <input type="text" class="form-control" id="link" name="link" placeholder="Masukkan Link Portofolio" required>
             </div>
             <div class="d-flex justify-content-between">
               <a href="index.php?halaman=portofolio" class="btn btn-secondary">Kembali</a>

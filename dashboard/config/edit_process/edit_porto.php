@@ -8,6 +8,7 @@ $tahun = htmlspecialchars($_POST['tahun']);
 $basis = htmlspecialchars($_POST['basis']);
 $deskripsi = mysqli_real_escape_string($koneksi, $_POST['deskripsi']);
 $thumbLama = htmlspecialchars($_POST['thumb_lama']);
+$link = htmlspecialchars($_POST['link']);
 
 $namaFile = $_FILES['thumbnail']['name'];
 $tempatFile = $_FILES['thumbnail']['tmp_name'];
@@ -21,7 +22,7 @@ if ($errorFile == 4) {
 	$fileThumbnail = $thumbLama;
 
 	$sql = "UPDATE dt_portofolio SET judul_portofolio = '$judulPorto', thumbnail = '$fileThumbnail', id_basis = '$basis', 
-	tahun_pembuatan = '$tahun', deskripsi = '$deskripsi' WHERE id = $id";
+	tahun_pembuatan = '$tahun', deskripsi = '$deskripsi', link_porto = '$link' WHERE id = $id";
 	$result = mysqli_query($koneksi, $sql);
 
 	if ($result) {
@@ -54,7 +55,7 @@ if ($errorFile == 4) {
 			move_uploaded_file($tempatFile, '../../file_thumbnail/' . $fileThumbnail);
 
 			$sql = "UPDATE dt_portofolio SET judul_portofolio = '$judulPorto', thumbnail = '$fileThumbnail', id_basis = '$basis',
-			tahun_pembuatan = '$tahun', deskripsi = '$deskripsi' WHERE id = $id";
+			tahun_pembuatan = '$tahun', deskripsi = '$deskripsi', link_porto = '$link' WHERE id = $id";
 			$result = mysqli_query($koneksi, $sql);
 
 			// menghapus gambar/foto di local folder

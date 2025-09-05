@@ -5,8 +5,8 @@
 
   $sqlPorto = "SELECT dt_portofolio.id, dt_portofolio.judul_portofolio, dt_portofolio.thumbnail, 
   dt_portofolio.id_basis, dt_basisprojek.nama_basis, dt_portofolio.tahun_pembuatan,
-  dt_portofolio.deskripsi, dt_portofolio.id_admin, dt_portofolio.created_at FROM dt_portofolio 
-  INNER JOIN dt_basisprojek ON dt_portofolio.id_basis = dt_basisprojek.id WHERE dt_portofolio.id = '$idPorto'";
+  dt_portofolio.deskripsi, dt_portofolio.link_porto, dt_portofolio.id_admin, dt_portofolio.created_at 
+  FROM dt_portofolio INNER JOIN dt_basisprojek ON dt_portofolio.id_basis = dt_basisprojek.id WHERE dt_portofolio.id = '$idPorto'";
 
   $queryPorto = mysqli_query($koneksi, $sqlPorto);
   $dataPorto = mysqli_num_rows($queryPorto);
@@ -145,7 +145,7 @@
                 <ul>
                   <li><strong>Basis Projek</strong> Belum Tersedia</li>
                   <li><strong>Tahun Pembuatan</strong> Belum Tersedia</li>
-                  <li><strong>Link Git Repo</strong> <a href="#">www.example.com</a></li>
+                  <li><strong>Link Projek</strong> <a href="#">www.example.com</a></li>
                 </ul>
               </div>
             </div>
@@ -199,7 +199,8 @@
                 <ul>
                   <li><strong>Basis Projek</strong> <?= $dtPorto['nama_basis']; ?></li>
                   <li><strong>Tahun Pembuatan</strong> <?= $dtPorto['tahun_pembuatan']; ?></li>
-                  <li><strong>Link Git Repo</strong> <a href="#">www.example.com</a></li>
+                  <li><strong>Link Projek</strong> <a href="<?= $dtPorto['link_porto']; ?>">
+                    <?= $dtPorto['link_porto']; ?></a></li>
                 </ul>
               </div>
             </div>

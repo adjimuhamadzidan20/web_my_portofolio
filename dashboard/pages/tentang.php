@@ -52,19 +52,19 @@
     <div class="card">
       <div class="card-header">
         <div class="d-flex justify-content-between align-items-center">
-          Data tentang pribadi
+          <span class="d-none d-md-block">Data tentang pribadi</span>
           <div class="opsi-tambah">
             <a href="index.php?halaman=tambah_tentang" class="btn btn-primary btn-sm text-white"><i class="fas fa-plus me-1"></i>Tambah</a>
           </div>
         </div>
       </div>
-      <div class="card-body">
+      <div class="card-body table-responsive">
         <table id="tabel_tentang" class="table table-bordered">
             <thead>
               <tr>
                 <th class="text-center">No</th>
-                <th class="text-center" style="width: 80%;">Tentang Deskripsi</th>
-                <th class="text-center">Opsi</th>
+                <th class="text-center lebar-kolom-tentang">Tentang</th>
+                <th class="text-center text-nowrap">Opsi</th>
               </tr>
             </thead>
             <tbody>
@@ -78,10 +78,11 @@
                   <td><?= $tentang['deskripsi']; ?></td>
                   <td nowrap="nowrap">
                     <center>
-                      <a href="index.php?halaman=edit_tentang&edit=<?= $tentang['id']; ?>" class="btn btn-primary text-white btn-sm"><i class="fas fa-edit"></i></a>
+                      <a href="index.php?halaman=edit_tentang&edit=<?= $tentang['id']; ?>" class="btn btn-primary text-white btn-sm" title="Ubah data"><i class="fas fa-edit"></i></a>
 
                       <button type="button" class="btn btn-primary text-white btn-sm" data-bs-toggle="modal" 
-                      data-bs-target="#hapusTentang<?= $tentang['id']; ?>"><i class="fas fa-trash"></i></button>
+                      data-bs-target="#hapusTentang<?= $tentang['id']; ?>" title="Hapus data">
+                      <i class="fas fa-trash"></i></button>
                     </center>
 
                     <!-- modal hapus -->
@@ -102,7 +103,6 @@
                         </div>
                       </div>
                     </div>
-                  
                   </td>
                 </tr>
               <?php endforeach; ?>

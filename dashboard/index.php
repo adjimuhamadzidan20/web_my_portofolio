@@ -39,6 +39,17 @@
         overflow: hidden;
       }
 
+      .lebar-kolom-tentang {
+        width: 80%;
+      }
+
+      @media screen and (max-width: 480px) {
+        .lebar-kolom-tentang {
+          width: 800px;
+          text-wrap: nowrap;
+        }
+      }
+
       /*.dataTables_paginate .paginate_button.page-item.active a {
         background-color: black;
         border-color: black;
@@ -173,6 +184,16 @@
             "paging": false,
             "lengthChange": false,
             "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
+          });
+
+          $('#tabel_kontak').DataTable({
+            "paging": true,
+            "lengthChange": true,
+            "searching": true,
             "ordering": true,
             "info": true,
             "autoWidth": false,

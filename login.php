@@ -23,24 +23,15 @@
     <link rel="stylesheet" href="dashboard/assets/plugins/toastr/toastr.min.css">
 
     <style type="text/css">
-      body {
+      /*body {
         background-image: url("landing_page/assets/img/background_header_new.jpg");
         background-size: cover;
         background-position: center;
-      }
+      }*/
 
       .login-admin {
         margin-top: 80px;
       }
-
-      /*.btn-dark {
-        background-color: black;
-      }
-
-      .btn-dark:hover {
-        background-color: #343A40;
-        border-color: #343A40;
-      }*/
     </style>
   </head>
   <body>
@@ -50,7 +41,7 @@
           <div class="container">
             <div class="row justify-content-center">
               <div class="col-lg-5">
-                <div class="login-admin card shadow-lg border-0 rounded-lg">
+                <div class="login-admin card shadow border-0 rounded-lg">
                   <div class="card-header">
                     <h4 class="text-center font-weight-light my-4">MY PORTOFOLIO</h4>
                   </div>
@@ -89,7 +80,7 @@
         <footer class="py-4 mt-auto">
           <div class="container-fluid px-4">
             <div class="d-flex align-items-center justify-content-between small">
-              <div class="text-light">My Portofolio | 2024 - <?= date('Y'); ?></div>
+              <div class="text-dark">My Portofolio | 2024 - <?= date('Y'); ?></div>
             </div>
           </div>
         </footer>

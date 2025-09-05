@@ -24,16 +24,16 @@
           <div class="opsi-tambah">
             <a href="index.php?halaman=tambah_basis" class="btn btn-primary btn-sm text-white"><i class="fas fa-plus me-1"></i>Tambah</a>
           </div>
-          Basis projek portofolio yang anda bangun
+          <span class="d-none d-md-block">Basis projek portofolio yang anda bangun</span>
         </div>            
       </div>
-      <div class="card-body">
+      <div class="card-body table-responsive">
         <table id="tabel_basis" class="table table-bordered">
             <thead>
               <tr>
                 <th class="text-center">No</th>
-                <th>Nama Basis</th>
-                <th class="text-center">Opsi</th>
+                <th class=" text-nowrap">Nama Basis</th>
+                <th class="text-center text-nowrap">Opsi</th>
               </tr>
             </thead>
             <tbody>
@@ -44,13 +44,13 @@
               ?>  
                 <tr>
                   <td class="text-center"><?= $no; ?></td>
-                  <td><?= $basis['nama_basis']; ?></td>
+                  <td class="text-nowrap"><?= $basis['nama_basis']; ?></td>
                   <td nowrap="nowrap">
                     <center>
-                      <a href="index.php?halaman=edit_basis&edit=<?= $basis['id']; ?>" class="btn btn-primary btn-sm text-white btn-sm"><i class="fas fa-edit"></i></a>
+                      <a href="index.php?halaman=edit_basis&edit=<?= $basis['id']; ?>" class="btn btn-primary btn-sm text-white btn-sm" title="Ubah data"><i class="fas fa-edit"></i></a>
 
                       <button type="button" class="btn btn-primary btn-sm text-white btn-sm" data-bs-toggle="modal" 
-                      data-bs-target="#hapusBasis<?= $basis['id']; ?>"><i class="fas fa-trash"></i></button>
+                      data-bs-target="#hapusBasis<?= $basis['id']; ?>" title="Hapus data"><i class="fas fa-trash"></i></button>
                     </center>
 
                     <!-- modal hapus -->
@@ -71,7 +71,6 @@
                         </div>
                       </div>
                     </div>
-
                   </td>
                 </tr>
               <?php endforeach; ?>  

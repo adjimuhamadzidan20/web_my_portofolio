@@ -1,5 +1,6 @@
 <?php
     require 'dashboard/config/koneksi_db.php';
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -138,7 +139,7 @@
                         <?php
                             } else {
                         ?>
-                            <p>I'm <span class="typed" 
+                            <p><span class="typed" 
                             data-typed-items="
                             <?php  
                                 foreach ($row as $status) :
@@ -329,8 +330,8 @@
                         <?php
                             $sqlPorto = "SELECT dt_portofolio.id, dt_portofolio.judul_portofolio, dt_portofolio.thumbnail, 
                             dt_portofolio.id_basis, dt_basisprojek.nama_basis, dt_portofolio.tahun_pembuatan,
-                            dt_portofolio.deskripsi, dt_portofolio.id_admin, dt_portofolio.created_at FROM dt_portofolio 
-                            INNER JOIN dt_basisprojek ON dt_portofolio.id_basis = dt_basisprojek.id";
+                            dt_portofolio.deskripsi, dt_portofolio.link_porto, dt_portofolio.id_admin, dt_portofolio.created_at 
+                            FROM dt_portofolio INNER JOIN dt_basisprojek ON dt_portofolio.id_basis = dt_basisprojek.id";
                             
                             $queryPorto = mysqli_query($koneksi, $sqlPorto);
                             $dataPorto = mysqli_num_rows($queryPorto);
@@ -486,35 +487,35 @@
                     </div>
                     <div class="col-lg-8">
                         <!-- alert notif -->
-                        <div class="alert alert-success alert-dismissible fade show mb-4 d-none" role="alert">
-                            <strong>Terima kasih!</strong> Pesan anda telah terkirim.
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
+                        <?php 
+                            if (isset($_SESSION['status']) && isset($_SESSION['pesan'])) : 
+                        ?>
+                            <div class="alert alert-<?= $_SESSION['status']; ?> alert-dismissible fade show mb-4" role="alert">
+                                <strong>Terima kasih,</strong> <?= $_SESSION['pesan']; ?>.
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        <?php 
+                            unset($_SESSION['status']);  
+                            unset($_SESSION['pesan']);  
+                            endif; 
+                        ?>
 
                         <!-- form kontak kami -->
-                        <form id="contactForm" name="contact-portofolio-data" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+                        <form id="contactForm" class="php-email-form" data-aos="fade-up" data-aos-delay="200" method="post" action="dashboard/config/add_process/add_kontak_masuk.php">
                             <div class="row gy-4">
-
                                 <div class="col-md-6">
                                     <input type="text" id="name" name="nama_lengkap" class="form-control" placeholder="Nama Lengkap Anda" required="required">
                                 </div>
-
                                 <div class="col-md-6 ">
                                     <input type="email" id="email" class="form-control" name="email" placeholder="Email Anda" required="required">
                                 </div>
-
                                 <div class="col-md-12">
                                     <input type="text" id="phone" class="form-control" name="no_telp" placeholder="No Telepon" required="required">
-                                </div>
-
+                                </div>  
                                 <div class="col-md-12">
                                     <textarea class="form-control" id="message" name="pesan" rows="6" placeholder="Masukkan Pesan" required="required"></textarea>
                                 </div>
-
                                 <div class="col-md-12 text-center">
-                                    <div class="loading">Loading</div>
-                                    <div class="error-message"></div>
-                                    <div class="sent-message">Your message has been sent. Thank you!</div>
                                     <button type="submit">Kirim Pesan</button>
                                 </div>
                             </div>
@@ -587,7 +588,6 @@
 
     <!-- Vendor JS Files -->
     <script src="landing_page/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="landing_page/assets/vendor/php-email-form/validate.js"></script>
     <script src="landing_page/assets/vendor/aos/aos.js"></script>
     <script src="landing_page/assets/vendor/typed.js/typed.umd.js"></script>
     <script src="landing_page/assets/vendor/purecounter/purecounter_vanilla.js"></script>

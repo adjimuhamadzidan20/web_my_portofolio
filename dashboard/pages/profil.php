@@ -28,10 +28,10 @@
         </div>
         <div class="card-body p-4 d-flex justify-content-center align-items-center">
           <div class="text-center">
-            <img class="profile-user-img img-fluid img-circle mb-4 img-thumbnail" 
-              src="profil_pict/admin_user.png"
-              alt="admin_user" style="border-radius: 100%; width: 180px; height: 180px; object-fit: cover;">
-            <h6>Foto Profil</h6>
+            <img class="profile-user-img img-fluid mb-4 img-thumbnail" 
+              src="profil_pict/background_default.png"
+              alt="admin_user" style="width: 280px; height: 180px; object-fit: cover;">
+            <h6>Background Profil</h6>
           </div>
         </div>
       </div>
@@ -62,7 +62,7 @@
             data-bs-target="#tambahProfil">
             <i class="fas fa-plus me-1"></i>Tambah Profil</button>
 
-            <button class="btn text-white btn-primary col-12 col-lg-auto" disabled="disabled"><i class="fas fa-undo me-1"></i>Reset Profil</button>
+            <button class="btn text-white btn-primary col-12 col-lg-auto mb-2 mb-lg-0" disabled="disabled"><i class="fas fa-undo me-1"></i>Reset Profil</button>
 
             <a href="index.php?halaman=akun" class="btn btn-primary text-white col-12 col-lg-auto"><i class="fas fa-user me-2"></i>Pengaturan Akun</a>
           </div>
@@ -83,9 +83,9 @@
         </div>
         <div class="card-body p-4 d-flex justify-content-center align-items-center">
           <div class="text-center">
-            <img class="profile-user-img img-fluid img-circle mb-4 img-thumbnail" 
+            <img class="profile-user-img img-fluid mb-4 img-thumbnail" 
               src="file_foto/<?= $profil['foto']; ?>"
-              alt="admin_user" style="border-radius: 100%; width: 180px; height: 180px; object-fit: cover;">
+              alt="admin_user" style="width: 280px; height: 180px; object-fit: cover;">
             <h6><?= $profil['nama_lengkap']; ?></h6>
           </div>
         </div>
@@ -127,7 +127,7 @@
             data-foto="<?= $profil['foto']; ?>">
             <i class="fas fa-edit me-1"></i>Sunting Profil</button>
 
-            <button type="button" class="btn btn-primary text-white col-12 col-lg-auto" data-bs-toggle="modal" 
+            <button type="button" class="btn btn-primary text-white col-12 col-lg-auto mb-2 mb-lg-0" data-bs-toggle="modal" 
             data-bs-target="#resetProfil<?= $profil['id']; ?>"><i class="fas fa-undo me-1"></i>Reset Profil</button>
 
             <a href="index.php?halaman=akun" class="btn btn-primary text-white col-12 col-lg-auto"><i class="fas fa-user me-2"></i>Pengaturan Akun</a>
@@ -233,7 +233,7 @@
           <div class="mb-1">
             <label for="foto" class="form-label">Upload Latar Profil</label><br>
             <img class="profile-user-img img-fluid mb-3 img-thumbnail" src="" alt="admin_user" id="admin_user" 
-            style="width: 85px; height: 85px; object-fit: cover;">
+            style="width: 150px; height: 85px; object-fit: cover;">
           </div>
           <div class="mb-3">
             <input type="file" class="form-control" id="foto" name="foto" title="*Ukuran gambar max 2MB">

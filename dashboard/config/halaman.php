@@ -63,6 +63,9 @@
 		else if ($_GET['halaman'] == 'edit_status') {
 			require 'pages/edit_pages/edit_hal_statusprofil.php';
 		} 
+		else if ($_GET['halaman'] == 'kontak') {
+			require 'pages/kontak.php';
+		} 
 		else {
 			require 'pages/404_error.php';
 		} 
