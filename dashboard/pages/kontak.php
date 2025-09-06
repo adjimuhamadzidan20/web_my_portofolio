@@ -22,7 +22,7 @@
     <div class="card">
       <div class="card-header">
         <div class="d-flex justify-content-between align-items-center">
-          <span class="d-none d-md-block">Kontak masuk yang telah diterima</span>
+          <span class="d-none d-md-block">Riwayat kontak masuk yang telah diterima</span>
           <span class="badge text-bg-success"><?= $jumlah; ?> pesan masuk</span>
         </div>            
       </div>
@@ -35,7 +35,7 @@
                 <th class="text-nowrap">Email</th>
                 <th class="text-nowrap">No. Telp</th>
                 <th class="text-nowrap">Pesan</th>
-                <th class="text-nowrap">Waktu</th>
+                <th class="text-nowrap text-center">Waktu</th>
                 <th class="text-center text-nowrap">Opsi</th>
               </tr>
             </thead>
@@ -51,7 +51,7 @@
                   <td class="text-nowrap"><?= $kontak['email']; ?></td>
                   <td class="text-nowrap"><?= $kontak['no_telp']; ?></td>
                   <td class="text-nowrap"><?= $kontak['pesan']; ?></td>
-                  <td class="text-nowrap"><?= $kontak['created_at']; ?></td>
+                  <td class="text-nowrap text-center"><?= $kontak['created_at']; ?></td>
                   <td nowrap="nowrap">
                     <center>
                       <button type="button" class="btn btn-primary btn-sm text-white btn-sm" data-bs-toggle="modal" 
@@ -63,11 +63,11 @@
                       <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                           <div class="modal-header">
-                            <h5 class="modal-title font-weight-normal"><i class="fas fa-trash me-2"></i>Hapus kontak masuk</h5>
+                            <h5 class="modal-title font-weight-normal"><i class="fas fa-trash me-2"></i>Hapus pesan masuk</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                           </div>
                           <div class="modal-body">
-                            <p>Yakin ingin menghapus pesan masuk dari kontak ini?</p>
+                            <p>Yakin ingin menghapus riwayat pesan masuk ini?</p>
                           </div>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>

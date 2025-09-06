@@ -23,12 +23,6 @@
     <link rel="stylesheet" href="dashboard/assets/plugins/toastr/toastr.min.css">
 
     <style type="text/css">
-      /*body {
-        background-image: url("landing_page/assets/img/background_header_new.jpg");
-        background-size: cover;
-        background-position: center;
-      }*/
-
       .login-admin {
         margin-top: 80px;
       }
@@ -79,7 +73,7 @@
       <div id="layoutAuthentication_footer">
         <footer class="py-4 mt-auto">
           <div class="container-fluid px-4">
-            <div class="d-flex align-items-center justify-content-between small">
+            <div class="d-flex align-items-center justify-content-center justify-content-md-between small">
               <div class="text-dark">My Portofolio | 2024 - <?= date('Y'); ?></div>
             </div>
           </div>

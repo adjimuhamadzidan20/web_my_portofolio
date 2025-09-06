@@ -18,27 +18,31 @@
 	    exit;
 	}
 
-	$username = htmlspecialchars($_POST['username']);
-	$password = htmlspecialchars($_POST['password']);
+	$usernameAdmin = htmlspecialchars($_POST['username']);
+	$passwordAdmin = htmlspecialchars($_POST['password']);
+	$decriptPassword = md5($passwordAdmin);
 
-	$sql = "SELECT * FROM dt_admin WHERE username = '$username'";
-	$query = mysqli_query($koneksi, $sql);
+	$sql = "SELECT * FROM dt_admin WHERE username = ? AND password = ?";
+	$query = mysqli_prepare($koneksi, $sql);
 	
-	$dataAdmin = mysqli_fetch_assoc($query);
-	$jumlahAdmin = mysqli_num_rows($query);
-	$decriptPass = md5($password);
+	mysqli_stmt_bind_param($query, 'ss', $usernameAdmin, $decriptPassword);
+	mysqli_stmt_execute($query);
+	mysqli_stmt_store_result($query);
 
-	if ($jumlahAdmin == 1) {
-		if ($decriptPass == $dataAdmin['password']) {
-			$_SESSION['id_admin'] = $dataAdmin['id'];
-			$_SESSION['admin'] = $dataAdmin['nama_admin'];
+	if (mysqli_stmt_num_rows($query) == 1) {
+		mysqli_stmt_bind_result($query, $id, $nama_admin, $username, $password);
+    	mysqli_stmt_fetch($query);
+	
+		if ($decriptPassword == $password) {
+			$_SESSION['id_admin'] = $id;
+			$_SESSION['admin'] = $nama_admin;
 			$_SESSION['login'] = true;
 			
 			// remember me
 			$remember = $_POST['remember'];
 			if ($remember) {
-				setcookie('ID', $dataAdmin['id'], time()+60, '/');
-          		setcookie('KEY', hash('sha256', $dataAdmin['username']), time()+60, '/');
+				setcookie('ID', $id, time()+60, '/');
+          		setcookie('KEY', hash('sha256', $username), time()+60, '/');
 			}
 
 			header('Location: ../index.php');
@@ -60,4 +64,5 @@
     exit;
 	}
 
+	mysqli_stmt_close($query);
 ?>

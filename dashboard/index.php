@@ -78,7 +78,7 @@
           </main>
           <footer class="py-4 bg-light mt-auto">
               <div class="container-fluid px-4">
-                  <div class="d-flex align-items-center justify-content-between small">
+                  <div class="d-flex align-items-center justify-content-center justify-content-md-between small">
                       <div class="text-muted">My Portofolio | 2024 - <?= date('Y'); ?></div>
                   </div>
               </div>

@@ -24,7 +24,7 @@
 ?>
 
 <h2 class="mt-3 text-uppercase">Selamat Datang!</h2>
-<ol class="breadcrumb mb-4">
+<ol class="breadcrumb mb-3">
   <li class="breadcrumb-item active">Dashboard</li>
 </ol>
 <div class="row">
