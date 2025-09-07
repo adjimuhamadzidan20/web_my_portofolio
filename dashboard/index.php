@@ -27,6 +27,21 @@
     <link rel="stylesheet" href="assets/plugins/toastr/toastr.min.css">
 
     <style type="text/css">
+      .btn-primary, .bg-primary {
+        background-color: #40407a !important;
+        border-color: #40407a !important;
+      }
+
+      .btn-primary:hover {
+        background-color: #2c2c54;
+        border-color: #2c2c54;
+      }
+
+      .btn-primary:active {
+        background-color: #2c2c54 !important;
+        border-color: #2c2c54 !important;
+      }
+
       .gambar-porto {
         width: 70px;
         height: 70px;
@@ -39,6 +54,27 @@
         overflow: hidden;
       }
 
+      .form-control:focus {
+        border-color: #40407a !important;
+        box-shadow: 0 0 0 0.2rem rgba(64, 64, 122, 0.25) !important;
+        outline: none;
+      }
+
+      .form-select:focus {
+        border-color: #40407a !important;
+        box-shadow: 0 0 0 0.2rem rgba(64, 64, 122, 0.25) !important;
+        outline: none;
+      }
+
+      .dataTables_paginate .paginate_button.page-item.active a {
+        background-color: #40407a;
+        border-color: #40407a;
+      }
+
+      .dataTables_paginate .paginate_button.page-item:not(.active) a {
+        color: #40407a;
+      }  
+
       .lebar-kolom-tentang {
         width: 80%;
       }
@@ -49,15 +85,6 @@
           text-wrap: nowrap;
         }
       }
-
-      /*.dataTables_paginate .paginate_button.page-item.active a {
-        background-color: black;
-        border-color: black;
-      }
-
-      .dataTables_paginate .paginate_button.page-item:not(.active) a {
-        color: black;
-      }  */
     </style>
 
   </head>

@@ -26,6 +26,21 @@
       .login-admin {
         margin-top: 80px;
       }
+
+      .btn-primary {
+        background-color: #40407a;
+        border-color: #40407a;
+      }
+
+      .btn-primary:hover {
+        background-color: #2c2c54;
+        border-color: #2c2c54;
+      }
+
+      .btn-primary:active {
+        background-color: #2c2c54 !important;
+        border-color: #2c2c54 !important;
+      }
     </style>
   </head>
   <body>
@@ -34,7 +49,7 @@
         <main>
           <div class="container">
             <div class="row justify-content-center">
-              <div class="col-lg-5">
+              <div class="col-lg-4">
                 <div class="login-admin card shadow border-0 rounded-lg">
                   <div class="card-header">
                     <h4 class="text-center font-weight-light my-4">MY PORTOFOLIO</h4>
@@ -53,9 +68,6 @@
                         <div>
                           <input class="form-check-input" id="inputRememberPassword" type="checkbox" name="remember" />
                           <label class="form-check-label" for="inputRememberPassword">Remember Password</label>
-                        </div>
-                        <div>
-                          <a class="small" href="password.html">Lupa Password?</a>
                         </div>
                       </div>
                       <div class="mt-4 mb-0">

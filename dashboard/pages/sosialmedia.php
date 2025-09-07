@@ -205,7 +205,7 @@
         <h5 class="modal-title font-weight-normal" id="exampleModalLabel"><i class="fas fa-edit me-2"></i>Edit link sosial media</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <form method="post" action="config/edit_sosialmedia.php">
+      <form method="post" action="config/edit_process/edit_sosialmedia.php">
           <div class="modal-body">
             <input type="text" class="form-control" id="id" name="id" hidden>
             <div class="mb-3">

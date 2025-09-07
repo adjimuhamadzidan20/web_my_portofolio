@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 05 Sep 2025 pada 19.05
+-- Waktu pembuatan: 07 Sep 2025 pada 07.10
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.1.31
 
@@ -97,7 +97,7 @@ INSERT INTO `dt_kemampuan` (`id`, `kemampuan`, `tingkatan`, `nilai_progres`, `id
 CREATE TABLE `dt_kontak` (
   `id` int(11) NOT NULL,
   `nama_lengkap` varchar(30) NOT NULL,
-  `email` varchar(20) NOT NULL,
+  `email` varchar(35) NOT NULL,
   `no_telp` varchar(20) NOT NULL,
   `pesan` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
@@ -109,7 +109,7 @@ CREATE TABLE `dt_kontak` (
 
 INSERT INTO `dt_kontak` (`id`, `nama_lengkap`, `email`, `no_telp`, `pesan`, `created_at`) VALUES
 (18, 'Beyourselfit', 'beyourselfit20@gmail', '089518181818', 'Minat untuk projeknya', '2025-09-05 16:48:38'),
-(19, 'Adji Muhamad Zidan', 'adjimuhamadzidan@gma', '0895337528748', 'bagus sekali untuk portofolionya...', '2025-09-05 16:49:25');
+(20, 'Adji Muhamad Zidan', 'adjimuhamadzidan@gmail.com', '0895337528748', 'Oke banget..', '2025-09-06 05:27:09');
 
 -- --------------------------------------------------------
 
@@ -160,7 +160,7 @@ CREATE TABLE `dt_profil` (
 --
 
 INSERT INTO `dt_profil` (`id`, `nama_lengkap`, `no_telp`, `email`, `alamat`, `foto`, `id_admin`, `created_at`) VALUES
-(1, 'Beyourselfit20', '089518181818', 'beyourselfit20@gmail.com', 'Jatirahayu, Kota Bekasi', '68bad798a5d3d.jpg', 1, '2025-09-05 12:29:12');
+(1, 'Beyourselfit20', '089518181818', 'beyourselfit20@gmail.com', 'Jatirahayu, Kota Bekasi', '68bbc7d05de2c.jpg', 1, '2025-09-06 05:34:08');
 
 -- --------------------------------------------------------
 
@@ -183,7 +183,8 @@ CREATE TABLE `dt_sosialmedia` (
 INSERT INTO `dt_sosialmedia` (`id`, `sosial_media`, `link`, `id_admin`, `created_at`) VALUES
 (4, 'github', 'https://github.com/adjimuhamadzidan20/', 1, '2025-08-31 05:01:37'),
 (5, 'instagram', 'https://www.instagram.com/_adjiii20', 1, '2025-08-31 05:01:45'),
-(6, 'linkedin', 'https://www.linkedin.com/in/adjimuhamadzidan/', 1, '2025-08-31 05:01:51');
+(6, 'linkedin', 'https://www.linkedin.com/in/adjimuhamadzidan/', 1, '2025-08-31 05:01:51'),
+(7, 'facebook', 'https://www.facebook.com/adji.muhamad.zidan17/', 1, '2025-09-07 04:22:45');
 
 -- --------------------------------------------------------
 
@@ -321,7 +322,7 @@ ALTER TABLE `dt_kemampuan`
 -- AUTO_INCREMENT untuk tabel `dt_kontak`
 --
 ALTER TABLE `dt_kontak`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT untuk tabel `dt_portofolio`
@@ -339,7 +340,7 @@ ALTER TABLE `dt_profil`
 -- AUTO_INCREMENT untuk tabel `dt_sosialmedia`
 --
 ALTER TABLE `dt_sosialmedia`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `dt_statusprofil`

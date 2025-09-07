@@ -56,6 +56,23 @@
   <!-- Main CSS File -->
   <link href="landing_page/assets/css/main.css" rel="stylesheet">
 
+  <style>
+    .btn-primary, .bg-primary {
+      background-color: #40407a !important;
+      border-color: #40407a !important;
+    }
+
+    .btn-primary:hover {
+      background-color: #2c2c54;
+      border-color: #2c2c54;
+    }
+
+    .btn-primary:active {
+      background-color: #2c2c54 !important;
+      border-color: #2c2c54 !important;
+    }
+  </style>
+
 </head>
 
 <body class="portfolio-details-page">
