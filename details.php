@@ -278,9 +278,6 @@
         <div class="copyright">
           <span>Copyright</span><strong class="px-1 sitename">My Portofolio</strong>| 2024 - <?= date('Y'); ?> <span>All Rights Reserved</span>
         </div>
-        <div class="credits">
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distribuited by <a href="https://themewagon.com">ThemeWagon</a>
-        </div>
       </div>
     </div>
   </footer>

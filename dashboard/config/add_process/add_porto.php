@@ -32,7 +32,7 @@
 			$idAdmin = $_SESSION['id_admin'];
 
 			$sql = "INSERT INTO dt_portofolio (judul_portofolio, thumbnail, id_basis, tahun_pembuatan, deskripsi, 
-			link_porto, id_admin) VALUES ('$judulPorto', '$fileThumbnail', '$basis', '$tahun', '$deskripsi', '$link', $idAdmin')";
+			link_porto, id_admin) VALUES ('$judulPorto', '$fileThumbnail', '$basis', '$tahun', '$deskripsi', '$link', '$idAdmin')";
 			$result = mysqli_query($koneksi, $sql);
 
 			if ($result) {
