@@ -17,12 +17,12 @@
 
         if ($profilName == 0) {
     ?>
-        <title>Portfolio || Anonymus</title>
+        <title>Portofolio || Anonymus</title>
     <?php
         } else {
             while ($dtProfil = mysqli_fetch_assoc($queryProfil)) :
     ?>
-        <title>Portfolio || <?= $dtProfil['nama_lengkap']; ?></title>
+        <title>Portofolio || <?= $dtProfil['nama_lengkap']; ?></title>
     <?php
             endwhile;
         }
@@ -520,7 +520,7 @@
                                 </div>
                             </div>
                         </form>
-                    </div><
+                    </div>
                     <!-- End Contact Form -->
                 </div>
             </div>
