@@ -42,7 +42,6 @@
           <div class="mb-3">
             <label for="tahun" class="form-label">Basis Projek</label>
             <select class="form-select" aria-label="Default select example" id="basis" name="basis" required>
-              <option value="<?= $data['id_basis']; ?>" selected><?= $data['nama_basis']; ?></option>
               <?php
                 $sqlBasis = "SELECT id, nama_basis FROM dt_basisprojek";
                 $queryBasis = mysqli_query($koneksi, $sqlBasis);
@@ -54,7 +53,8 @@
 
                 foreach ($rowBasis as $basis) :
               ?>
-                <option value="<?= $basis['id']; ?>"><?= $basis['nama_basis']; ?></option>
+                <option value="<?= $basis['id']; ?>" <?= ($data['id_basis'] == $basis['id']) ? "selected" : ""?>>
+                <?= $basis['nama_basis']; ?></option>
               <?php  
                 endforeach;
               ?>

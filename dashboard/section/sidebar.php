@@ -126,37 +126,37 @@
                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                 Dashboard
             </a>
-            <div class="sb-sidenav-menu-heading">Interface</div>
+            <div class="sb-sidenav-menu-heading">Main Menu</div>
             <a class="nav-link <?= $active2; ?>" href="index.php?halaman=profil">
-                <div class="sb-nav-link-icon"><i class="far fa-circle"></i></div>
+                <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
                 Profil
             </a>
             <a class="nav-link <?= $active3; ?>" href="index.php?halaman=tentang">
-                <div class="sb-nav-link-icon"><i class="far fa-circle"></i></div>
+                <div class="sb-nav-link-icon"><i class="fas fa-quote-right"></i></div>
                 Tentang
             </a>
             <a class="nav-link <?= $active4; ?>" href="index.php?halaman=kemampuan">
-                <div class="sb-nav-link-icon"><i class="far fa-circle"></i></div>
+                <div class="sb-nav-link-icon"><i class="fas fa-tasks"></i></div>
                 Kemampuan
             </a>
             <a class="nav-link <?= $active5; ?>" href="index.php?halaman=basis">
-                <div class="sb-nav-link-icon"><i class="far fa-circle"></i></div>
+                <div class="sb-nav-link-icon"><i class="fas fa-tags"></i></div>
                 Basis Projek
             </a>
             <a class="nav-link <?= $active6; ?>" href="index.php?halaman=status">
-                <div class="sb-nav-link-icon"><i class="far fa-circle"></i></div>
+                <div class="sb-nav-link-icon"><i class="fas fa-info-circle"></i></div>
                 Status Profil
             </a>
             <a class="nav-link <?= $active7; ?>" href="index.php?halaman=portofolio">
-                <div class="sb-nav-link-icon"><i class="far fa-circle"></i></div>
+                <div class="sb-nav-link-icon"><i class="fas fa-th-list"></i></div>
                 Portofolio
             </a>
             <a class="nav-link <?= $active8; ?>" href="index.php?halaman=sosial_media">
-                <div class="sb-nav-link-icon"><i class="far fa-circle"></i></div>
+                <div class="sb-nav-link-icon"><i class="fas fa-share-alt"></i></div>
                 Sosial Media
             </a>
             <a class="nav-link <?= $active9; ?>" href="index.php?halaman=kontak">
-                <div class="sb-nav-link-icon"><i class="far fa-circle"></i></div>
+                <div class="sb-nav-link-icon"><i class="fas fa-envelope"></i></div>
                 Kontak Masuk<span class="ms-2 badge text-bg-danger"><?= $jumlah; ?></span>
             </a>
         </div>

@@ -76,7 +76,7 @@
       }  
 
       .lebar-kolom-tentang {
-        width: 80%;
+        width: 83%;
       }
 
       @media screen and (max-width: 480px) {

@@ -30,12 +30,16 @@
             <div class="mb-3">
               <label for="tingkatan" class="form-label">Tingkatan</label>
               <select class="form-select" aria-label="Default select example" id="tingkatan" name="tingkatan" required>
-                <option value="<?= $data['tingkatan']; ?>" selected><?= $data['tingkatan']; ?></option>
-                <option value="Pemula (Beginner)">Pemula (Beginner)</option>
-                <option value="Menengah (Intermediate)">Menengah (Intermediate)</option>
-                <option value="Lanjutan (Advance)">Lanjutan (Advance)</option>
-                <option value="Mahir (Expert)">Mahir (Expert)</option>
-                <option value="Professional (Professional)">Profesional (Professional)</option>
+                <option value="Pemula (Beginner)" 
+                <?= ($data['tingkatan'] == "Pemuka (Beginner)") ? "selected" : ""?>>Pemula (Beginner)</option>
+                <option value="Menengah (Intermediate)" 
+                <?= ($data['tingkatan'] == "Menengah (Intermediate)") ? "selected" : ""?>>Menengah (Intermediate)</option>
+                <option value="Lanjutan (Advance)" 
+                <?= ($data['tingkatan'] == "Lanjutan (Advance)") ? "selected" : ""?>>Lanjutan (Advance)</option>
+                <option value="Mahir (Expert)" 
+                <?= ($data['tingkatan'] == "Mahir (Expert)") ? "selected" : ""?>>Mahir (Expert)</option>
+                <option value="Professional (Professional)" 
+                <?= ($data['tingkatan'] == "Professional (Professional)") ? "selected" : ""?>>Profesional (Professional)</option>
               </select>
             </div>
             <div class="d-flex justify-content-between">
