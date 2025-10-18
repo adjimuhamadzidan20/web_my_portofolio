@@ -71,6 +71,23 @@
       background-color: #2c2c54 !important;
       border-color: #2c2c54 !important;
     }
+
+    .portfolio-details .portfolio-details-slider .thumbnail {
+      width: 66%; 
+      object-fit: cover;
+      border: 1px solid lightgrey;
+      padding: 3px;
+    }
+
+    section, .section {
+      padding: 35px 0;
+    }
+
+    @media screen and (max-width: 575px) {
+      .portfolio-details .portfolio-details-slider .thumbnail {
+        width: 100%; 
+      }
+    }
   </style>
 
 </head>
@@ -131,17 +148,16 @@
             </script>
             <div class="swiper-wrapper align-items-center">
               <div class="swiper-slide">
-                <img src="dashboard/thumb_pict/thumb_porto.png" alt="thumbnail">
+                <img src="dashboard/thumb_pict/thumb_porto.png" alt="thumbnail" class="thumbnail">
               </div>
             </div>
           </div>
 
-          <div class="row justify-content-between gy-4 mt-4">
-
+          <div class="row gy-4 mt-2">
             <div class="col-lg-8" data-aos="fade-up">
               <div class="portfolio-description">
                 <h2 class="text-uppercase">This is an example of portfolio details</h2>
-                <h6 class="text-uppercase fw-bold mb-3">Tentang Projek</h6>
+                <h5 class="text-uppercase fw-bold mb-3">Tentang Projek</h5>
                 <p>
                   Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
                 </p>
@@ -156,14 +172,18 @@
                 </p>
               </div>
             </div>
-            <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
+          </div>
+
+          <div class="row mt-4">
+            <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
               <div class="portfolio-info">
-                <h3 class="text-uppercase">Informasi Projek</h3>
+                <h5 class="text-uppercase fw-bold mb-3">Informasi Projek</h5>
                 <ul>
                   <li><strong>Basis Projek</strong> Belum Tersedia</li>
                   <li><strong>Tahun Pembuatan</strong> Belum Tersedia</li>
                   <li><strong>Link Projek</strong> <a href="#">www.example.com</a></li>
                 </ul>
+                <a href="index.php#portfolio" class="btn btn-primary mt-2 mb-3 mb-lg-0 rounded-pill px-4">Kembali</a>
               </div>
             </div>
           </div>
@@ -195,30 +215,32 @@
             </script>
             <div class="swiper-wrapper align-items-center">
               <div class="swiper-slide">
-                <img src="dashboard/file_thumbnail/<?= $dtPorto['thumbnail']; ?>" alt="thumbnail">
+                <img src="dashboard/file_thumbnail/<?= $dtPorto['thumbnail']; ?>" alt="thumbnail" class="thumbnail">
               </div>
             </div>
           </div>
 
-          <div class="row justify-content-between gy-4 mt-4">
-
+          <div class="row gy-4 mt-2">
             <div class="col-lg-8" data-aos="fade-up">
               <div class="portfolio-description">
                 <h2 class="text-uppercase"><?= $dtPorto['judul_portofolio']; ?></h2>
-                <h6 class="text-uppercase fw-bold mb-3">Tentang Projek</h6>
+                <h5 class="text-uppercase fw-bold mb-3">Tentang Projek</h5>
                 <?= $dtPorto['deskripsi']; ?>
-                <a href="index.php#portfolio" class="btn btn-primary mt-2 mb-3 mb-lg-0 rounded-pill px-4">Kembali</a>
               </div>
             </div>
-            <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
+          </div>
+
+          <div class="row mt-4">
+            <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
               <div class="portfolio-info">
-                <h3 class="text-uppercase">Informasi Projek</h3>
+                <h5 class="text-uppercase fw-bold mb-3">Informasi Projek</h5>
                 <ul>
                   <li><strong>Basis Projek</strong> <?= $dtPorto['nama_basis']; ?></li>
                   <li><strong>Tahun Pembuatan</strong> <?= $dtPorto['tahun_pembuatan']; ?></li>
                   <li><strong>Link Projek</strong> <a href="<?= $dtPorto['link_porto']; ?>">
                     <?= $dtPorto['link_porto']; ?></a></li>
                 </ul>
+                <a href="index.php#portfolio" class="btn btn-primary mt-2 mb-3 mb-lg-0 rounded-pill px-4">Kembali</a>
               </div>
             </div>
           </div>

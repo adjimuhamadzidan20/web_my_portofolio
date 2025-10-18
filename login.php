@@ -27,6 +27,17 @@
         margin-top: 80px;
       }
 
+      .title-login {
+        letter-spacing: 2px;
+        font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+        color: #2c2c54;
+      }
+
+      .title-admin {
+        color: #2c2c54;
+        font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+      }
+
       .btn-primary {
         background-color: #40407a;
         border-color: #40407a;
@@ -41,6 +52,12 @@
         background-color: #2c2c54 !important;
         border-color: #2c2c54 !important;
       }
+
+      .form-control:focus {
+        border-color: #40407a !important;
+        box-shadow: 0 0 0 0.2rem rgba(64, 64, 122, 0.25) !important;
+        outline: none;
+      }
     </style>
   </head>
   <body>
@@ -52,9 +69,10 @@
               <div class="col-lg-4">
                 <div class="login-admin card shadow border-0 rounded-lg">
                   <div class="card-header">
-                    <h4 class="text-center font-weight-light my-4">MY PORTOFOLIO</h4>
+                    <h4 class="text-center font-weight-light my-3 title-login">MY PORTOFOLIO</h4>
                   </div>
                   <div class="card-body">
+                    <h6 class="text-uppercase text-center mb-3 title-admin">Admin Login</h6>
                     <form action="dashboard/config/proses_login.php" method="post">
                       <div class="form-floating mb-3">
                         <input type="text" class="form-control" placeholder="Username" name="username" id="inputUsername" required>
@@ -67,7 +85,7 @@
                       <div class="form-check mb-3 d-flex justify-content-between">
                         <div>
                           <input class="form-check-input" id="inputRememberPassword" type="checkbox" name="remember" />
-                          <label class="form-check-label" for="inputRememberPassword">Remember Password</label>
+                          <label class="form-check-label" for="inputRememberPassword">Remember Me</label>
                         </div>
                       </div>
                       <div class="mt-4 mb-0">

@@ -61,6 +61,14 @@
             cursor: pointer;
         }
 
+        .img-fluid {
+            height: 260px; 
+            width: 100vw; 
+            object-fit: cover;
+            border: 1px solid lightgrey;
+            padding: 3px;
+        }
+
         .deskripsi-porto {
             width: 93%;
             height: 40px;
@@ -403,7 +411,7 @@
                                 foreach ($row as $porto) :
                         ?>
                             <div class="col-lg-4 col-md-6 portfolio-item isotope-item <?= $porto['nama_basis']; ?>">
-                                <img src="dashboard/file_thumbnail/<?= $porto['thumbnail']; ?>" class="img-fluid" alt="thumbnail" style="height: 260px; width: 100%; object-fit: cover;">
+                                <img src="dashboard/file_thumbnail/<?= $porto['thumbnail']; ?>" class="img-fluid" alt="thumbnail">
                                 <div class="portfolio-info">
                                     <h4><?= $porto['judul_portofolio']; ?></h4>
                                     <h6><?= $porto['nama_basis']; ?></h6>
