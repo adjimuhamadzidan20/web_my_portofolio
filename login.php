@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="web_my_portofolio" />
     <meta name="author" content="adjimuhamadzidan" />
-    <title>Login || Portofolio</title>
+    <title>Portofolio Web | Login</title>
     <link href="dashboard/assets/css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 
@@ -67,18 +67,18 @@
           <div class="container">
             <div class="row justify-content-center">
               <div class="col-lg-4">
-                <div class="login-admin card rounded-lg">
+                <div class="login-admin card rounded-0">
                   <div class="card-header">
-                    <h4 class="text-center font-weight-light my-3 title-login">MY PORTOFOLIO</h4>
+                    <h4 class="text-center font-weight-light my-3 title-login">PORTOFOLIO WEB</h4>
                   </div>
                   <div class="card-body">
                     <form action="dashboard/config/proses_login.php" method="post">
-                      <div class="form-floating mb-3 mt-3">
-                        <input type="text" class="form-control" placeholder="Username" name="username" id="inputUsername" required>
+                      <div class="form-floating mb-3 mt-2">
+                        <input type="text" class="form-control rounded-0" placeholder="Username" name="username" id="inputUsername" required>
                         <label for="inputUsername">Username</label>
                       </div>
                       <div class="form-floating mb-3">
-                        <input type="password" class="form-control" placeholder="Password" id="inputPassword" name="password" required>
+                        <input type="password" class="form-control rounded-0" placeholder="Password" id="inputPassword" name="password" required>
                         <label for="inputPassword">Password</label>
                       </div>
                       <div class="form-check mb-3 d-flex justify-content-between">
@@ -88,7 +88,7 @@
                         </div>
                       </div>
                       <div class="mt-3 mb-0">
-                        <button type="submit" class="btn btn-primary w-100">Masuk</button>
+                        <button type="submit" class="btn btn-primary w-100 rounded-0">Masuk</button>
                       </div>
                     </form>
                   </div>
