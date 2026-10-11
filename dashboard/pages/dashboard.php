@@ -23,7 +23,7 @@
   $dataPesan = mysqli_num_rows($query6);
 ?>
 
-<h2 class="mt-3 text-uppercase">Selamat Datang!</h2>
+<h3 class="mt-4 text-uppercase">Selamat Datang!</h3>
 <ol class="breadcrumb mb-3">
   <li class="breadcrumb-item active">Dashboard</li>
 </ol>

@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="web_portofolio" />
     <meta name="author" content="adjimuhamadzidan" />
-    <title>Portofolio || Dashboard</title>
+    <title>Portofolio Web | Dashboard</title>
     
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
@@ -52,6 +52,10 @@
       .deskripsi-port {
         height: 50px;
         overflow: hidden;
+      }
+
+      .deskripsi-port p {
+        text-align: left !important;
       }
 
       .form-control:focus {
@@ -106,7 +110,7 @@
           <footer class="py-4 bg-light mt-auto">
               <div class="container-fluid px-4">
                   <div class="d-flex align-items-center justify-content-center justify-content-md-between small">
-                      <div class="text-muted">My Portofolio | 2024 - <?= date('Y'); ?></div>
+                      <div class="text-muted">Portofolio Web | 2024 - <?= date('Y'); ?></div>
                   </div>
               </div>
           </footer>

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 07 Sep 2025 pada 07.10
--- Versi server: 10.4.32-MariaDB
--- Versi PHP: 8.1.31
+-- Generation Time: Oct 11, 2026 at 07:44 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dt_admin`
+-- Table structure for table `dt_admin`
 --
 
 CREATE TABLE `dt_admin` (
@@ -35,7 +35,7 @@ CREATE TABLE `dt_admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `dt_admin`
+-- Dumping data for table `dt_admin`
 --
 
 INSERT INTO `dt_admin` (`id`, `nama_admin`, `username`, `password`) VALUES
@@ -44,7 +44,7 @@ INSERT INTO `dt_admin` (`id`, `nama_admin`, `username`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dt_basisprojek`
+-- Table structure for table `dt_basisprojek`
 --
 
 CREATE TABLE `dt_basisprojek` (
@@ -55,18 +55,17 @@ CREATE TABLE `dt_basisprojek` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `dt_basisprojek`
+-- Dumping data for table `dt_basisprojek`
 --
 
 INSERT INTO `dt_basisprojek` (`id`, `nama_basis`, `id_admin`, `created_at`) VALUES
-(7, 'Web', 1, '2025-08-31 05:01:04'),
-(8, 'Dekstop', 1, '2025-08-31 05:01:17'),
-(9, 'Android', 1, '2025-08-31 05:01:23');
+(10, 'Web', 1, '2026-10-11 03:10:55'),
+(11, 'Dekstop', 1, '2026-10-11 03:11:02');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dt_kemampuan`
+-- Table structure for table `dt_kemampuan`
 --
 
 CREATE TABLE `dt_kemampuan` (
@@ -79,19 +78,20 @@ CREATE TABLE `dt_kemampuan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `dt_kemampuan`
+-- Dumping data for table `dt_kemampuan`
 --
 
 INSERT INTO `dt_kemampuan` (`id`, `kemampuan`, `tingkatan`, `nilai_progres`, `id_admin`, `created_at`) VALUES
 (10, 'Javascript', 'Menengah (Intermediate)', 35, 1, '2025-08-31 05:00:20'),
 (11, 'Github', 'Menengah (Intermediate)', 35, 1, '2025-08-31 05:00:27'),
 (12, 'Laravel10', 'Menengah (Intermediate)', 35, 1, '2025-08-31 05:00:35'),
-(13, 'Codeigniter4', 'Lanjutan (Advance)', 45, 1, '2025-08-31 05:00:43');
+(13, 'Codeigniter4', 'Lanjutan (Advance)', 45, 1, '2025-08-31 05:00:43'),
+(14, 'OOP PHP', 'Menengah (Intermediate)', 35, 1, '2026-10-11 03:11:43');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dt_kontak`
+-- Table structure for table `dt_kontak`
 --
 
 CREATE TABLE `dt_kontak` (
@@ -104,17 +104,23 @@ CREATE TABLE `dt_kontak` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `dt_kontak`
+-- Dumping data for table `dt_kontak`
 --
 
 INSERT INTO `dt_kontak` (`id`, `nama_lengkap`, `email`, `no_telp`, `pesan`, `created_at`) VALUES
-(18, 'Beyourselfit', 'beyourselfit20@gmail', '089518181818', 'Minat untuk projeknya', '2025-09-05 16:48:38'),
-(20, 'Adji Muhamad Zidan', 'adjimuhamadzidan@gmail.com', '0895337528748', 'Oke banget..', '2025-09-06 05:27:09');
+(21, 'Beyourselfit20', 'beyourselfit20@gmail.com', '089518181818', 'Bagus sekali portofolionya..', '2026-10-11 05:20:15'),
+(22, 'Adji Muhamad Zidan', 'adji123@gmail.com', '089518189999', 'test123', '2026-10-11 05:30:12'),
+(23, 'Adji Muhamad Zidan', 'adji123@gmail.com', '089518189999', 'sasa', '2026-10-11 05:30:55'),
+(24, 'Beyourselfit20', 'beyourselfit20@gmail.com', '089518181818', 'sss', '2026-10-11 05:32:07'),
+(25, 'Beyourselfit20', 'beyourselfit20@gmail.com', '089518181818', 'sasa', '2026-10-11 05:33:35'),
+(26, 'Beyourselfit20', 'beyourselfit20@gmail.com', '089518181818', 'sasasa', '2026-10-11 05:35:42'),
+(27, 'Beyourselfit20', 'beyourselfit20@gmail.com', '089518181818', 'sasasa', '2026-10-11 05:37:17'),
+(28, 'Beyourselfit20', 'beyourselfit20@gmail.com', '089518181818', 'sasasa', '2026-10-11 05:38:00');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dt_portofolio`
+-- Table structure for table `dt_portofolio`
 --
 
 CREATE TABLE `dt_portofolio` (
@@ -130,18 +136,17 @@ CREATE TABLE `dt_portofolio` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `dt_portofolio`
+-- Dumping data for table `dt_portofolio`
 --
 
 INSERT INTO `dt_portofolio` (`id`, `judul_portofolio`, `thumbnail`, `id_basis`, `tahun_pembuatan`, `deskripsi`, `link_porto`, `id_admin`, `created_at`) VALUES
-(5, 'Sistem Pendukung Keputusan SAW', '68b3d9aa327ca.jpg', 7, '2022', '<p style=\"text-align: justify; \">long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p><p style=\"text-align: justify; \">long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p><p style=\"text-align: justify; \">long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>', 'https://github.com/adjimuhamadzidan20/', 1, '2025-09-05 09:30:14'),
-(6, 'Sistem Pendukung Keputusan AHP', '68b3dadd46c55.jpg', 7, '2022', '<p style=\"text-align: justify; \">long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p><p style=\"text-align: justify; \">long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p><p style=\"text-align: justify; \">long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>', 'https://github.com/adjimuhamadzidan20/', 1, '2025-09-05 09:30:21'),
-(7, 'Sistem Informasi Inventori', '68b3fd969bf17.jpg', 8, '2020', '<p style=\"text-align: justify; \">industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p><p style=\"text-align: justify;\">long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p><p style=\"text-align: justify;\">long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>', 'https://github.com/adjimuhamadzidan20/', 1, '2025-09-05 09:30:40');
+(11, 'Sistem Manajemen Nilai', '6acb0e08b840d.jpg', 10, '2024', '<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).<br><br>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>', 'https://github.com/adjimuhamadzidan20', 1, '2026-10-11 04:18:16'),
+(12, 'Sistem Pendukung Keputusan', '6acb0e3238cc0.jpg', 10, '2024', '<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).<br><br>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>', 'https://github.com/adjimuhamadzidan20', 1, '2026-10-11 04:18:58');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dt_profil`
+-- Table structure for table `dt_profil`
 --
 
 CREATE TABLE `dt_profil` (
@@ -156,16 +161,16 @@ CREATE TABLE `dt_profil` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `dt_profil`
+-- Dumping data for table `dt_profil`
 --
 
 INSERT INTO `dt_profil` (`id`, `nama_lengkap`, `no_telp`, `email`, `alamat`, `foto`, `id_admin`, `created_at`) VALUES
-(1, 'Beyourselfit20', '089518181818', 'beyourselfit20@gmail.com', 'Jatirahayu, Kota Bekasi', '68bbc7d05de2c.jpg', 1, '2025-09-06 05:34:08');
+(1, 'Beyourselfit20', '089518181818', 'beyourselfit20@gmail.com', 'Jatirahayu, Kota Bekasi', '6acaff6fd6cd5.jpg', 1, '2026-10-11 03:15:59');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dt_sosialmedia`
+-- Table structure for table `dt_sosialmedia`
 --
 
 CREATE TABLE `dt_sosialmedia` (
@@ -177,7 +182,7 @@ CREATE TABLE `dt_sosialmedia` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `dt_sosialmedia`
+-- Dumping data for table `dt_sosialmedia`
 --
 
 INSERT INTO `dt_sosialmedia` (`id`, `sosial_media`, `link`, `id_admin`, `created_at`) VALUES
@@ -189,7 +194,7 @@ INSERT INTO `dt_sosialmedia` (`id`, `sosial_media`, `link`, `id_admin`, `created
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dt_statusprofil`
+-- Table structure for table `dt_statusprofil`
 --
 
 CREATE TABLE `dt_statusprofil` (
@@ -200,18 +205,17 @@ CREATE TABLE `dt_statusprofil` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `dt_statusprofil`
+-- Dumping data for table `dt_statusprofil`
 --
 
 INSERT INTO `dt_statusprofil` (`id`, `nama_status`, `id_admin`, `created_at`) VALUES
 (7, 'Guru', 1, '2025-08-31 02:18:42'),
-(8, 'Coder', 1, '2025-08-31 02:18:49'),
-(9, 'Programmer', 1, '2025-08-31 02:18:57');
+(8, 'Coder', 1, '2025-08-31 02:18:49');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dt_tentang`
+-- Table structure for table `dt_tentang`
 --
 
 CREATE TABLE `dt_tentang` (
@@ -222,46 +226,45 @@ CREATE TABLE `dt_tentang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `dt_tentang`
+-- Dumping data for table `dt_tentang`
 --
 
 INSERT INTO `dt_tentang` (`id`, `deskripsi`, `id_admin`, `created_at`) VALUES
 (4, '<p class=\"\" style=\"text-align: justify; \"><span style=\"font-size: 16px;\">It is a </span><b style=\"font-size: 16px;\">long established</b><span style=\"font-size: 16px;\"> fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</span></p>', 1, '2025-08-31 04:11:10'),
-(5, '<p style=\"text-align: justify;\">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>', 1, '2025-08-31 04:58:43'),
-(6, '<p style=\"text-align: justify;\">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>', 1, '2025-08-31 04:58:52');
+(5, '<p style=\"text-align: justify;\">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>', 1, '2025-08-31 04:58:43');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `dt_admin`
+-- Indexes for table `dt_admin`
 --
 ALTER TABLE `dt_admin`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `dt_basisprojek`
+-- Indexes for table `dt_basisprojek`
 --
 ALTER TABLE `dt_basisprojek`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_admin` (`id_admin`);
 
 --
--- Indeks untuk tabel `dt_kemampuan`
+-- Indexes for table `dt_kemampuan`
 --
 ALTER TABLE `dt_kemampuan`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_admin` (`id_admin`);
 
 --
--- Indeks untuk tabel `dt_kontak`
+-- Indexes for table `dt_kontak`
 --
 ALTER TABLE `dt_kontak`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `dt_portofolio`
+-- Indexes for table `dt_portofolio`
 --
 ALTER TABLE `dt_portofolio`
   ADD PRIMARY KEY (`id`),
@@ -269,134 +272,134 @@ ALTER TABLE `dt_portofolio`
   ADD KEY `id_admin` (`id_admin`);
 
 --
--- Indeks untuk tabel `dt_profil`
+-- Indexes for table `dt_profil`
 --
 ALTER TABLE `dt_profil`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_admin` (`id_admin`);
 
 --
--- Indeks untuk tabel `dt_sosialmedia`
+-- Indexes for table `dt_sosialmedia`
 --
 ALTER TABLE `dt_sosialmedia`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_admin` (`id_admin`);
 
 --
--- Indeks untuk tabel `dt_statusprofil`
+-- Indexes for table `dt_statusprofil`
 --
 ALTER TABLE `dt_statusprofil`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_admin` (`id_admin`);
 
 --
--- Indeks untuk tabel `dt_tentang`
+-- Indexes for table `dt_tentang`
 --
 ALTER TABLE `dt_tentang`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_admin` (`id_admin`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `dt_admin`
+-- AUTO_INCREMENT for table `dt_admin`
 --
 ALTER TABLE `dt_admin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `dt_basisprojek`
+-- AUTO_INCREMENT for table `dt_basisprojek`
 --
 ALTER TABLE `dt_basisprojek`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT untuk tabel `dt_kemampuan`
+-- AUTO_INCREMENT for table `dt_kemampuan`
 --
 ALTER TABLE `dt_kemampuan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT untuk tabel `dt_kontak`
+-- AUTO_INCREMENT for table `dt_kontak`
 --
 ALTER TABLE `dt_kontak`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
--- AUTO_INCREMENT untuk tabel `dt_portofolio`
+-- AUTO_INCREMENT for table `dt_portofolio`
 --
 ALTER TABLE `dt_portofolio`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT untuk tabel `dt_profil`
+-- AUTO_INCREMENT for table `dt_profil`
 --
 ALTER TABLE `dt_profil`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `dt_sosialmedia`
+-- AUTO_INCREMENT for table `dt_sosialmedia`
 --
 ALTER TABLE `dt_sosialmedia`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT untuk tabel `dt_statusprofil`
+-- AUTO_INCREMENT for table `dt_statusprofil`
 --
 ALTER TABLE `dt_statusprofil`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT untuk tabel `dt_tentang`
+-- AUTO_INCREMENT for table `dt_tentang`
 --
 ALTER TABLE `dt_tentang`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `dt_basisprojek`
+-- Constraints for table `dt_basisprojek`
 --
 ALTER TABLE `dt_basisprojek`
   ADD CONSTRAINT `dt_basisprojek_ibfk_1` FOREIGN KEY (`id_admin`) REFERENCES `dt_admin` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `dt_kemampuan`
+-- Constraints for table `dt_kemampuan`
 --
 ALTER TABLE `dt_kemampuan`
   ADD CONSTRAINT `dt_kemampuan_ibfk_1` FOREIGN KEY (`id_admin`) REFERENCES `dt_admin` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `dt_portofolio`
+-- Constraints for table `dt_portofolio`
 --
 ALTER TABLE `dt_portofolio`
   ADD CONSTRAINT `dt_portofolio_ibfk_1` FOREIGN KEY (`id_admin`) REFERENCES `dt_admin` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `dt_portofolio_ibfk_2` FOREIGN KEY (`id_basis`) REFERENCES `dt_basisprojek` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `dt_profil`
+-- Constraints for table `dt_profil`
 --
 ALTER TABLE `dt_profil`
   ADD CONSTRAINT `dt_profil_ibfk_1` FOREIGN KEY (`id_admin`) REFERENCES `dt_admin` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `dt_sosialmedia`
+-- Constraints for table `dt_sosialmedia`
 --
 ALTER TABLE `dt_sosialmedia`
   ADD CONSTRAINT `dt_sosialmedia_ibfk_1` FOREIGN KEY (`id_admin`) REFERENCES `dt_admin` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `dt_statusprofil`
+-- Constraints for table `dt_statusprofil`
 --
 ALTER TABLE `dt_statusprofil`
   ADD CONSTRAINT `dt_statusprofil_ibfk_1` FOREIGN KEY (`id_admin`) REFERENCES `dt_admin` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `dt_tentang`
+-- Constraints for table `dt_tentang`
 --
 ALTER TABLE `dt_tentang`
   ADD CONSTRAINT `dt_tentang_ibfk_1` FOREIGN KEY (`id_admin`) REFERENCES `dt_admin` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;

@@ -124,9 +124,9 @@
             <div class="sb-sidenav-menu-heading">Core</div>
             <a class="nav-link <?= $active1; ?>" href="index.php?halaman=dashboard">
                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                Dashboard
+                Beranda
             </a>
-            <div class="sb-sidenav-menu-heading">Main Menu</div>
+            <div class="sb-sidenav-menu-heading pt-3">Main Menu</div>
             <a class="nav-link <?= $active2; ?>" href="index.php?halaman=profil">
                 <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
                 Profil

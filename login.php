@@ -67,14 +67,13 @@
           <div class="container">
             <div class="row justify-content-center">
               <div class="col-lg-4">
-                <div class="login-admin card shadow border-0 rounded-lg">
+                <div class="login-admin card rounded-lg">
                   <div class="card-header">
                     <h4 class="text-center font-weight-light my-3 title-login">MY PORTOFOLIO</h4>
                   </div>
                   <div class="card-body">
-                    <h6 class="text-uppercase text-center mb-3 title-admin">Admin Login</h6>
                     <form action="dashboard/config/proses_login.php" method="post">
-                      <div class="form-floating mb-3">
+                      <div class="form-floating mb-3 mt-3">
                         <input type="text" class="form-control" placeholder="Username" name="username" id="inputUsername" required>
                         <label for="inputUsername">Username</label>
                       </div>
@@ -88,7 +87,7 @@
                           <label class="form-check-label" for="inputRememberPassword">Remember Me</label>
                         </div>
                       </div>
-                      <div class="mt-4 mb-0">
+                      <div class="mt-3 mb-0">
                         <button type="submit" class="btn btn-primary w-100">Masuk</button>
                       </div>
                     </form>

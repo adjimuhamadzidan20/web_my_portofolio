@@ -1,16 +1,18 @@
 <?php
   require 'dashboard/config/koneksi_db.php';
 
-  $idPorto = $_GET['id_porto'];
+  if (isset($_GET['id_porto'])) {
+    $idPorto = $_GET['id_porto'];
 
-  $sqlPorto = "SELECT dt_portofolio.id, dt_portofolio.judul_portofolio, dt_portofolio.thumbnail, 
-  dt_portofolio.id_basis, dt_basisprojek.nama_basis, dt_portofolio.tahun_pembuatan,
-  dt_portofolio.deskripsi, dt_portofolio.link_porto, dt_portofolio.id_admin, dt_portofolio.created_at 
-  FROM dt_portofolio INNER JOIN dt_basisprojek ON dt_portofolio.id_basis = dt_basisprojek.id WHERE dt_portofolio.id = '$idPorto'";
+    $sqlPorto = "SELECT dt_portofolio.id, dt_portofolio.judul_portofolio, dt_portofolio.thumbnail, 
+    dt_portofolio.id_basis, dt_basisprojek.nama_basis, dt_portofolio.tahun_pembuatan,
+    dt_portofolio.deskripsi, dt_portofolio.link_porto, dt_portofolio.id_admin, dt_portofolio.created_at 
+    FROM dt_portofolio INNER JOIN dt_basisprojek ON dt_portofolio.id_basis = dt_basisprojek.id 
+    WHERE dt_portofolio.id = '$idPorto'";
 
-  $queryPorto = mysqli_query($koneksi, $sqlPorto);
-  $dataPorto = mysqli_num_rows($queryPorto);
-
+    $queryPorto = mysqli_query($koneksi, $sqlPorto);
+    $dataPorto = mysqli_num_rows($queryPorto);
+  }
 ?>
 
 <!DOCTYPE html>
@@ -38,8 +40,11 @@
     }
   ?>
 
-  <meta name="description" content="web_portofolio" />
-  <meta name="author" content="adjimuhamadzidan" />
+  <meta content="portofolio" name="description">
+  <meta content="portofolio" name="keywords">
+
+  <!-- Favicons -->
+  <link href="landing_page/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -57,249 +62,237 @@
   <link href="landing_page/assets/css/main.css" rel="stylesheet">
 
   <style>
-    .btn-primary, .bg-primary {
-      background-color: #40407a !important;
-      border-color: #40407a !important;
+    html, body {
+      height: 100%;
+      margin: 0;
     }
 
-    .btn-primary:hover {
-      background-color: #2c2c54;
-      border-color: #2c2c54;
+    body {
+      display: flex;
+      flex-direction: column;
     }
 
-    .btn-primary:active {
-      background-color: #2c2c54 !important;
-      border-color: #2c2c54 !important;
+    main {
+      flex: 1;
     }
 
-    .portfolio-details .portfolio-details-slider .thumbnail {
-      width: 66%; 
-      object-fit: cover;
-      border: 1px solid lightgrey;
-      padding: 3px;
+    footer {
+      margin-top: auto;
     }
 
-    section, .section {
-      padding: 35px 0;
-    }
-
-    @media screen and (max-width: 575px) {
-      .portfolio-details .portfolio-details-slider .thumbnail {
-        width: 100%; 
-      }
+    .link-porto {
+      display: inline-block;      
+      max-width: 100%;             
+      white-space: normal;         
+      word-break: break-word;     
+      overflow-wrap: break-word; 
     }
   </style>
-
 </head>
 
 <body class="portfolio-details-page">
-  <header id="header" class="header d-flex flex-column justify-content-center">
+
+  <header id="header" class="header dark-background d-flex flex-column">
     <i class="header-toggle d-xl-none bi bi-list"></i>
+
+    <!-- nama profil -->
+    <a href="index.php" class="logo d-flex align-items-center justify-content-center mt-4">
+      <?php
+        $sqlProfil = "SELECT nama_lengkap FROM dt_profil";
+        $queryProfil = mysqli_query($koneksi, $sqlProfil);
+        $profilName = mysqli_num_rows($queryProfil);
+
+        if ($profilName == 0) {
+      ?>
+        <h1 class="sitename">Anonymus</h1>
+      <?php
+        } else {
+          while ($dtProfil = mysqli_fetch_assoc($queryProfil)) :
+      ?>
+        <h1 class="sitename"><?= $dtProfil['nama_lengkap']; ?></h1>
+      <?php
+          endwhile;
+        }
+      ?>
+    </a>
+
+    <!-- sosial media profil -->
+    <div class="social-links text-center">
+      <?php
+        $sqlsosmed = "SELECT * FROM dt_sosialmedia";
+        $sosmed = mysqli_query($koneksi, $sqlsosmed);
+
+        $datasosmed = mysqli_num_rows($sosmed);
+        if ($datasosmed == 0) {
+      ?>
+        <span>Sosial media belum tersedia..</span>
+      <?php
+        } else {
+          while ($data = mysqli_fetch_assoc($sosmed)) :
+      ?>
+        <a href="<?= $data['link']; ?>" class="<?= $data['sosial_media']; ?>" target="_blank">
+          <i class="bi bi-<?= $data['sosial_media']; ?>"></i>
+        </a>
+      <?php
+          endwhile;
+        }
+      ?>
+    </div>
+
+    <!-- menu link sidebar -->
     <nav id="navmenu" class="navmenu">
       <ul>
-        <li><a href="index.php#hero"><i class="bi bi-house navicon"></i><span>Home</span></a></li>
-        <li><a href="index.php#about"><i class="bi bi-person navicon"></i><span>About</span></a></li>
-        <li><a href="index.php#skills"><i class="bi bi-stack navicon"></i><span>Skills</span></a></li>
-        <li><a href="index.php#portfolio"><i class="bi bi-images navicon"></i><span>Portfolio</span></a></li>
-        <li><a href="index.php#contact"><i class="bi bi-envelope navicon"></i><span>Contact</span></a></li>
+        <li><a href="index.php?#hero" class="active"><i class="bi bi-house navicon"></i>Beranda</a></li>
+        <li><a href="index.php?#about"><i class="bi bi-person navicon"></i> Tentang</a></li>
+        <li><a href="index.php?#skills"><i class="bi bi-stack navicon"></i> Kemampuan</a></li>
+        <li><a href="index.php?#portfolio"><i class="bi bi-images navicon"></i> Portofolio</a></li>
+        <li><a href="index.php?#contact"><i class="bi bi-envelope navicon"></i> Kontak</a></li>
       </ul>
     </nav>
   </header>
 
   <main class="main">
     <!-- Page Title -->
-    <div class="page-title" data-aos="fade">
-      <div class="container">
+    <div class="page-title dark-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">Portofolio Details</h1>
         <nav class="breadcrumbs">
           <ol>
             <li><a href="index.php">Beranda</a></li>
             <li class="current">Portofolio Details</li>
           </ol>
         </nav>
-        <h1 class="text-uppercase mt-2">Portofolio Details</h1>
       </div>
-    </div><!-- End Page Title -->
+    </div>
+    <!-- End Page Title -->
 
     <!-- Portfolio Details Section -->
-    <section id="portfolio-details" class="portfolio-details section">
+    <section id="portfolio-details" class="portfolio-details section px-lg-2">
+      <!-- default portofolio (template) -->
       <?php  
-        if ($dataPorto == 0) {
+        if (isset($dataPorto) == 0) {
       ?>
-        <div class="container" data-aos="fade-up">
-          <div class="portfolio-details-slider swiper init-swiper">
-            <script type="application/json" class="swiper-config">
-              {
-                "loop": true,
-                "speed": 600,
-                "autoplay": {
-                  "delay": 5000
-                },
-                "slidesPerView": "auto",
-                "navigation": {
-                  "nextEl": ".swiper-button-next",
-                  "prevEl": ".swiper-button-prev"
-                },
-                "pagination": {
-                  "el": ".swiper-pagination",
-                  "type": "bullets",
-                  "clickable": true
-                }
-              }
-            </script>
-            <div class="swiper-wrapper align-items-center">
-              <div class="swiper-slide">
-                <img src="dashboard/thumb_pict/thumb_porto.png" alt="thumbnail" class="thumbnail">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="row gy-4">
+            <div class="col-lg-8">
+              <div class="portfolio-details-slider swiper init-swiper">
+                <script type="application/json" class="swiper-config">
+                  {
+                    "loop": true,
+                    "speed": 600,
+                    "autoplay": {
+                      "delay": 5000
+                    },
+                    "slidesPerView": "auto",
+                    "pagination": {
+                      "el": ".swiper-pagination",
+                      "type": "bullets",
+                      "clickable": true
+                    }
+                  }
+                </script>
+
+                <div class="swiper-wrapper align-items-center">
+                  <div class="swiper-slide">
+                    <img src="dashboard/thumb_pict/thumb_porto.png" alt="thumbnail-porto" class="img-thumbnail rounded-0">
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="row gy-4 mt-2">
-            <div class="col-lg-8" data-aos="fade-up">
-              <div class="portfolio-description">
-                <h2 class="text-uppercase">This is an example of portfolio details</h2>
-                <h5 class="text-uppercase fw-bold mb-3">Tentang Projek</h5>
-                <p>
-                  Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
-                </p>
-                <p>
-                  Amet consequatur qui dolore veniam voluptatem voluptatem sit. Non aspernatur atque natus ut cum nam et. Praesentium error dolores rerum minus sequi quia veritatis eum. Eos et doloribus doloremque nesciunt molestiae laboriosam.
-                </p>
-                <p>
-                  Impedit ipsum quae et aliquid doloribus et voluptatem quasi. Perspiciatis occaecati earum et magnam animi. Quibusdam non qui ea vitae suscipit vitae sunt. Repudiandae incidunt cumque minus deserunt assumenda tempore. Delectus voluptas necessitatibus est.
-                </p>
-                <p>
-                  Sunt voluptatum sapiente facilis quo odio aut ipsum repellat debitis. Molestiae et autem libero. Explicabo et quod necessitatibus similique quis dolor eum. Numquam eaque praesentium rem et qui nesciunt.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="row mt-4">
-            <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
-              <div class="portfolio-info">
-                <h5 class="text-uppercase fw-bold mb-3">Informasi Projek</h5>
+            <div class="col-lg-4">
+              <div class="portfolio-info p-3" data-aos="fade-up" data-aos-delay="200">
+                <h3 class="text-uppercase">Informasi Projek</h3>
                 <ul>
-                  <li><strong>Basis Projek</strong> Belum Tersedia</li>
-                  <li><strong>Tahun Pembuatan</strong> Belum Tersedia</li>
-                  <li><strong>Link Projek</strong> <a href="#">www.example.com</a></li>
+                  <li><strong>Basis Projek</strong>: Belum tersedia</li>
+                  <li><strong>Tahun Projek</strong>: Belum tersedia</li>
+                  <li><strong>Link Projek</strong>: Belum tersedia</li>
                 </ul>
-                <a href="index.php#portfolio" class="btn btn-primary mt-2 mb-3 mb-lg-0 rounded-pill px-4">Kembali</a>
               </div>
             </div>
           </div>
+
+          <div class="row">
+            <div class="col-lg-8">
+              <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
+                <h2>Judul Portofolio</h2>
+                <p>
+                  It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                </p>
+              </div>
+            </div>
+          </div>  
         </div>
       <?php  
         } else {
-          while ($dtPorto = mysqli_fetch_assoc($queryPorto)) :
+          if (isset($queryPorto)) :
+            while ($dtPorto = mysqli_fetch_assoc($queryPorto)) :
       ?>
-        <div class="container" data-aos="fade-up">
-          <div class="portfolio-details-slider swiper init-swiper">
-            <script type="application/json" class="swiper-config">
-              {
-                "loop": true,
-                "speed": 600,
-                "autoplay": {
-                  "delay": 5000
-                },
-                "slidesPerView": "auto",
-                "navigation": {
-                  "nextEl": ".swiper-button-next",
-                  "prevEl": ".swiper-button-prev"
-                },
-                "pagination": {
-                  "el": ".swiper-pagination",
-                  "type": "bullets",
-                  "clickable": true
-                }
-              }
-            </script>
-            <div class="swiper-wrapper align-items-center">
-              <div class="swiper-slide">
-                <img src="dashboard/file_thumbnail/<?= $dtPorto['thumbnail']; ?>" alt="thumbnail" class="thumbnail">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="row gy-4">
+            <div class="col-lg-8">
+              <div class="portfolio-details-slider swiper init-swiper">
+                <script type="application/json" class="swiper-config">
+                  {
+                    "loop": true,
+                    "speed": 600,
+                    "autoplay": {
+                      "delay": 5000
+                    },
+                    "slidesPerView": "auto",
+                    "pagination": {
+                      "el": ".swiper-pagination",
+                      "type": "bullets",
+                      "clickable": true
+                    }
+                  }
+                </script>
+
+                <div class="swiper-wrapper align-items-center">
+                  <div class="swiper-slide">
+                    <img src="dashboard/file_thumbnail/<?= $dtPorto['thumbnail']; ?>" alt="thumbnail-porto" class="img-thumbnail rounded-0">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="portfolio-info p-3" data-aos="fade-up" data-aos-delay="200">
+                <h3 class="text-uppercase">Informasi Projek</h3>
+                <ul>
+                  <li><strong>Basis Projek</strong>: <?= $dtPorto['nama_basis']; ?></li>
+                  <li><strong>Tahun Projek</strong>: <?= $dtPorto['tahun_pembuatan']; ?></li>
+                  <li><strong>Link Projek</strong>: 
+                    <a href="<?= $dtPorto['link_porto']; ?>" class="link-porto"><?= $dtPorto['link_porto']; ?></a>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
-
-          <div class="row gy-4 mt-2">
-            <div class="col-lg-8" data-aos="fade-up">
-              <div class="portfolio-description">
+        
+          <div class="row">
+            <div class="col-lg-8">
+              <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
                 <h2 class="text-uppercase"><?= $dtPorto['judul_portofolio']; ?></h2>
-                <h5 class="text-uppercase fw-bold mb-3">Tentang Projek</h5>
                 <?= $dtPorto['deskripsi']; ?>
               </div>
             </div>
-          </div>
-
-          <div class="row mt-4">
-            <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
-              <div class="portfolio-info">
-                <h5 class="text-uppercase fw-bold mb-3">Informasi Projek</h5>
-                <ul>
-                  <li><strong>Basis Projek</strong> <?= $dtPorto['nama_basis']; ?></li>
-                  <li><strong>Tahun Pembuatan</strong> <?= $dtPorto['tahun_pembuatan']; ?></li>
-                  <li><strong>Link Projek</strong> <a href="<?= $dtPorto['link_porto']; ?>">
-                    <?= $dtPorto['link_porto']; ?></a></li>
-                </ul>
-                <a href="index.php#portfolio" class="btn btn-primary mt-2 mb-3 mb-lg-0 rounded-pill px-4">Kembali</a>
-              </div>
-            </div>
-          </div>
+          </div>  
         </div>
-      <?php  
-          endwhile;
+      <?php
+            endwhile;
+          endif;  
         }
       ?>
-    </section>
-    <!-- Portfolio Details Section -->
 
+    </section>
+    <!-- /Portfolio Details Section -->
   </main>
 
   <footer id="footer" class="footer position-relative light-background">
     <div class="container">
-      <?php
-        $sqlProfilFooter = "SELECT nama_lengkap FROM dt_profil";
-        $queryProfilFooter = mysqli_query($koneksi, $sqlProfilFooter);
-        $profilNameFoot = mysqli_num_rows($queryProfilFooter);
-
-        if ($profilNameFoot == 0) {
-      ?>
-        <h3 class="sitename text-uppercase">Anonymus</h3>
-      <?php
-        } else {
-            while ($dtProfilFoot = mysqli_fetch_assoc($queryProfilFooter)) :
-      ?>
-        <h3 class="sitename text-uppercase"><?= $dtProfilFoot['nama_lengkap']; ?></h3>
-      <?php
-            endwhile;
-        }
-      ?>
-
-      <p>Halaman website yang menampilkan tentang diri pribadi serta kemampuan dan portofolio yang pernah dibangun.</p>
-      <div class="social-links d-flex justify-content-center">
-        <?php
-          $sqlSosialFooter = "SELECT * FROM dt_sosialmedia";
-          $querySosialFooter = mysqli_query($koneksi, $sqlSosialFooter);
-          $datasosialFooter = mysqli_num_rows($querySosialFooter);
-          if ($datasosialFooter == 0) {
-        ?>
-          <p>Sosial media belum tersedia..</p>
-        <?php
-          } else {
-              while ($data = mysqli_fetch_assoc($querySosialFooter)) :
-        ?>
-          <a href="<?= $data['link']; ?>">
-            <i class="bi bi-<?= $data['sosial_media']; ?>" title="<?= ucwords($data['sosial_media']); ?>" 
-            target="_blank"></i>
-          </a>
-        <?php
-              endwhile;
-          } 
-        ?>
-      </div>
-      <div class="container">
-        <div class="copyright">
-          <span>Copyright</span><strong class="px-1 sitename">My Portofolio</strong>| 2024 - <?= date('Y'); ?> <span>All Rights Reserved</span>
-        </div>
+      <div class="copyright text-center">
+        <strong class="px-1 sitename">Portofolio Web</strong>| 2024 - <?= date('Y'); ?>
       </div>
     </div>
   </footer>
@@ -312,12 +305,10 @@
 
   <!-- Vendor JS Files -->
   <script src="landing_page/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="landing_page/assets/vendor/php-email-form/validate.js"></script>
   <script src="landing_page/assets/vendor/aos/aos.js"></script>
   <script src="landing_page/assets/vendor/typed.js/typed.umd.js"></script>
   <script src="landing_page/assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="landing_page/assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="landing_page/assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="landing_page/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="landing_page/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="landing_page/assets/vendor/swiper/swiper-bundle.min.js"></script>
